@@ -1,11 +1,4 @@
-import {
-  useEffect,
-  useReducer,
-  useCallback,
-  useMemo,
-  useState,
-  useContext,
-} from "react";
+import { useReducer, useCallback, useMemo, useContext } from "react";
 import { ActionMapType, AuthStateType } from "../types";
 import { AuthContext } from "./auth-context";
 
@@ -55,7 +48,11 @@ export function AuthProvider({ children }: Props) {
 
   const login = useCallback(async (email: string, password: string) => {
     // TODO: Call the login API
-    const user: User = { id: "123", email, role: "dealer" };
+    const user: User = {
+      id: "123",
+      email,
+      role: password === "dealer" ? "dealer" : "customer",
+    };
     dispatch({ type: Types.INITIAL, payload: { user } });
   }, []);
 
@@ -66,7 +63,11 @@ export function AuthProvider({ children }: Props) {
 
   const signup = useCallback(async (email: string, password: string) => {
     // TODO : Call the signup API
-    const user: User = { id: "123", email, role: "dealer" };
+    const user: User = {
+      id: "123",
+      email,
+      role: password === "dealer" ? "dealer" : "customer",
+    };
     dispatch({ type: Types.INITIAL, payload: { user } });
   }, []);
 
