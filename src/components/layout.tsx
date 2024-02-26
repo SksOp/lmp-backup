@@ -4,15 +4,17 @@ import Navbar from "./navbar";
 
 function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <ThemeProvider
-      attribute="class"
-      defaultTheme="dark"
-      enableSystem
-      disableTransitionOnChange
-    >
+    // <ThemeProvider
+    //   attribute="class"
+    //   defaultTheme="light"
+    //   enableSystem
+    //   disableTransitionOnChange
+    // >
+    <>
       <Navbar />
       {children}
-    </ThemeProvider>
+    </>
+    // </ThemeProvider>
   );
 }
 
