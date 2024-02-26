@@ -1,6 +1,7 @@
 import React from 'react'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs'
 import { Application } from './application'
+import { leads } from '@/constants/leads'
 
 function MainSection() {
   return (
@@ -13,14 +14,15 @@ function MainSection() {
       </TabsList>
       <TabsContent value="applications">
         <div className='flex flex-col gap-3'>
-            {Array(5).fill(0).map((index) => (
-                <Application key={index} />
+            {leads.map((lead) => (
+              <Application key={lead.lead_id} lead={lead} />
+            
             ))}
             
         </div>
       </TabsContent>
       <TabsContent value="action">
-        <Application />
+        
       </TabsContent>
       </Tabs>
     </>
