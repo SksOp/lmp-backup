@@ -1,6 +1,6 @@
 import { BankConfig } from "./types";
 
-export const bankThree: BankConfig = {
+export const Bank3: BankConfig = {
   state_id: 1,
   state_name: {
     en: "Initiate Application",
