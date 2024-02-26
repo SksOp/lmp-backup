@@ -1,6 +1,7 @@
 import React from "react";
 import { ThemeProvider } from "./theme-provider";
 import Navbar from "./navbar";
+import NavBottom from "./navBottom";
 
 function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -13,6 +14,7 @@ function Layout({ children }: { children: React.ReactNode }) {
     <>
       <Navbar />
       {children}
+      <NavBottom />
     </>
     // </ThemeProvider>
   );

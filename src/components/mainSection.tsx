@@ -19,7 +19,7 @@ function MainSection() {
             
         </div>
       </TabsContent>
-      <TabsContent value="applications">
+      <TabsContent value="action">
         <Application />
       </TabsContent>
       </Tabs>

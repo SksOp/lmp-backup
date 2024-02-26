@@ -8,10 +8,10 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Icon } from "@iconify/react";
-import { LeadLogo } from "./avatar";
+import { LeadLogo } from "./leadLogo";
+import DocUpload from "./docUpload";
 
 interface lead{
     leadId: string;
@@ -33,7 +33,9 @@ export function Application( {leads}: leadProps) {
         <div className="justify-item-center">
         <CardTitle>Applicant Name</CardTitle>
         <CardDescription className="flex gap-3">
+          
           <Icon icon="streamline:user-identifier-card" className="mt-3 w-4 h-4 text-black-500" />
+          
           <p className="py-2">Applicant ID</p>
         </CardDescription>
         </div>
@@ -41,15 +43,16 @@ export function Application( {leads}: leadProps) {
         <Icon icon="ep:arrow-right" className="h-8 w-8 text-black-500" />
       </CardHeader>
       <CardContent>
-        <div>
+        <div className="flex justify-between">
+          <div>
           <Label>Leasing Status:</Label>
-          <div className="flex-grow"></div>
+          </div>
           <Label>Applied: 12/30/2024</Label>
         </div>
       </CardContent>
       <CardFooter className="flex gap-3">
       <Button variant="default">View</Button>
-      <Button variant="default">View</Button>
+      <DocUpload />
       
       </CardFooter>
     </Card>
