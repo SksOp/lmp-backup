@@ -21,7 +21,7 @@ export function Application({
   btns: React.ReactNode;
 }) {
   return (
-    <Card>
+    <Card className="rounded-sm">
       <CardHeader className="flex flex-row gap-3 items-center">
         <LeadLogo imageName={lead.lead_name} />
         <div>
