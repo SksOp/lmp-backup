@@ -46,7 +46,6 @@ export function Application( {lead}: {lead: MinimalLead} ) {
       <CardFooter className="flex gap-3">
       <Button variant="default">View</Button>
       <DocUpload />
-      
       </CardFooter>
     </Card>
   )
