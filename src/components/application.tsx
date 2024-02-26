@@ -14,8 +14,7 @@ import { LeadLogo } from "./leadLogo";
 import DocUpload from "./docUpload";
 import { MinimalLead } from "@/types";
 
-
-export function Application( {lead}: {lead: MinimalLead} ) {
+export function Application( {lead, btns}: {lead: MinimalLead, btns:React.ReactNode} ) {
   return (
 
     <Card className="w-full border-r-2">
@@ -44,8 +43,7 @@ export function Application( {lead}: {lead: MinimalLead} ) {
         </div>
       </CardContent>
       <CardFooter className="flex gap-3">
-      <Button variant="default">View</Button>
-      <DocUpload />
+      {btns}
       </CardFooter>
     </Card>
   )
