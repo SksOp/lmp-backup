@@ -15,12 +15,18 @@ export type AuthStateType = {
   user: User | null;
 };
 
+export interface User {
+  id: string;
+  name: string;
+  role: "dealer" | "customer";
+}
+
 export type AuthContextType = {
   user: User | null;
   loading: boolean;
   authenticated: boolean;
   // TODO : Later add the type for the auth object
-  login: (email: string, password: string) => void;
-  signup: (email: string, password: string) => void;
+  login: (id: string, password: string) => void;
+  signup: (id: string, password: string) => void;
   logout: () => void;
 };

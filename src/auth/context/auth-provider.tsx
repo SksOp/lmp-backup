@@ -1,25 +1,15 @@
-import { useReducer, useCallback, useMemo, useContext } from "react";
-import { ActionMapType, AuthStateType } from "../types";
+import { useReducer, useCallback, useMemo } from "react";
+import { ActionMapType, AuthStateType, User } from "../types";
 import { AuthContext } from "./auth-context";
 
 enum Types {
   INITIAL = "INITIAL",
 }
 
-interface User {
-  id: string;
-  email: string;
-  role: "dealer" | "customer";
-}
-
 type Payload = {
   [Types.INITIAL]: {
     user: User | null;
   };
-};
-
-export const useAuth = () => {
-  return useContext(AuthContext);
 };
 
 type Action = ActionMapType<Payload>[keyof ActionMapType<Payload>];
@@ -46,11 +36,11 @@ type Props = {
 export function AuthProvider({ children }: Props) {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  const login = useCallback(async (email: string, password: string) => {
+  const login = useCallback(async (id: string, password: string) => {
     // TODO: Call the login API
     const user: User = {
-      id: "123",
-      email,
+      id,
+      name: "Muhhamed",
       role: password === "dealer" ? "dealer" : "customer",
     };
     dispatch({ type: Types.INITIAL, payload: { user } });
@@ -61,11 +51,11 @@ export function AuthProvider({ children }: Props) {
     dispatch({ type: Types.INITIAL, payload: { user: null } });
   }, []);
 
-  const signup = useCallback(async (email: string, password: string) => {
+  const signup = useCallback(async (id: string, password: string) => {
     // TODO : Call the signup API
     const user: User = {
-      id: "123",
-      email,
+      id,
+      name: "Muhhamed",
       role: password === "dealer" ? "dealer" : "customer",
     };
     dispatch({ type: Types.INITIAL, payload: { user } });

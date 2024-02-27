@@ -3,6 +3,8 @@ import { Navigate, Outlet, useRoutes } from "react-router-dom";
 import { paths } from "./paths";
 
 const Home = React.lazy(() => import("@/pages/home"));
+const Login = React.lazy(() => import("@/pages/auth/login"));
+
 export default function Router() {
   return useRoutes([...root]);
 }

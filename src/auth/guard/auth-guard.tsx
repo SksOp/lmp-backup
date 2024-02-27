@@ -1,6 +1,6 @@
 import { useEffect, useCallback, useState } from "react";
 import { useRouter } from "@/hooks/useRouter";
-import { useAuth } from "../context/auth-provider";
+import { useAuth } from "@/hooks/useAuth";
 
 type AuthGuardProps = {
   children: React.ReactNode;
