@@ -1,17 +1,11 @@
-import { Application } from "@/components/application";
 import Layout from "@/layout/main";
-import LeadsFunnel from "@/components/leadsFunnel";
-import MainSection from "@/components/mainSection";
-import React from "react";
+import HomeView from "@/sections/home";
 
 function page() {
   return (
-    <>
-      <Layout>
-        <LeadsFunnel />
-        <MainSection />
-      </Layout>
-    </>
+    <Layout>
+      <HomeView />
+    </Layout>
   );
 }
 

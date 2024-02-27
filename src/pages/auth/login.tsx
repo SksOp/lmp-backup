@@ -1,8 +1,12 @@
 import AuthLayout from "@/layout/auth";
-import React from "react";
+import LoginView from "@/sections/auth/login";
 
 function Login() {
-  return <AuthLayout>Login</AuthLayout>;
+  return (
+    <AuthLayout>
+      <LoginView />
+    </AuthLayout>
+  );
 }
 
 export default Login;

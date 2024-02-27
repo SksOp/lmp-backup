@@ -1,6 +1,7 @@
 import React from "react";
 import { Navigate, Outlet, useRoutes } from "react-router-dom";
 import { paths } from "./paths";
+import AuthGuard from "@/auth/guard/auth-guard";
 
 const Home = React.lazy(() => import("@/pages/home"));
 const Login = React.lazy(() => import("@/pages/auth/login"));
@@ -12,7 +13,11 @@ export default function Router() {
 const root = [
   {
     path: paths.root,
-    element: <Home />,
+    element: (
+      <AuthGuard>
+        <Home />
+      </AuthGuard>
+    ),
   },
   {
     path: paths.login,

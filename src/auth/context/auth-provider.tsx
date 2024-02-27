@@ -1,4 +1,4 @@
-import { useReducer, useCallback, useMemo } from "react";
+import { useReducer, useCallback, useMemo, useEffect } from "react";
 import { ActionMapType, AuthStateType, User } from "../types";
 import { AuthContext } from "./auth-context";
 
@@ -35,6 +35,14 @@ type Props = {
 
 export function AuthProvider({ children }: Props) {
   const [state, dispatch] = useReducer(reducer, initialState);
+
+  useEffect(() => {
+    // TODO: Check on the client if there is user
+    // for now I am doing this to make the loading state false
+    // assuming no user is logged in
+    // initialiseUSer()
+    dispatch({ type: Types.INITIAL, payload: { user: null } });
+  }, []);
 
   const login = useCallback(async (id: string, password: string) => {
     // TODO: Call the login API
