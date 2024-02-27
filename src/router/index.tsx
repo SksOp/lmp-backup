@@ -16,7 +16,7 @@ const root = [
   },
   {
     path: paths.login,
-    element: <>Login</>,
+    element: <Login />,
   },
   {
     path: paths.logout,

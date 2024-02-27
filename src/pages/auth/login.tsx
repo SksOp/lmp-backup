@@ -1,7 +1,8 @@
+import AuthLayout from "@/layout/auth";
 import React from "react";
 
 function Login() {
-  return <div></div>;
+  return <AuthLayout>Login</AuthLayout>;
 }
 
 export default Login;
