@@ -1,5 +1,5 @@
 import React from "react";
-import { Navigate, Outlet, useRoutes } from "react-router-dom";
+import { Navigate, useRoutes } from "react-router-dom";
 import { paths } from "./paths";
 import AuthGuard from "@/auth/guard/auth-guard";
 

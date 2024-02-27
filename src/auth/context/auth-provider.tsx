@@ -37,11 +37,12 @@ export function AuthProvider({ children }: Props) {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
-    // TODO: Check on the client if there is user
-    // for now I am doing this to make the loading state false
-    // assuming no user is logged in
-    // initialiseUSer()
-    dispatch({ type: Types.INITIAL, payload: { user: null } });
+    const localUser = localStorage.getItem("user");
+    if (!localUser) {
+      dispatch({ type: Types.INITIAL, payload: { user: null } });
+      return;
+    }
+    dispatch({ type: Types.INITIAL, payload: { user: JSON.parse(localUser) } });
   }, []);
 
   const login = useCallback(async (id: string, password: string) => {
@@ -51,11 +52,13 @@ export function AuthProvider({ children }: Props) {
       name: "Muhhamed",
       role: password === "dealer" ? "dealer" : "customer",
     };
+    localStorage.setItem("user", JSON.stringify(user));
     dispatch({ type: Types.INITIAL, payload: { user } });
   }, []);
 
   const logout = useCallback(async () => {
     // TODO : Call the logout API
+    localStorage.removeItem("user");
     dispatch({ type: Types.INITIAL, payload: { user: null } });
   }, []);
 
@@ -66,6 +69,7 @@ export function AuthProvider({ children }: Props) {
       name: "Muhhamed",
       role: password === "dealer" ? "dealer" : "customer",
     };
+    localStorage.setItem("user", JSON.stringify(user));
     dispatch({ type: Types.INITIAL, payload: { user } });
   }, []);
 
