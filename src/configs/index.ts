@@ -2,20 +2,20 @@ import { Bank1, Bank2, Bank3 } from "./bank-configs";
 
 export * from "./bank-configs";
 
-export const Banks = [
+export const banks = [
   {
     logo: "",
-    name: "",
+    name: "hdfc",
     config: Bank1,
   },
   {
     logo: "",
-    name: "",
+    name: "sbi",
     config: Bank2,
   },
   {
     logo: "",
-    name: "",
+    name: "icici",
     config: Bank3,
   },
 ];

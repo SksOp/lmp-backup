@@ -13,6 +13,8 @@ import {
 import InputField from "./inputField";
 import { LeadLogo } from "./leadLogo";
 import { Icon } from "@iconify/react";
+import { Link } from "react-router-dom";
+import { paths } from "@/router";
 
 function DocUpload() {
   return (
@@ -24,9 +26,9 @@ function DocUpload() {
         <DrawerHeader>
           <div className="flex justify-between">
             <DrawerTitle className="text-bold">Upload Documents</DrawerTitle>
-            <a href="/" className="text-red-500">
+            <Link to={paths.home} className="text-red-500">
               Cancel
-            </a>
+            </Link>
           </div>
           <p className="flex">
             Naomi's leasing application requires you to confirm the car

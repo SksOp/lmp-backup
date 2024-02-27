@@ -2,6 +2,8 @@ import React from 'react'
 import {Chart, ArcElement, Tooltip, Legend, Title} from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
 import { Icon } from '@iconify/react';
+import { Link } from 'react-router-dom';
+import { paths } from '@/router';
 
 Chart.register(ArcElement, Tooltip, Legend, Title);
 const data = {
@@ -20,9 +22,9 @@ function LeadsFunnel() {
     <div className='flex flex-col bg-blue-300 '>
       <div className='flex justify-between m-2'>
         <h1 className='text-2xl font-bold'>Leads Funnel</h1>
-        <a href='#' className='flex text-xl gap-2'>All Leads 
+        <Link to={paths.home} className='flex text-xl gap-2'>All Leads 
         <Icon icon="teenyicons:arrow-right-solid" className="w-8 h-8 mr-8" />
-        </a>
+        </Link>
       </div>
       <div className='flex justify-between'>
         <ul className='m-4 list-disc list-inside'>
