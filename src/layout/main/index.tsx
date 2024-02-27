@@ -1,5 +1,4 @@
 import React from "react";
-import { ThemeProvider } from "../../components/theme-provider";
 import Navbar from "./nav/navbar";
 import NavBottom from "./nav/navBottom";
 
