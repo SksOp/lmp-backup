@@ -26,17 +26,17 @@ function LeadsFunnel() {
         <Icon icon="teenyicons:arrow-right-solid" className="w-8 h-8 mr-8" />
         </Link>
       </div>
-      <div className='flex justify-between'>
-        <ul className='m-4 list-disc list-inside'>
-          <li className=''>23 Initiated</li>
-          <li className=''>12 Bank Verifications</li>
-          <li className=''>4 Document Verification</li>
-          <li className=''>45 Dealer Acknowledges</li>
-          <li className=''>5 Amount Disbursed</li>
-          <li className=''>3 Loan Rejected</li>
+      <div className='flex justify-between items-center'>
+        <ul className='m-4 list-none li'>
+          <li className='flex items-center'><div className="w-2 h-2 bg-[#9F43CC] rounded-full mr-2"></div>23 Initiated</li>
+          <li className='flex items-center'><div className="w-2 h-2 bg-[#2B87E3] rounded-full mr-2"></div>12 Bank Verifications</li>
+          <li className='flex items-center'><div className="w-2 h-2 bg-[#0CA85D] rounded-full mr-2"></div>4 Document Verification</li>
+          <li className='flex items-center'><div className="w-2 h-2 bg-[#EBA10F] rounded-full mr-2"></div>45 Dealer Acknowledges</li>
+          <li className='flex items-center'><div className="w-2 h-2 bg-[#EA6200] rounded-full mr-2"></div>5 Amount Disbursed</li>
+          <li className='flex items-center'><div className="w-2 h-2 bg-[#951919] rounded-full mr-2"></div>3 Loan Rejected</li>
         </ul>
-      <div className='w-full max-w-xs m-2'>
-      <Doughnut data={data} />
+      <div className='w-full max-w-xs m-2 items-center'>
+      <Doughnut data={data} className='w-full' />
       </div>
       </div>
     

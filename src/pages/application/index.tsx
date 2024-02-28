@@ -1,4 +1,4 @@
-import Layout from '@/layout/bank'
+import Layout from '@/layout/application'
 import ApplicationView from '@/sections/application'
 import React from 'react'
 

@@ -9,9 +9,9 @@ function NavBottom() {
         <Icon icon="solar:home-2-bold" className="h-8 w-8" />
       </Link>
 
-      <Link to={paths.home}>
+      <a href={paths.application}>
         <Icon icon="zondicons:add-solid" className="h-14 w-14 mb-4" />
-      </Link>
+      </a>
       <Link to={paths.home}>
         <Icon icon="fluent:people-20-regular" className="h-7 w-7" />
       </Link>
