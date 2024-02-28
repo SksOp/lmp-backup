@@ -28,5 +28,6 @@ export type AuthContextType = {
   // TODO : Later add the type for the auth object
   login: (id: string, password: string) => void;
   logout: () => void;
-  resetPassword: (id: string, oldPassword: string, newPassword: string) => void;
+  requestResetPasswordWithEmail: (email: string) => Promise<boolean>;
+  resetPassword: (password: string, otp: string) => Promise<boolean>;
 };

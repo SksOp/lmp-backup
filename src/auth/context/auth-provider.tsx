@@ -62,30 +62,15 @@ export function AuthProvider({ children }: Props) {
     dispatch({ type: Types.INITIAL, payload: { user: null } });
   }, []);
 
-  // const signup = useCallback(async (id: string, password: string) => {
-  //   // TODO : Call the signup API
-  //   const user: User = {
-  //     id,
-  //     name: "Muhhamed",
-  //     role: password === "dealer" ? "dealer" : "customer",
-  //   };
-  //   localStorage.setItem("user", JSON.stringify(user));
-  //   dispatch({ type: Types.INITIAL, payload: { user } });
-  // }, []);
+  const requestResetPasswordWithEmail = useCallback(async (email: string) => {
+    // TODO : Call the reset password API
+    return true;
+  }, []);
 
-  const resetPassword = useCallback(
-    async (id: string, oldPassword: string, newPassword: string) => {
-      // TODO : Call the reset password API
-      const user: User = {
-        id,
-        name: "Muhhamed",
-        role: oldPassword === "dealer" ? "dealer" : "customer",
-      };
-      localStorage.setItem("user", JSON.stringify(user));
-      dispatch({ type: Types.INITIAL, payload: { user } });
-    },
-    []
-  );
+  const resetPassword = useCallback(async (password: string, otp: string) => {
+    // TODO : Call the reset password API
+    return true;
+  }, []);
 
   const value = useMemo(
     () => ({
@@ -94,9 +79,17 @@ export function AuthProvider({ children }: Props) {
       user: state.user,
       login,
       logout,
+      requestResetPasswordWithEmail,
       resetPassword,
     }),
-    [state.loading, state.user, login, logout, resetPassword]
+    [
+      state.loading,
+      state.user,
+      login,
+      logout,
+      requestResetPasswordWithEmail,
+      resetPassword,
+    ]
   );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
