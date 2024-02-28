@@ -6,6 +6,7 @@ import AuthGuard from "@/auth/guard/auth-guard";
 const Home = React.lazy(() => import("@/pages/home"));
 const Login = React.lazy(() => import("@/pages/auth/login"));
 const Application = React.lazy(() => import("@/pages/application"));
+const Logout = React.lazy(() => import("@/pages/auth/logout"));
 
 export default function Router() {
   return useRoutes([...root]);
@@ -15,9 +16,9 @@ const root = [
   {
     path: paths.root,
     element: (
-      //<AuthGuard>
+      <AuthGuard>
         <Home />
-      //</AuthGuard>
+      </AuthGuard>
     ),
   },
   {
@@ -26,7 +27,11 @@ const root = [
   },
   {
     path: paths.logout,
-    element: <>Logout</>,
+    element: (
+      <AuthGuard>
+        <Logout />
+      </AuthGuard>
+    ),
   },
   {
     path: paths.application,
