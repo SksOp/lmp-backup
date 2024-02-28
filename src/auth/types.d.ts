@@ -18,6 +18,9 @@ export type AuthStateType = {
 export interface User {
   id: string;
   name: string;
+  // we require email and number  inorder to send the OTP in case of reset password
+  email?: string;
+  number?: string;
   role: "dealer" | "customer";
 }
 

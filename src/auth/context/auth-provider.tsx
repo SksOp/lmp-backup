@@ -49,7 +49,9 @@ export function AuthProvider({ children }: Props) {
     // TODO: Call the login API
     const user: User = {
       id,
-      name: "Muhhamed",
+      name: "Shubham Kumar",
+      email: "sks@devflex.co.in",
+      number: "1234567890",
       role: password === "dealer" ? "dealer" : "customer",
     };
     localStorage.setItem("user", JSON.stringify(user));
