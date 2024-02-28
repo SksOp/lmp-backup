@@ -1,6 +1,6 @@
 import React from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
-import  LeadCard  from "./leadCard";
+import LeadCard from "./leadCard";
 import { leads } from "@/constants/leads";
 import { Button } from "./ui/button";
 import DocUpload from "./docUpload";
@@ -43,19 +43,7 @@ function MainSection() {
         <TabsContent value="applications">
           <div className="flex flex-col gap-3">
             {leads.map((lead) => (
-              <>
-                <LeadCard {...leadData} />
-              </>
-              // <Application
-              //   key={lead.lead_id}
-              //   lead={lead}
-              //   btns={
-              //     <>
-              //       <Button variant="default">View</Button>
-              //       <DocUpload />
-              //     </>
-              //   }
-              // />
+              <LeadCard {...leadData} key={lead.lead_id} />
             ))}
           </div>
         </TabsContent>
