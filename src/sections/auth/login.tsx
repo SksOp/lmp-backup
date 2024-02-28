@@ -23,9 +23,7 @@ function LoginView() {
     <div className="pt-16 min-h-screen  bg-muted ">
       <div className="pt-16 py-6 border-b flex bg-background flex-col gap-2 items-center">
         <UserAvatar />
-        <h2 className="text-2xl font-bold mt-10">
-          Login or Register to Tamweel account
-        </h2>
+        <h2 className="text-2xl font-bold mt-10">Login to Tamweel account</h2>
         <p className=" opacity-50">Start your car leasing process with us </p>
       </div>
       {currentPage === "id" && (

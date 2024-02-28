@@ -27,6 +27,6 @@ export type AuthContextType = {
   authenticated: boolean;
   // TODO : Later add the type for the auth object
   login: (id: string, password: string) => void;
-  signup: (id: string, password: string) => void;
   logout: () => void;
+  resetPassword: (id: string, oldPassword: string, newPassword: string) => void;
 };
