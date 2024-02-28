@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
-import UserAvatar from "./components/user-avatar";
 import { useAuth } from "@/hooks/useAuth";
 import { useRouter } from "@/hooks/useRouter";
 import { Input } from "@/components/ui/input";
 import { Label } from "@radix-ui/react-label";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import HeroAvatar from "./components/hero-avatar";
 
 function LoginView() {
   const { login, user } = useAuth();
@@ -22,7 +22,7 @@ function LoginView() {
   return (
     <div className="pt-16 min-h-screen  bg-muted ">
       <div className="pt-16 py-6 border-b flex bg-background flex-col gap-2 items-center">
-        <UserAvatar />
+        <HeroAvatar />
         <h2 className="text-2xl font-bold mt-10">Login to Tamweel account</h2>
         <p className=" opacity-50">Start your car leasing process with us </p>
       </div>

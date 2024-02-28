@@ -1,5 +1,5 @@
 import { useReducer, useCallback, useMemo, useEffect } from "react";
-import { ActionMapType, AuthStateType, User } from "../types";
+import { ActionMapType, AuthStateType, Platform, User } from "../types";
 import { AuthContext } from "./auth-context";
 
 enum Types {
@@ -64,12 +64,22 @@ export function AuthProvider({ children }: Props) {
     dispatch({ type: Types.INITIAL, payload: { user: null } });
   }, []);
 
-  const requestResetPasswordWithEmail = useCallback(async (email: string) => {
+  const requestResetPasswordWithEmail = useCallback(async () => {
     // TODO : Call the reset password API
     return true;
   }, []);
 
-  const resetPassword = useCallback(async (password: string, otp: string) => {
+  const requestResetPasswordWithPhone = useCallback(async () => {
+    // TODO : Call the reset password API
+    return true;
+  }, []);
+
+  const validateOtp = useCallback(async (otp: string, platform: Platform) => {
+    // TODO : Call the reset password API
+    return true;
+  }, []);
+
+  const resetPassword = useCallback(async () => {
     // TODO : Call the reset password API
     return true;
   }, []);
@@ -82,6 +92,8 @@ export function AuthProvider({ children }: Props) {
       login,
       logout,
       requestResetPasswordWithEmail,
+      requestResetPasswordWithPhone,
+      validateOtp,
       resetPassword,
     }),
     [
@@ -90,6 +102,8 @@ export function AuthProvider({ children }: Props) {
       login,
       logout,
       requestResetPasswordWithEmail,
+      requestResetPasswordWithPhone,
+      validateOtp,
       resetPassword,
     ]
   );

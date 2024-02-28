@@ -1,10 +1,11 @@
 import AuthLayout from "@/layout/auth";
-import LoginView from "@/sections/auth/login";
+import ResetPassword from "@/sections/auth/reset-password";
+import React from "react";
 
 function Page() {
   return (
     <AuthLayout>
-      <LoginView />
+      <ResetPassword />
     </AuthLayout>
   );
 }

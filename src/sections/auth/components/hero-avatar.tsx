@@ -3,13 +3,19 @@ import { Icon } from "@iconify/react";
 import { ClassValue } from "clsx";
 import React from "react";
 
-function UserAvatar({ className }: { className?: ClassValue }) {
+function HeroAvatar({
+  className,
+  icon,
+}: {
+  className?: ClassValue;
+  icon?: string;
+}) {
   return (
     <div
       className={cn(" bg-primary/10 max-w-min p-8 rounded-full ", className)}
     >
       <Icon
-        icon="prime:user"
+        icon={icon ?? "prime:user"}
         width="3rem"
         height="3rem"
         className="text-primary"
@@ -18,4 +24,4 @@ function UserAvatar({ className }: { className?: ClassValue }) {
   );
 }
 
-export default UserAvatar;
+export default HeroAvatar;

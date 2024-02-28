@@ -7,6 +7,7 @@ const Home = React.lazy(() => import("@/pages/home"));
 const Login = React.lazy(() => import("@/pages/auth/login"));
 const Application = React.lazy(() => import("@/pages/application"));
 const Logout = React.lazy(() => import("@/pages/auth/logout"));
+const ResetPassword = React.lazy(() => import("@/pages/auth/reset-password"));
 
 export default function Router() {
   return useRoutes([...root]);
@@ -14,7 +15,7 @@ export default function Router() {
 
 const root = [
   {
-    path: paths.root,
+    path: paths.home,
     element: (
       <AuthGuard>
         <Home />
@@ -34,8 +35,20 @@ const root = [
     ),
   },
   {
+    path: paths.resetPassword,
+    element: (
+      <AuthGuard>
+        <ResetPassword />
+      </AuthGuard>
+    ),
+  },
+  {
     path: paths.application,
-    element: <Application />,
+    element: (
+      <AuthGuard>
+        <Application />
+      </AuthGuard>
+    ),
   },
   { path: "*", element: <Navigate to="/404" replace /> },
 ];
