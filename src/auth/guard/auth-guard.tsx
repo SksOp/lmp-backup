@@ -1,7 +1,9 @@
-import { useEffect, useCallback, useState } from "react";
-import { useRouter } from "@/hooks/useRouter";
+import React, { useEffect } from "react";
 import { useAuth } from "@/hooks/useAuth";
 import { paths } from "@/router";
+import { useNavigate } from "react-router-dom";
+import { useRouter } from "@/hooks/useRouter";
+import { Progress } from "@radix-ui/react-progress";
 
 type AuthGuardProps = {
   children: React.ReactNode;
@@ -12,7 +14,7 @@ export default function AuthGuard({ children }: AuthGuardProps) {
   const { user } = useAuth();
   useEffect(() => {
     if (!user) router.replace(paths.login);
-  }, [user, router]);
+  }, [router, user]);
 
-  return <>{children}</>;
+  return <React.Suspense fallback={<Progress />}>{children}</React.Suspense>;
 }
