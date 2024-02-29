@@ -5,4 +5,6 @@ export const paths = {
   home: "/",
   application: "/application",
   resetPassword: "/reset-password",
+  leads: "/leads",
+  lead: "/lead/:id",
 };
