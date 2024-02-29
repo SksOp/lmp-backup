@@ -53,7 +53,7 @@ const root = [
     ),
   },
   {
-    path: paths.lead,
+    path: paths.lead + "/:id",
     element: (
       <AuthGuard>
         <Lead />

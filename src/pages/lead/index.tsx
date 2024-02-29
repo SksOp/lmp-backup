@@ -3,6 +3,7 @@ import { Navigate, useParams } from "react-router-dom";
 import { paths } from "@/router";
 import { leads } from "@/constants/leads";
 import React from 'react'
+import LeadView from '@/sections/lead';
 
 function Page() {
   const { id } = useParams();
@@ -14,7 +15,7 @@ function Page() {
 
   return (
     <Layout>
-      <p>Lead ID: {id}</p>
+      <LeadView />
     </Layout>
   )
 }

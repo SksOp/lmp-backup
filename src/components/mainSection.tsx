@@ -4,9 +4,12 @@ import LeadCard from "./leadCard";
 import { leads } from "@/constants/leads";
 import { Button } from "./ui/button";
 import DocUpload from "./docUpload";
+import { Link } from "react-router-dom";
+import { paths } from "@/router";
 
 export const leadData = {
   name: "Ahmed Mohamed Abdelhady",
+  leadId: "987654321",
   badge: {
     color: "yellow",
     text: "Ongoing",
@@ -46,7 +49,11 @@ function MainSection() {
         <TabsContent value="applications">
           <div className="flex flex-col gap-3">
             {leads.map((lead) => (
+              <>
+              <Link to={`${paths.lead}/${lead.lead_id}`} >
               <LeadCard {...leadData} key={lead.lead_id} />
+              </Link>
+              </>
             ))}
           </div>
         </TabsContent>

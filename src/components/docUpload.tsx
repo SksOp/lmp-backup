@@ -20,15 +20,17 @@ function DocUpload() {
   return (
     <Drawer>
       <DrawerTrigger>
-        <Button variant="outline">Upload Documents</Button>
+        <p className="text-orange-500 underline">
+          Document Verification Pending
+        </p>
       </DrawerTrigger>
       <DrawerContent className="h-[90vh]">
         <DrawerHeader>
           <div className="flex justify-between">
             <DrawerTitle className="text-bold">Upload Documents</DrawerTitle>
-            <Link to={paths.home} className="text-red-500">
-              Cancel
-            </Link>
+            <DrawerClose>
+              <p className="text-red-500 ">Cancel</p>
+            </DrawerClose>
           </div>
           <p className="flex">
             Naomi's leasing application requires you to confirm the car

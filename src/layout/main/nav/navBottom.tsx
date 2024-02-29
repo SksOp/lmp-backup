@@ -12,7 +12,7 @@ function NavBottom() {
       <a href={paths.application}>
         <Icon icon="zondicons:add-solid" className="h-14 w-14 mb-4" />
       </a>
-      <Link to={paths.home}>
+      <Link to={paths.leads}>
         <Icon icon="fluent:people-20-regular" className="h-7 w-7" />
       </Link>
     </nav>

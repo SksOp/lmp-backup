@@ -11,10 +11,12 @@ import { Badge } from "./ui/badge";
 import { Icon } from "@iconify/react";
 import { Progress } from "./ui/progress";
 import { cn } from "@/lib/utils";
+import { LeadLogo } from "./leadLogo";
 
 export interface Props {
   className?: ClassValue;
   name: string;
+  leadId: string;
   badge?: {
     color: string;
     text: string;
@@ -49,8 +51,9 @@ function LeadCard({
   contacts,
 }: Props) {
   return (
-    <Card className="p-4">
+    <Card>
       <CardHeader className="flex flex-row gap-2 items-center">
+        <LeadLogo imageName={name} />
         <CardTitle>{name}</CardTitle>
         <Badge className=" bg-yellow-500 text-black font-normal">
           {badge?.text}
@@ -100,6 +103,7 @@ function LeadCard({
           icon="ic:baseline-sms"
           className="w-16 h-16 p-4 bg-secondary rounded-full"
         />
+
       </CardFooter>
     </Card>
   );
