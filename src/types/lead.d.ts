@@ -75,6 +75,27 @@ export type MinimalLead = {
   };
 };
 
+interface State {
+  key: string;
+  name: {
+    en: string;
+    ar: string;
+  };
+  status: string;
+  actor: string;
+  completed_by: string;
+  completed_at: string;
+  updated_by: string;
+  updated_at: string;
+  state_type: string;
+  view_permission_actors: string;
+  edit_permission_actors: string;
+}
+
+interface States {
+  [key: string]: State ;
+}
+
 export type DetailedLead = {
   personal_details: {
     name: string;
@@ -126,114 +147,7 @@ export type DetailedLead = {
     payment_date: string;
   };
   history_timeline: {
-    states: {
-      1: {
-        name: {
-          en: string;
-          ar: string;
-        };
-        status: string;
-        actor: string;
-        completed_by: string;
-        completed_at: string;
-        updated_by: string;
-        updated_at: string;
-        state_type: string;
-        view_permission_actors: string;
-        edit_permission_actors: string;
-      };
-      2: {
-        name: {
-          en: string;
-          ar: string;
-        };
-        status: string;
-        actor: string;
-        completed_by: string;
-        completed_at: string;
-        updated_by: string;
-        updated_at: string;
-        state_type: string;
-        view_permission_actors: string;
-        edit_permission_actors: string;
-      };
-      3: {
-        count: string;
-        name: {
-          en: string;
-          ar: string;
-        };
-        status: string;
-        actor: string;
-        completed_by: string;
-        completed_at: string;
-        updated_by: string;
-        updated_at: string;
-        state_type: string;
-        view_permission_actors: string;
-        edit_permission_actors: string;
-      };
-      4: {
-        name: {
-          en: string;
-          ar: string;
-        };
-        status: string;
-        actor: string;
-        completed_by: string;
-        completed_at: string;
-        updated_by: string;
-        updated_at: string;
-        state_type: string;
-        view_permission_actors: string;
-        edit_permission_actors: string;
-      };
-      5: {
-        name: {
-          en: string;
-          ar: string;
-        };
-        status: string;
-        actor: string;
-        completed_by: string;
-        completed_at: string;
-        updated_by: string;
-        updated_at: string;
-        state_type: string;
-        view_permission_actors: string;
-        edit_permission_actors: string;
-      };
-      6: {
-        name: {
-          en: string;
-          ar: string;
-        };
-        status: string;
-        actor: string;
-        completed_by: string;
-        completed_at: string;
-        updated_by: string;
-        updated_at: string;
-        state_type: string;
-        view_permission_actors: string;
-        edit_permission_actors: string;
-      };
-      7: {
-        name: {
-          en: string;
-          ar: string;
-        };
-        status: string;
-        actor: string;
-        completed_by: string;
-        completed_at: string;
-        updated_by: string;
-        updated_at: string;
-        state_type: string;
-        view_permission_actors: string;
-        edit_permission_actors: string;
-      };
-    };
+    states: States;
   };
   actions: {
     1: {
@@ -265,5 +179,67 @@ export type DetailedLead = {
   nba: {
     en: string;
     ar: string;
+  };
+};
+
+export type LeadAnalytics = {
+  total_applications: string;
+  states: {
+    1: {
+      count: string;
+      name: {
+        en: string;
+        ar: string;
+      };
+      status: string;
+    };
+    2: {
+      count: string;
+      name: {
+        en: string;
+        ar: string;
+      };
+      status: string;
+    };
+    3: {
+      count: string;
+      name: {
+        en: string;
+        ar: string;
+      };
+      status: string;
+    };
+    4: {
+      count: string;
+      name: {
+        en: string;
+        ar: string;
+      };
+      status: string;
+    };
+    5: {
+      count: string;
+      name: {
+        en: string;
+        ar: string;
+      };
+      status: string;
+    };
+    6: {
+      count: string;
+      name: {
+        en: string;
+        ar: string;
+      };
+      status: string;
+    };
+    7: {
+      count: string;
+      name: {
+        en: string;
+        ar: string;
+      };
+      status: string;
+    };
   };
 };

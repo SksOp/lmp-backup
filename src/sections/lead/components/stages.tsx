@@ -3,12 +3,14 @@ import { Icon } from "@iconify/react";
 import { ClassValue } from "clsx";
 import React from "react";
 import { Link } from "react-router-dom";
+import { AnalyticsSummary, MinimalLeads, DetailedLeads } from "@/constants/leads"; 
 
 interface Props {
   className?: ClassValue;
   date: string;
   title: string;
-  doneBy?: string;
+  doneBy: string;
+  status: string;
   action?: string;
 }
 
@@ -17,7 +19,9 @@ function Stages({
   date,
   title,
   doneBy,
+  status,
   action,
+
 }: Props) {
 
 
@@ -26,9 +30,9 @@ function Stages({
       <div>{date}</div>
       <div className="flex flex-col items-center">
         {/* <div className="w-6 h-6  rounded-full border border-gray-600"> */}
-        {action === "done" ? (
+        {status === "completed" ? (
             <Icon icon="teenyicons:tick-circle-solid" className="w-6 h-6" />
-          ) : action === "doc" ? (
+          ) : status === "current" ? (
             <Icon icon="icon-park-solid:caution" className="w-6 h-6" />
           ) : <div className="w-6 h-6  rounded-full border border-gray-600"></div>}
         {/* </div> */}

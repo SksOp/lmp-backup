@@ -3,35 +3,15 @@ import { Icon } from '@iconify/react';
 import { ClassValue } from 'clsx';
 import React from 'react'
 import Stages from './stages';
+import { AnalyticsSummary, MinimalLeads, DetailedLeads } from "@/constants/leads"; 
+import { Navigate, useParams } from 'react-router-dom';
+import { forEachChild } from 'typescript';
 
-const stages = [
-  {
-    date: "12/12/2021",
-    title: "Application submitted",
-    doneBy: "John Doe",
-    action: "",
-  },
-  {
-    date: "12/12/2021",
-    title: "Application submitted",
-    doneBy: "John Doe",
-    action: "doc",
-  },
-  {
-    date: "12/12/2021",
-    title: "Application submitted",
-    doneBy: "John Doe",
-    action: "done",
-  },
-  {
-    date: "12/12/2021",
-    title: "Application submitted",
-    doneBy: "John Doe",
-    action: "done",
-  },
-];
 
 function Progress() {
+  const stages = [DetailedLeads.history_timeline.states];
+  console.log(stages);
+
   return (
     <>
       <Tabs defaultValue="status" className="w-full p-4">
@@ -49,15 +29,20 @@ function Progress() {
             <p>Aliquam pulvinar vestibulum blandit. Donec sed nisl libero. Fusce dignissim.</p>
           </div>
           <div className='flex flex-col gap-4 justify-start border-2 p-4'>
-          {stages.map((stage, index) => (
-            <Stages
-            key={index}
-            date={stage.date}
-            title={stage.title}
-            doneBy={stage.doneBy}
-            action={stage.action}
-            />
-            ))}
+          
+          {
+           
+          } 
+
+          {/* {stages.map((stage, index) => (<></>
+            // <Stages
+            // key={index}
+            // date={stage.date}
+            // title={stage.title}
+            // doneBy={stage.doneBy}
+            // action={stage.action}
+            // />
+            ))} */}
             </div>
         </TabsContent>
         <TabsContent value="info"></TabsContent>
