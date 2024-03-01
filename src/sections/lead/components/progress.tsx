@@ -1,16 +1,28 @@
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Icon } from '@iconify/react';
-import { ClassValue } from 'clsx';
-import React from 'react'
-import Stages from './stages';
-import { AnalyticsSummary, MinimalLeads, DetailedLeads } from "@/constants/leads"; 
-import { Navigate, useParams } from 'react-router-dom';
-import { forEachChild } from 'typescript';
-
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Icon } from "@iconify/react";
+import { ClassValue } from "clsx";
+import React from "react";
+import Stages from "./stages";
+import {
+  AnalyticsSummary,
+  MinimalLeads,
+  DetailedLeads,
+} from "@/constants/leads";
+import { Navigate, useParams } from "react-router-dom";
+import { forEachChild } from "typescript";
 
 function Progress() {
-  const stages = [DetailedLeads.history_timeline.states];
-  console.log(stages);
+  const stages = DetailedLeads.history_timeline.states;
+  // find total number of keys in stages
+
+  const totalStage = Object.keys(stages).length;
+
+  const data = Array.from(
+    { length: totalStage },
+    (_, i) => stages[String(totalStage - i)]
+  );
+
+  console.log(data);
 
   return (
     <>
@@ -24,17 +36,17 @@ function Progress() {
           </TabsTrigger>
         </TabsList>
         <TabsContent value="status">
-          <div className='flex gap-3 mb-4 items-center justify-start border-2 border-dotted p-4'>
-            <Icon icon="flat-color-icons:idea" className='h-6 w-6' />
-            <p>Aliquam pulvinar vestibulum blandit. Donec sed nisl libero. Fusce dignissim.</p>
+          <div className="flex gap-3 mb-4 items-center justify-start border-2 border-dotted p-4">
+            <Icon icon="flat-color-icons:idea" className="h-6 w-6" />
+            <p>
+              Aliquam pulvinar vestibulum blandit. Donec sed nisl libero. Fusce
+              dignissim.
+            </p>
           </div>
-          <div className='flex flex-col gap-4 justify-start border-2 p-4'>
-          
-          {
-           
-          } 
+          <div className="flex flex-col gap-4 justify-start border-2 p-4">
+            {}
 
-          {/* {stages.map((stage, index) => (<></>
+            {/* {stages.map((stage, index) => (<></>
             // <Stages
             // key={index}
             // date={stage.date}
@@ -43,13 +55,12 @@ function Progress() {
             // action={stage.action}
             // />
             ))} */}
-            </div>
+          </div>
         </TabsContent>
         <TabsContent value="info"></TabsContent>
       </Tabs>
-    
     </>
-  )
+  );
 }
 
-export default Progress
+export default Progress;
