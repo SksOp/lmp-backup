@@ -8,8 +8,6 @@ import { paths } from "@/router";
 import { MinimalLeads } from "@/constants/leads";
 
 function MainSection() {
-  
-
   return (
     <>
       <Tabs defaultValue="applications" className="w-full p-4">
@@ -25,11 +23,11 @@ function MainSection() {
           <div className="flex flex-col gap-3">
             {MinimalLeads.map((lead) => (
               <>
-              <Link to={`${paths.lead}/${lead.application_id.application_id}`} >
-              <LeadCard
-                data = {lead}
-               />
-              </Link>
+                <Link
+                  to={`${paths.lead}/${lead.application_id.application_id}`}
+                >
+                  <LeadCard data={lead} />
+                </Link>
               </>
             ))}
           </div>

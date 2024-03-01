@@ -5,6 +5,6 @@ export const paths = {
   home: "/",
   application: "/application",
   resetPassword: "/reset-password",
-  leads: "/leads",
-  lead: "/lead/:id",
+  lead: "/lead", // there also a dynamic path for lead /lead/:id
+  allLead: "/lead/all",
 };

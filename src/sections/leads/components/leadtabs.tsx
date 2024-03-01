@@ -1,10 +1,10 @@
-import LeadCard from '@/components/leadCard'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import LeadCard from "@/components/leadCard";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { MinimalLeads } from "@/constants/leads";
-import { paths } from '@/router'
-import path from 'path'
-import React from 'react'
-import { Link } from 'react-router-dom'
+import { paths } from "@/router";
+import path from "path";
+import React from "react";
+import { Link } from "react-router-dom";
 
 function LeadTabs() {
   return (
@@ -22,25 +22,23 @@ function LeadTabs() {
           </TabsTrigger>
         </TabsList>
         <TabsContent value="leads">
-        <div className="flex flex-col gap-3">
+          <div className="flex flex-col gap-3">
             {MinimalLeads.map((lead) => (
               <>
-              <Link to={`${paths.lead}/${lead.application_id.application_id}`} >
-              <LeadCard data={lead} />
-              </Link>
+                <Link
+                  to={`${paths.lead}/${lead.application_id.application_id}`}
+                >
+                  <LeadCard data={lead} />
+                </Link>
               </>
             ))}
           </div>
         </TabsContent>
-        <TabsContent value="active">
-          hello
-        </TabsContent>
-        <TabsContent value="action">
-          hello
-        </TabsContent>
+        <TabsContent value="active">hello</TabsContent>
+        <TabsContent value="action">hello</TabsContent>
       </Tabs>
     </>
-  )
+  );
 }
 
-export default LeadTabs
+export default LeadTabs;

@@ -1,5 +1,5 @@
 import React from "react";
-import { Navigate, useRoutes } from "react-router-dom";
+import { Navigate, Outlet, useRoutes } from "react-router-dom";
 import { paths } from "./paths";
 import AuthGuard from "@/auth/guard/auth-guard";
 
@@ -53,20 +53,22 @@ const root = [
     ),
   },
   {
-    path: paths.lead + "/:id",
+    path: paths.lead,
     element: (
       <AuthGuard>
-        <Lead />
+        <Outlet />
       </AuthGuard>
     ),
-  },
-  {
-    path: paths.leads,
-    element: (
-      <AuthGuard>
-        <Leads />
-      </AuthGuard>
-    ),
+    children: [
+      {
+        path: paths.allLead,
+        element: <Leads />,
+      },
+      {
+        path: ":id",
+        element: <Lead />,
+      },
+    ],
   },
   { path: "*", element: <Navigate to="/404" replace /> },
 ];
