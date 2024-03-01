@@ -12,66 +12,39 @@ import { Icon } from "@iconify/react";
 import { Progress } from "./ui/progress";
 import { cn } from "@/lib/utils";
 import { LeadLogo } from "./leadLogo";
+import { MinimalLead } from "@/types";
 
 export interface Props {
   className?: ClassValue;
-  name: string;
-  leadId: string;
-  badge?: {
-    color: string;
-    text: string;
-  };
-  bankName: string;
-  vehicleName: string;
-  vehicleImage?: string;
-  cost: {
-    currency: string;
-    amount: string;
-  };
-  leasingStatus: string;
-  progress: number;
-  contacts?: {
-    phone: string;
-    whatsapp: string;
-    email: string;
-    sms: string;
-  };
+  data: MinimalLead;
 }
 
 function LeadCard({
   className,
-  name,
-  badge,
-  bankName,
-  vehicleName,
-  vehicleImage,
-  cost,
-  leasingStatus,
-  progress,
-  contacts,
+  data
 }: Props) {
   return (
     <Card>
       <CardHeader className="flex flex-row gap-2 items-center">
-        <LeadLogo imageName={name} />
-        <CardTitle>{name}</CardTitle>
-        <Badge className=" bg-yellow-500 text-black font-normal">
+        <LeadLogo imageName={data.application_id.lead_name} />
+        <CardTitle>{data.application_id.lead_name}</CardTitle>
+        {/* <Badge className=" bg-yellow-500 text-black font-normal">
           {badge?.text}
-        </Badge>
+        </Badge> */}
       </CardHeader>
 
       <CardContent className="flex flex-col gap-2">
         <div className="flex justify-between items-center">
           <div className="grid gap-2 grid-cols-3">
-            <DetailViewer title="Bank" value={bankName} />
-            <DetailViewer title="Vehicle" value={vehicleName} />
+            <DetailViewer title="Bank" value={data.application_id.lessor_details.lessor_name.en} />
+            <DetailViewer title="Vehicle" value={data.application_id.car_details.brand} />
             <DetailViewer
               title="Cost"
-              value={cost?.amount + " " + cost?.currency}
+              value={data.application_id.car_details.price.final_price }
             />
           </div>
           <div>
-            <img className="max-w-[10rem]" src={vehicleImage} alt="vehicle" />
+            <img className="max-w-[10rem]" src={data.application_id.car_details.car_image} alt="vehicle" />
           </div>
         </div>
 
@@ -79,11 +52,11 @@ function LeadCard({
           <p>
             <span className="opacity-50">Leasing Status:</span>
 
-            <span className="ml-3 text-primary"> {leasingStatus}</span>
+            <span className="ml-3 text-primary"> {data.application_id.status}</span>
           </p>
-          <p>{progress}%</p>
+          <p>{data.application_id.progress_measure}%</p>
         </div>
-        <Progress value={progress} className="h-2" />
+        <Progress value={Number(data.application_id.progress_measure)} className="h-2" />
       </CardContent>
 
       <CardFooter className="flex justify-between">

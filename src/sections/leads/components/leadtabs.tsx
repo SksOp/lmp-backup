@@ -1,7 +1,6 @@
 import LeadCard from '@/components/leadCard'
-import { leadData } from '@/components/mainSection'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import { leads } from '@/constants/leads'
+import { MinimalLeads } from "@/constants/leads";
 import { paths } from '@/router'
 import path from 'path'
 import React from 'react'
@@ -24,10 +23,10 @@ function LeadTabs() {
         </TabsList>
         <TabsContent value="leads">
         <div className="flex flex-col gap-3">
-            {leads.map((lead) => (
+            {MinimalLeads.map((lead) => (
               <>
-              <Link to={`${paths.lead}/${lead.lead_id}`} >
-              <LeadCard {...leadData} key={lead.lead_id} />
+              <Link to={`${paths.lead}/${lead.application_id.application_id}`} >
+              <LeadCard data={lead} />
               </Link>
               </>
             ))}
