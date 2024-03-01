@@ -44,7 +44,7 @@ function Progress() {
           </TabsTrigger>
         </TabsList>
         <TabsContent value="status">
-          <div className='flex gap-2 mb-4 items-center justify-between border-2 border-dotted p-4'>
+          <div className='flex gap-3 mb-4 items-center justify-start border-2 border-dotted p-4'>
             <Icon icon="flat-color-icons:idea" className='h-6 w-6' />
             <p>Aliquam pulvinar vestibulum blandit. Donec sed nisl libero. Fusce dignissim.</p>
           </div>
