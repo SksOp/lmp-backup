@@ -12,17 +12,15 @@ import { Navigate, useParams } from "react-router-dom";
 import { forEachChild } from "typescript";
 
 function Progress() {
-  const stages = DetailedLeads.history_timeline.states;
+  const rawData = DetailedLeads.history_timeline.states;
   // find total number of keys in stages
 
-  const totalStage = Object.keys(stages).length;
+  const totalStage = Object.keys(rawData).length;
 
-  const data = Array.from(
+  const stages = Array.from(
     { length: totalStage },
-    (_, i) => stages[String(totalStage - i)]
+    (_, i) => rawData[String(totalStage - i)]
   );
-
-  console.log(data);
 
   return (
     <>
@@ -46,15 +44,16 @@ function Progress() {
           <div className="flex flex-col gap-4 justify-start border-2 p-4">
             {}
 
-            {/* {stages.map((stage, index) => (<></>
-            // <Stages
-            // key={index}
-            // date={stage.date}
-            // title={stage.title}
-            // doneBy={stage.doneBy}
-            // action={stage.action}
-            // />
-            ))} */}
+            {stages.map((stage, index) => (
+              <Stages
+                key={index}
+                date={"23 July"}
+                title={stage.name.en}
+                doneBy={stage.completed_by}
+                status={stage.status}
+                // action={stage.action}
+              />
+            ))}
           </div>
         </TabsContent>
         <TabsContent value="info"></TabsContent>
