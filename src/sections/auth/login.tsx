@@ -60,7 +60,7 @@ const IdView = ({
       </div>
       <div className="w-full max-w-xl  absolute bottom-0 left-1/2 transform -translate-x-1/2 p-6">
         <Button
-          className={cn("w-full bg-success ")}
+          className={cn("w-full bg-primary ")}
           disabled={id.length < 2}
           onClick={() => setCurrentPage("password")}
         >
@@ -95,7 +95,7 @@ const PasswordView = ({
       </div>
       <div className="w-full max-w-xl  absolute bottom-0 left-1/2 transform -translate-x-1/2 p-6">
         <Button
-          className={cn("w-full bg-success ")}
+          className={cn("w-full bg-primary ")}
           disabled={password.length < 2}
           onClick={() => login(id, password)}
         >

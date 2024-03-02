@@ -134,7 +134,7 @@ function SelectPlatform({ onSelectPlatform }: SelectPlatformProps) {
       </RadioGroup>
       <div className="w-full max-w-xl  absolute bottom-0 left-1/2 transform -translate-x-1/2 p-6">
         <Button
-          className={cn("w-full bg-success ")}
+          className={cn("w-full bg-primary ")}
           onClick={() => onSelectPlatform(selectedPlatform)}
         >
           Next
@@ -183,7 +183,7 @@ function OtpView({ otp, setOtp, onOtpSubmit }: any) {
       </div>
       <div className="w-full max-w-xl  absolute bottom-0 left-1/2 transform -translate-x-1/2 p-6">
         <Button
-          className={cn("w-full bg-success flex-1 ")}
+          className={cn("w-full bg-primary flex-1 ")}
           disabled={otp.length < otpLength}
           onClick={onOtpSubmit}
         >
@@ -225,7 +225,7 @@ function NewPasswordView({
       />
       <div className="w-full max-w-xl  absolute bottom-0 left-1/2 transform -translate-x-1/2 p-6">
         <Button
-          className={cn("w-full bg-success ")}
+          className={cn("w-full bg-primary ")}
           disabled={password.length < 6}
           onClick={() => handleResetPassword(password)}
         >
