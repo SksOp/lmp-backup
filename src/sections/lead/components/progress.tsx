@@ -21,11 +21,17 @@ function Progress() {
   return (
     <>
       <Tabs defaultValue="status" className="w-full p-4">
-        <TabsList className="grid w-full grid-cols-2 gap-1 my-8">
-          <TabsTrigger className="hover:bg-foreground/5 " value="status">
+        <TabsList className="grid w-full grid-cols-2 gap-1 my-4 bg-background border h-none">
+          <TabsTrigger
+            className="data-[state=active]:bg-primary/5 my-1 p-2"
+            value="status"
+          >
             Application Status
           </TabsTrigger>
-          <TabsTrigger className="hover:bg-foreground/5 " value="info">
+          <TabsTrigger
+            className="data-[state=active]:bg-primary/5 my-1 p-2"
+            value="info"
+          >
             Lead info
           </TabsTrigger>
         </TabsList>
