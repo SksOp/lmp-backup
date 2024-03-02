@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Selectbank from "./selectbank";
 import GroupOne from "./groupOne";
-import { BankConfig, banks } from "@/configs";
+import { Bank, BankConfig, banks } from "@/configs";
 import ProgressBar from "./progressBar";
 import GroupTwo from "./groupTwo";
 import GroupThree from "./groupThree";
@@ -9,19 +9,24 @@ import Success from "./success";
 
 function ApplicationDrawerContent() {
   const [data, setdata] = useState({});
-  const [bank, setBank] = useState<string | null>();
+  const [bank, setBank] = useState<Bank>(banks[0]);
   const [group, setGroup] = useState<number>(0);
-  const [config, setConfig] = useState<null | BankConfig>(null);
 
   return (
-    <>
+    <div className="flex flex-col gap-2 py-4 px-2">
+      <p className="text-center text-xl font-semibold">New Leasing Application</p>
+      <p className="text-center text-sm text-foreground/70">Initiate the application with customer/vehicle details</p>
       <ProgressBar group={group} />
-      {group === 0 && <Selectbank setConfig={setConfig} setGroup={setGroup} setData={setdata} data={data} />}
-      {group === 1 && <GroupOne config={config} group={1} setGroup={setGroup} setData={setdata} data={data} />}
-      {group === 2 && <GroupTwo config={config} group={2} setGroup={setGroup} setData={setdata} data={data} />}
-      {group === 3 && <GroupThree config={config} group={3} setGroup={setGroup} setData={setdata} data={data} />}
-      {group === 4 && <Success />}
-    </>
+      <div className="flex flex-col gap-4">
+        {group === 0 && (
+          <Selectbank banks={banks} selectedBank={bank} setBank={(bank: Bank) => setBank(bank)} setGroup={setGroup} setData={setdata} data={data} />
+        )}
+        {group === 1 && <GroupOne config={bank.config} group={1} setGroup={setGroup} setData={setdata} data={data} />}
+        {group === 2 && <GroupTwo config={bank.config} group={2} setGroup={setGroup} setData={setdata} data={data} />}
+        {group === 3 && <GroupThree config={bank.config} group={3} setGroup={setGroup} setData={setdata} data={data} />}
+        {group === 4 && <Success />}
+      </div>
+    </div>
   );
 }
 

@@ -14,7 +14,7 @@ function GroupOne({
   group,
   setGroup,
   setData,
-  data
+  data,
 }: {
   config: BankConfig | null;
   group: number;
@@ -22,9 +22,11 @@ function GroupOne({
   setData: (data: object) => void;
   data: object;
 }) {
-
   const handleOnClick = () => {
     setGroup(2);
+  };
+  const handleBackClick = () => {
+    setGroup(0);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -33,18 +35,24 @@ function GroupOne({
 
   return (
     <>
-      {
-        config && config.input_fields?.map((field) => field.group === group && (
-              <Card>
+      {config &&
+        config.input_fields?.map(
+          (field) =>
+            field.group === group && (
+              <div className="w-full">
                 <Label>{field.label.en}</Label>
                 <Input name={field.input_field_id} onChange={handleChange} />
-              </Card>
-          )
-        )
-      }
-
-      <Button variant="default" className="w-full absolute bottom-2" onClick={() => handleOnClick()}>Continue</Button>
-
+              </div>
+            )
+        )}
+      <div className="flex absolute bottom-2 w-full gap-3 left-1/2 -translate-x-1/2 p-3 ">
+        <Button variant="outline" className="flex-grow " onClick={() => handleBackClick()}>
+          Back
+        </Button>
+        <Button variant="default" className="flex-grow" onClick={() => handleOnClick()}>
+          Continue
+        </Button>
+      </div>
     </>
   );
 }
