@@ -5,6 +5,7 @@ import { Icon } from "@iconify/react";
 import { Link } from "react-router-dom";
 import { paths } from "@/router";
 import { Card, CardContent, CardHeader } from "./ui/card";
+import { cn } from "@/lib/utils";
 
 Chart.register(ArcElement, Tooltip, Legend, Title);
 const data = {
@@ -65,7 +66,7 @@ function LeadsFunnel() {
         </div>
       </CardHeader>
       <CardContent>
-        <div className="flex flex-col-reverse sm:flex-row justify-between items-center">
+        <div className="flex  min-[500px]:flex-row flex-col-reverse justify-between items-center">
           <ul>
             {data.labels.map((label, index) => (
               <li key={index} className="flex text-xl my-3 items-center">
@@ -79,14 +80,19 @@ function LeadsFunnel() {
               </li>
             ))}
           </ul>
-          <div className="max-w-xs m-2 flex relative justify-end items-center">
+          <div
+            className={"max-w-xs m-2 flex relative justify-end items-center"}
+          >
             <Doughnut
               options={options}
-              style={{ width: "300px", height: "300px" }}
+              className="!w-40 !h-40 sm:!w-80 sm:!h-80 transition-all duration-300"
               data={data}
             />
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-              <p className="text-6xl font-bold"> {total} </p>
+              <p className="text-4xl sm:text-6xl font-bold transition-all duration-300 ">
+                {" "}
+                {total}{" "}
+              </p>
             </div>
           </div>
         </div>
