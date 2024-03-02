@@ -57,7 +57,7 @@ function LeadCard({ className, data, hideIcons }: Props) {
           <p>
             <span className="opacity-50">Leasing Status:</span>
 
-            <span className="ml-3 text-primary">
+            <span className="ml-3 text-foreground">
               {" "}
               {data.application_id.status}
             </span>
