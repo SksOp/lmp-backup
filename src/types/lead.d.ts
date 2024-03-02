@@ -1,3 +1,44 @@
+interface State {
+  key: string;
+  name: {
+    en: string;
+    ar: string;
+  };
+  status: string;
+  actor: string;
+  completed_by: string;
+  completed_at: string;
+  updated_by: string;
+  updated_at: string;
+  state_type: string;
+  view_permission_actors: string;
+  edit_permission_actors: string;
+}
+
+interface States {
+  [key: string]: State;
+}
+
+interface Action {
+  key: string;
+  en: string;
+  ar: string;
+
+  actor: string;
+  fields: {
+    [key: string]: {
+      name: string;
+      type: string;
+      max_size: string;
+      accepted_count: string;
+    };
+  };
+}
+
+interface Actions {
+  [key: string]: Action;
+}
+
 export type MinimalLead = {
   application_id: {
     application_id: string;
@@ -75,27 +116,6 @@ export type MinimalLead = {
   };
 };
 
-interface State {
-  key: string;
-  name: {
-    en: string;
-    ar: string;
-  };
-  status: string;
-  actor: string;
-  completed_by: string;
-  completed_at: string;
-  updated_by: string;
-  updated_at: string;
-  state_type: string;
-  view_permission_actors: string;
-  edit_permission_actors: string;
-}
-
-interface States {
-  [key: string]: State;
-}
-
 export type DetailedLead = {
   personal_details: {
     name: string;
@@ -149,33 +169,7 @@ export type DetailedLead = {
   history_timeline: {
     states: States;
   };
-  actions: {
-    1: {
-      en: string;
-      ar: string;
-    };
-    actor: string;
-    fields: {
-      1: {
-        name: string;
-        type: string;
-        max_size: string;
-        accepted_count: string;
-      };
-      2: {
-        name: string;
-        type: string;
-        max_size: string;
-        accepted_count: string;
-      };
-      3: {
-        name: string;
-        type: string;
-        max_size: string;
-        accepted_count: string;
-      };
-    };
-  };
+  actions: Actions;
   nba: {
     en: string;
     ar: string;

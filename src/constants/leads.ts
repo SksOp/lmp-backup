@@ -647,9 +647,10 @@ export const DetailedLeads: DetailedLead = {
   },
   actions: {
     "1": {
+      key: "1",
       en: "Upload Documents",
       ar: "Upload Documents",
-    },
+    
     actor: "customer",
     fields: {
       "1": {
@@ -671,6 +672,7 @@ export const DetailedLeads: DetailedLead = {
         accepted_count: "1",
       },
     },
+  },
   },
   nba: {
     en: "Awaiting for customer to upload all the necessery documentes, followup today to fastrack",

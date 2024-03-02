@@ -99,7 +99,7 @@ function LeadCard({ className, data, hideIcons }: Props) {
 
 export default LeadCard;
 
-const DetailViewer = ({
+export const DetailViewer = ({
   title,
   value,
   className,
