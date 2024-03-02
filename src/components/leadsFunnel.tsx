@@ -85,7 +85,7 @@ function LeadsFunnel() {
           >
             <Doughnut
               options={options}
-              className="!w-40 !h-40 sm:!w-80 sm:!h-80 transition-all duration-300"
+              className="!w-44 !h-44 sm:!w-80 sm:!h-80  transition-all duration-300"
               data={data}
             />
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
