@@ -5,7 +5,6 @@ import AuthGuard from "@/auth/guard/auth-guard";
 
 const Home = React.lazy(() => import("@/pages/home"));
 const Login = React.lazy(() => import("@/pages/auth/login"));
-const Application = React.lazy(() => import("@/pages/application"));
 const Logout = React.lazy(() => import("@/pages/auth/logout"));
 const ResetPassword = React.lazy(() => import("@/pages/auth/reset-password"));
 const Leads = React.lazy(() => import("@/pages/all-leads"));
@@ -41,14 +40,6 @@ const root = [
     element: (
       <AuthGuard>
         <ResetPassword />
-      </AuthGuard>
-    ),
-  },
-  {
-    path: paths.application,
-    element: (
-      <AuthGuard>
-        <Application />
       </AuthGuard>
     ),
   },

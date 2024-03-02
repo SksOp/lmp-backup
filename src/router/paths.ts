@@ -3,7 +3,6 @@ export const paths = {
   register: "/register",
   logout: "/logout",
   home: "/",
-  application: "/application",
   resetPassword: "/reset-password",
   lead: "/lead", // there also a dynamic path for lead /lead/:id
   allLead: "/lead/all",

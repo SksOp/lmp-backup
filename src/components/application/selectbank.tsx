@@ -16,14 +16,20 @@ function BankCard({
   return <Button onClick={onClick}>{children}</Button>;
 }
 
-function Selectbank( {setConfig, setGroup, data, setData}: {setConfig: (config: BankConfig) => void, setGroup: (group: number) => void,data: object, setData: (data: any) => void}){
-  const params = useSearchParams();
-  // user selectes bank
-  // user goes in flow with group
-  
+function Selectbank({
+  setConfig,
+  setGroup,
+  data,
+  setData,
+}: {
+  setConfig: (config: BankConfig) => void;
+  setGroup: (group: number) => void;
+  data: object;
+  setData: (data: any) => void;
+}) {
   const handleBankClick = (index: number) => {
     setConfig(banks[index].config);
-    setData({...data, bank: banks[index].name});
+    setData({ ...data, bank: banks[index].name });
     setGroup(1);
   };
 

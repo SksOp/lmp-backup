@@ -1,3 +1,15 @@
+import ApplicationDrawerContent from "@/components/application";
+import { Button } from "@/components/ui/button";
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "@/components/ui/drawer";
 import { paths } from "@/router";
 import { Icon } from "@iconify/react";
 import { Link } from "react-router-dom";
@@ -8,9 +20,14 @@ function NavBottom() {
         <Icon icon="solar:home-2-bold" className="h-8 w-8" />
       </Link>
 
-      <Link to={paths.application}>
-        <Icon icon="zondicons:add-solid" className="h-14 w-14 mb-4" />
-      </Link>
+      <Drawer>
+        <DrawerTrigger>
+          <Icon icon="zondicons:add-solid" className="h-14 w-14 mb-4" />
+        </DrawerTrigger>
+        <DrawerContent className="min-h-[90vh]">
+          <ApplicationDrawerContent />
+        </DrawerContent>
+      </Drawer>
       <Link to={paths.allLead}>
         <Icon icon="fluent:people-20-regular" className="h-7 w-7" />
       </Link>
