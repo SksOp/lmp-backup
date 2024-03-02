@@ -10,12 +10,18 @@ import { MinimalLeads } from "@/constants/leads";
 function MainSection() {
   return (
     <>
-      <Tabs defaultValue="applications" className="w-full p-4">
-        <TabsList className="grid w-full grid-cols-2 gap-1 my-8">
-          <TabsTrigger className="hover:bg-foreground/5 " value="applications">
+      <Tabs defaultValue="applications" className="w-full mb-16 px-4">
+        <TabsList className="grid w-full grid-cols-2 gap-1 my-4 bg-background border h-none">
+          <TabsTrigger
+            className="data-[state=active]:bg-primary/5 my-1 p-3"
+            value="applications"
+          >
             Active Applications
           </TabsTrigger>
-          <TabsTrigger className="hover:bg-foreground/5 " value="action">
+          <TabsTrigger
+            className="data-[state=active]:bg-primary/5 my-1 p-3"
+            value="action"
+          >
             Required Action
           </TabsTrigger>
         </TabsList>
