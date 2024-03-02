@@ -18,7 +18,7 @@ export type MinimalLead = {
     phone_number: string;
     email: string;
     is_verified: string;
-    status: string;
+    status: "active" | "inactive";
     car_details: {
       brand: string;
       model: string;
@@ -93,7 +93,7 @@ interface State {
 }
 
 interface States {
-  [key: string]: State ;
+  [key: string]: State;
 }
 
 export type DetailedLead = {
@@ -182,64 +182,64 @@ export type DetailedLead = {
   };
 };
 
-export type LeadAnalytics = {
-  total_applications: string;
-  states: {
-    1: {
-      count: string;
-      name: {
-        en: string;
-        ar: string;
-      };
-      status: string;
-    };
-    2: {
-      count: string;
-      name: {
-        en: string;
-        ar: string;
-      };
-      status: string;
-    };
-    3: {
-      count: string;
-      name: {
-        en: string;
-        ar: string;
-      };
-      status: string;
-    };
-    4: {
-      count: string;
-      name: {
-        en: string;
-        ar: string;
-      };
-      status: string;
-    };
-    5: {
-      count: string;
-      name: {
-        en: string;
-        ar: string;
-      };
-      status: string;
-    };
-    6: {
-      count: string;
-      name: {
-        en: string;
-        ar: string;
-      };
-      status: string;
-    };
-    7: {
-      count: string;
-      name: {
-        en: string;
-        ar: string;
-      };
-      status: string;
-    };
-  };
-};
+// export type LeadAnalytics = {
+//   total_applications: string;
+//   states: {
+//     1: {
+//       count: string;
+//       name: {
+//         en: string;
+//         ar: string;
+//       };
+//       status: string;
+//     };
+//     2: {
+//       count: string;
+//       name: {
+//         en: string;
+//         ar: string;
+//       };
+//       status: string;
+//     };
+//     3: {
+//       count: string;
+//       name: {
+//         en: string;
+//         ar: string;
+//       };
+//       status: string;
+//     };
+//     4: {
+//       count: string;
+//       name: {
+//         en: string;
+//         ar: string;
+//       };
+//       status: string;
+//     };
+//     5: {
+//       count: string;
+//       name: {
+//         en: string;
+//         ar: string;
+//       };
+//       status: string;
+//     };
+//     6: {
+//       count: string;
+//       name: {
+//         en: string;
+//         ar: string;
+//       };
+//       status: string;
+//     };
+//     7: {
+//       count: string;
+//       name: {
+//         en: string;
+//         ar: string;
+//       };
+//       status: string;
+//     };
+//   };
+// };

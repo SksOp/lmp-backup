@@ -1,4 +1,4 @@
-import { LeadAnalytics, DetailedLead, MinimalLead } from "@/types";
+import { DetailedLead, MinimalLead } from "@/types";
 
 export const MinimalLeads: MinimalLead[] = [
   {
@@ -678,64 +678,64 @@ export const DetailedLeads: DetailedLead = {
   },
 };
 
-export const AnalyticsSummary: LeadAnalytics = {
-  total_applications: "38",
-  states: {
-    "1": {
-      count: "20",
-      name: {
-        en: "Application Initiated",
-        ar: "تم تشغيل التطبيق",
-      },
-      status: "completed",
-    },
-    "2": {
-      count: "10",
-      name: {
-        en: "Bank Verifications",
-        ar: "التحققات البنكية",
-      },
-      status: "completed",
-    },
-    "3": {
-      count: "8",
-      name: {
-        en: "Document Verifications",
-        ar: "التحقق من الوثائق",
-      },
-      status: "current",
-    },
-    "4": {
-      count: "5",
-      name: {
-        en: "Dealer Acknowledgement",
-        ar: "إقرار الموزع",
-      },
-      status: "upcoming",
-    },
-    "5": {
-      count: "3",
-      name: {
-        en: "Loan Approved",
-        ar: "تمت الموافقة على القرض",
-      },
-      status: "upcoming",
-    },
-    "6": {
-      count: "2",
-      name: {
-        en: "Vehicle Delivery",
-        ar: "تسليم المركبة",
-      },
-      status: "upcoming",
-    },
-    "7": {
-      count: "2",
-      name: {
-        en: "Loan Declined",
-        ar: "تم رفض القرض",
-      },
-      status: "upcoming",
-    },
-  },
-};
+// export const AnalyticsSummary: LeadAnalytics = {
+//   total_applications: "38",
+//   states: {
+//     "1": {
+//       count: "20",
+//       name: {
+//         en: "Application Initiated",
+//         ar: "تم تشغيل التطبيق",
+//       },
+//       status: "completed",
+//     },
+//     "2": {
+//       count: "10",
+//       name: {
+//         en: "Bank Verifications",
+//         ar: "التحققات البنكية",
+//       },
+//       status: "completed",
+//     },
+//     "3": {
+//       count: "8",
+//       name: {
+//         en: "Document Verifications",
+//         ar: "التحقق من الوثائق",
+//       },
+//       status: "current",
+//     },
+//     "4": {
+//       count: "5",
+//       name: {
+//         en: "Dealer Acknowledgement",
+//         ar: "إقرار الموزع",
+//       },
+//       status: "upcoming",
+//     },
+//     "5": {
+//       count: "3",
+//       name: {
+//         en: "Loan Approved",
+//         ar: "تمت الموافقة على القرض",
+//       },
+//       status: "upcoming",
+//     },
+//     "6": {
+//       count: "2",
+//       name: {
+//         en: "Vehicle Delivery",
+//         ar: "تسليم المركبة",
+//       },
+//       status: "upcoming",
+//     },
+//     "7": {
+//       count: "2",
+//       name: {
+//         en: "Loan Declined",
+//         ar: "تم رفض القرض",
+//       },
+//       status: "upcoming",
+//     },
+//   },
+// };

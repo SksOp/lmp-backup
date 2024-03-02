@@ -3,11 +3,7 @@ import { Icon } from "@iconify/react";
 import { ClassValue } from "clsx";
 import React from "react";
 import Stages from "./stages";
-import {
-  AnalyticsSummary,
-  MinimalLeads,
-  DetailedLeads,
-} from "@/constants/leads";
+import { MinimalLeads, DetailedLeads } from "@/constants/leads";
 import { Navigate, useParams } from "react-router-dom";
 import { forEachChild } from "typescript";
 
