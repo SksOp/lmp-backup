@@ -26,6 +26,7 @@ function LeadCard({ className, data, hideIcons }: Props) {
       <CardHeader className="flex flex-row gap-2 items-center">
         <LeadLogo imageName={data.application_id.lead_name} />
         <CardTitle>{data.application_id.lead_name}</CardTitle>
+        {data.application_id.is_verified === "yes" ? <Icon icon="mage:verified-check-fill" className="w-6 h-6 text-primary"  /> : null }
       </CardHeader>
 
       <CardContent className="flex flex-col gap-2">

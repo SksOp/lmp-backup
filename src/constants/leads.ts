@@ -88,7 +88,7 @@ export const MinimalLeads: MinimalLead[] = [
       driving_license_number: "MH12 20211234567",
       phone_number: "+19876543210",
       email: "alicesmith123@gmail.com",
-      is_verified: "yes",
+      is_verified: "no",
       status: "active",
       car_details: {
         brand: "KIA",
@@ -156,7 +156,7 @@ export const MinimalLeads: MinimalLead[] = [
       driving_license_number: "MH12 20211234567",
       phone_number: "+1234567890",
       email: "john.duo@example.com",
-      is_verified: "yes",
+      is_verified: "no",
       status: "active",
       car_details: {
         brand: "KIA",
