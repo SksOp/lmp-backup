@@ -25,20 +25,29 @@ function MainSection() {
             Required Action
           </TabsTrigger>
         </TabsList>
-        <TabsContent value="applications">
-          <div className="flex flex-col gap-3">
-            {MinimalLeads.map((lead) => (
-              <>
-                <Link
-                  to={`${paths.lead}/${lead.application_id.application_id}`}
-                >
-                  <LeadCard hideIcons data={lead} />
-                </Link>
-              </>
-            ))}
-          </div>
+        <TabsContent value="applications" className="flex flex-col gap-3">
+          {MinimalLeads.map((lead) => (
+            <>
+              <Link to={`${paths.lead}/${lead.application_id.application_id}`}>
+                <LeadCard hideIcons data={lead} />
+              </Link>
+            </>
+          ))}
         </TabsContent>
-        <TabsContent value="action"></TabsContent>
+        <TabsContent value="action" className="flex flex-col gap-3">
+          {MinimalLeads.map(
+            (lead) =>
+              lead.application_id.current_actor === "Dealer" && (
+                <>
+                  <Link
+                    to={`${paths.lead}/${lead.application_id.application_id}`}
+                  >
+                    <LeadCard hideIcons data={lead} />
+                  </Link>
+                </>
+              )
+          )}
+        </TabsContent>
       </Tabs>
     </>
   );
