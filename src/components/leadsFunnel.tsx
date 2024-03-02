@@ -55,7 +55,7 @@ function LeadsFunnel() {
       <CardHeader>
         <div className="flex justify-between m-2">
           <h1 className="text-2xl font-bold">Applications Funnel</h1>
-          <Link to={paths.home} className="flex text-xl gap-2">
+          <Link to={paths.allLead} className="flex text-xl gap-2">
             All Leads
             <Icon
               icon="teenyicons:arrow-right-solid"
