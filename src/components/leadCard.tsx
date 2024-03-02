@@ -17,22 +17,20 @@ import { MinimalLead } from "@/types";
 export interface Props {
   className?: ClassValue;
   data: MinimalLead;
+  hideIcons?: boolean;
 }
 
-function LeadCard({ className, data }: Props) {
+function LeadCard({ className, data, hideIcons }: Props) {
   return (
     <Card className={cn(className)}>
       <CardHeader className="flex flex-row gap-2 items-center">
         <LeadLogo imageName={data.application_id.lead_name} />
         <CardTitle>{data.application_id.lead_name}</CardTitle>
-        {/* <Badge className=" bg-yellow-500 text-black font-normal">
-          {badge?.text}
-        </Badge> */}
       </CardHeader>
 
       <CardContent className="flex flex-col gap-2">
         <div className="flex justify-between items-center">
-          <div className="grid gap-2 grid-cols-3">
+          <div className="">
             <DetailViewer
               title="Bank"
               value={data.application_id.lessor_details.lessor_name.en}
@@ -73,22 +71,26 @@ function LeadCard({ className, data }: Props) {
       </CardContent>
 
       <CardFooter className="flex justify-between">
-        <Icon
-          icon="ion:call-outline"
-          className="w-16 h-16 p-4 bg-secondary rounded-full"
-        />
-        <Icon
-          icon="akar-icons:whatsapp-fill"
-          className="w-16 h-16 p-4 bg-secondary rounded-full"
-        />
-        <Icon
-          icon="material-symbols-light:alternate-email"
-          className="w-16 h-16 p-4 bg-secondary rounded-full"
-        />
-        <Icon
-          icon="ic:baseline-sms"
-          className="w-16 h-16 p-4 bg-secondary rounded-full"
-        />
+        {!hideIcons && (
+          <>
+            <Icon
+              icon="ion:call-outline"
+              className="w-16 h-16 p-4 bg-secondary rounded-full"
+            />
+            <Icon
+              icon="akar-icons:whatsapp-fill"
+              className="w-16 h-16 p-4 bg-secondary rounded-full"
+            />
+            <Icon
+              icon="material-symbols-light:alternate-email"
+              className="w-16 h-16 p-4 bg-secondary rounded-full"
+            />
+            <Icon
+              icon="ic:baseline-sms"
+              className="w-16 h-16 p-4 bg-secondary rounded-full"
+            />
+          </>
+        )}
       </CardFooter>
     </Card>
   );
@@ -106,9 +108,9 @@ const DetailViewer = ({
   className?: ClassValue;
 }) => {
   return (
-    <>
-      <p className="text-lg opacity-50">{title}</p>
-      <p className="text-lg  font-bold col-span-2">{value}</p>
-    </>
+    <div className="flex gap-5">
+      <p className="text-md  opacity-50">{title}:</p>
+      <p className="text-md  ">{value}</p>
+    </div>
   );
 };

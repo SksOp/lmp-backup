@@ -32,7 +32,7 @@ function MainSection() {
                 <Link
                   to={`${paths.lead}/${lead.application_id.application_id}`}
                 >
-                  <LeadCard data={lead} />
+                  <LeadCard hideIcons data={lead} />
                 </Link>
               </>
             ))}
