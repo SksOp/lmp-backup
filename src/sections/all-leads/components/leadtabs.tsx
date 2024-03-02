@@ -34,19 +34,19 @@ function LeadTabs() {
       <Tabs defaultValue="all-leads" className="w-full p-4">
         <TabsList className="grid w-full grid-cols-3 gap-1 my-4 bg-background border h-none">
           <TabsTrigger
-            className="data-[state=active]:bg-primary/5 my-1 p-2"
+            className="data-[state=active]:bg-foreground/5 my-1 p-2"
             value="all-leads"
           >
             View All Leads
           </TabsTrigger>
           <TabsTrigger
-            className="data-[state=active]:bg-primary/5 my-1 p-2"
+            className="data-[state=active]:bg-foreground/5 my-1 p-2"
             value="active"
           >
             Active Leads
           </TabsTrigger>
           <TabsTrigger
-            className="data-[state=active]:bg-primary/5 my-1 p-2"
+            className="data-[state=active]:bg-foreground/5 my-1 p-2"
             value="action"
           >
             Required Action

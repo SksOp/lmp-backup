@@ -16,20 +16,20 @@ function Progress() {
   const stages = Array.from(
     { length: totalStage },
     (_, i) => rawData[String(totalStage - i)]
-  );
+  ).reverse();
 
   return (
     <>
       <Tabs defaultValue="status" className="w-full p-4">
         <TabsList className="grid w-full grid-cols-2 gap-1 my-4 bg-background border h-none">
           <TabsTrigger
-            className="data-[state=active]:bg-primary/5 my-1 p-2"
+            className="data-[state=active]:bg-foreground/5 my-1 p-2"
             value="status"
           >
             Application Status
           </TabsTrigger>
           <TabsTrigger
-            className="data-[state=active]:bg-primary/5 my-1 p-2"
+            className="data-[state=active]:bg-foreground/5 my-1 p-2"
             value="info"
           >
             Lead info
@@ -47,9 +47,10 @@ function Progress() {
             {}
 
             {stages.map((stage, index) => (
+
               <Stages
                 key={index}
-                date={"23 July"}
+                date={stage.completed_at.substring(0, 10).split("-").reverse().join("/")}
                 title={stage.name.en}
                 doneBy={stage.completed_by}
                 status={stage.status}
