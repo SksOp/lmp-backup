@@ -1,4 +1,4 @@
-import LeadTabs from "./components/leadtabs";
+import LeadTabs from "./components/all-leads";
 
 function LeadsView() {
   return (

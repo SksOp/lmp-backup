@@ -18,15 +18,27 @@ export interface Props {
   className?: ClassValue;
   data: MinimalLead;
   hideIcons?: boolean;
+  noHoverEffect?: boolean;
 }
 
-function LeadCard({ className, data, hideIcons }: Props) {
+function LeadCard({ className, data, hideIcons, noHoverEffect }: Props) {
   return (
-    <Card className={cn(className)}>
+    <Card
+      className={cn(
+        "transition-all duration-300",
+        !noHoverEffect && "hover:bg-primary/5  hover:scale-[101%]",
+        className
+      )}
+    >
       <CardHeader className="flex flex-row gap-2 items-center">
         <LeadLogo imageName={data.application_id.lead_name} />
         <CardTitle>{data.application_id.lead_name}</CardTitle>
-        {data.application_id.is_verified === "yes" ? <Icon icon="mage:verified-check-fill" className="w-6 h-6 text-primary"  /> : null }
+        {data.application_id.is_verified === "yes" ? (
+          <Icon
+            icon="mage:verified-check-fill"
+            className="w-6 h-6 text-primary"
+          />
+        ) : null}
       </CardHeader>
 
       <CardContent className="flex flex-col gap-2">
