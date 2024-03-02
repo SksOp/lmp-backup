@@ -19,12 +19,9 @@ export interface Props {
   data: MinimalLead;
 }
 
-function LeadCard({
-  className,
-  data
-}: Props) {
+function LeadCard({ className, data }: Props) {
   return (
-    <Card>
+    <Card className={cn(className)}>
       <CardHeader className="flex flex-row gap-2 items-center">
         <LeadLogo imageName={data.application_id.lead_name} />
         <CardTitle>{data.application_id.lead_name}</CardTitle>
@@ -36,15 +33,25 @@ function LeadCard({
       <CardContent className="flex flex-col gap-2">
         <div className="flex justify-between items-center">
           <div className="grid gap-2 grid-cols-3">
-            <DetailViewer title="Bank" value={data.application_id.lessor_details.lessor_name.en} />
-            <DetailViewer title="Vehicle" value={data.application_id.car_details.brand} />
+            <DetailViewer
+              title="Bank"
+              value={data.application_id.lessor_details.lessor_name.en}
+            />
+            <DetailViewer
+              title="Vehicle"
+              value={data.application_id.car_details.brand}
+            />
             <DetailViewer
               title="Cost"
-              value={data.application_id.car_details.price.final_price }
+              value={data.application_id.car_details.price.final_price}
             />
           </div>
           <div>
-            <img className="max-w-[10rem]" src={data.application_id.car_details.car_image} alt="vehicle" />
+            <img
+              className="max-w-[10rem]"
+              src={data.application_id.car_details.car_image}
+              alt="vehicle"
+            />
           </div>
         </div>
 
@@ -52,11 +59,17 @@ function LeadCard({
           <p>
             <span className="opacity-50">Leasing Status:</span>
 
-            <span className="ml-3 text-primary"> {data.application_id.status}</span>
+            <span className="ml-3 text-primary">
+              {" "}
+              {data.application_id.status}
+            </span>
           </p>
           <p>{data.application_id.progress_measure}%</p>
         </div>
-        <Progress value={Number(data.application_id.progress_measure)} className="h-2" />
+        <Progress
+          value={Number(data.application_id.progress_measure)}
+          className="h-2"
+        />
       </CardContent>
 
       <CardFooter className="flex justify-between">
@@ -76,7 +89,6 @@ function LeadCard({
           icon="ic:baseline-sms"
           className="w-16 h-16 p-4 bg-secondary rounded-full"
         />
-
       </CardFooter>
     </Card>
   );

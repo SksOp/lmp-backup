@@ -4,10 +4,18 @@ import { Doughnut } from "react-chartjs-2";
 import { Icon } from "@iconify/react";
 import { Link } from "react-router-dom";
 import { paths } from "@/router";
+import { Card, CardContent, CardHeader } from "./ui/card";
 
 Chart.register(ArcElement, Tooltip, Legend, Title);
 const data = {
-  labels: [],
+  labels: [
+    "Initiated",
+    "Bank Verifications",
+    "Document Verification",
+    "Dealer Acknowledges",
+    "Amount Disbursed",
+    "Loan Rejected",
+  ],
   datasets: [
     {
       data: [23, 12, 4, 45, 5, 3],
@@ -31,48 +39,59 @@ const data = {
   ],
 };
 
+const options = {
+  cutout: "80%", // Adjust this value to control the thickness of the doughnut
+  plugins: {
+    legend: {
+      display: false, // This will hide the legend (and labels)
+    },
+    // Include other plugin configurations here as needed
+  },
+};
 function LeadsFunnel() {
+  const total = data.datasets[0].data.reduce((a, b) => a + b, 0);
   return (
-    <div className="flex flex-col bg-blue-300 ">
-      <div className="flex justify-between m-2">
-        <h1 className="text-2xl font-bold">Leads Funnel</h1>
-        <Link to={paths.home} className="flex text-xl gap-2">
-          All Leads
-          <Icon icon="teenyicons:arrow-right-solid" className="w-8 h-8 mr-8" />
-        </Link>
-      </div>
-      <div className="flex justify-between items-center">
-        <ul className="m-4 list-none li">
-          <li className="flex items-center">
-            <div className="w-2 h-2 bg-[#9F43CC] rounded-full mr-2"></div>23
-            Initiated
-          </li>
-          <li className="flex items-center">
-            <div className="w-2 h-2 bg-[#2B87E3] rounded-full mr-2"></div>12
-            Bank Verifications
-          </li>
-          <li className="flex items-center">
-            <div className="w-2 h-2 bg-[#0CA85D] rounded-full mr-2"></div>4
-            Document Verification
-          </li>
-          <li className="flex items-center">
-            <div className="w-2 h-2 bg-[#EBA10F] rounded-full mr-2"></div>45
-            Dealer Acknowledges
-          </li>
-          <li className="flex items-center">
-            <div className="w-2 h-2 bg-[#EA6200] rounded-full mr-2"></div>5
-            Amount Disbursed
-          </li>
-          <li className="flex items-center">
-            <div className="w-2 h-2 bg-[#951919] rounded-full mr-2"></div>3 Loan
-            Rejected
-          </li>
-        </ul>
-        <div className="w-full max-w-xs m-2 items-center">
-          <Doughnut data={data} className="w-full" />
+    <Card className="bg-none w-full m-4 ">
+      <CardHeader>
+        <div className="flex justify-between m-2">
+          <h1 className="text-2xl font-bold">Applications Funnel</h1>
+          <Link to={paths.home} className="flex text-xl gap-2">
+            All Leads
+            <Icon
+              icon="teenyicons:arrow-right-solid"
+              className="w-8 h-8 mr-8"
+            />
+          </Link>
         </div>
-      </div>
-    </div>
+      </CardHeader>
+      <CardContent>
+        <div className="flex flex-col-reverse sm:flex-row justify-between items-center">
+          <ul>
+            {data.labels.map((label, index) => (
+              <li key={index} className="flex text-xl my-3 items-center">
+                <div
+                  className="w-2 h-2 bg-[#9F43CC] rounded-full mr-2"
+                  style={{
+                    backgroundColor: data.datasets[0].backgroundColor[index],
+                  }}
+                ></div>
+                {data.datasets[0].data[index]} {label}
+              </li>
+            ))}
+          </ul>
+          <div className="max-w-xs m-2 flex relative justify-end items-center">
+            <Doughnut
+              options={options}
+              style={{ width: "300px", height: "300px" }}
+              data={data}
+            />
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+              <p className="text-6xl font-bold"> {total} </p>
+            </div>
+          </div>
+        </div>
+      </CardContent>
+    </Card>
   );
 }
 
