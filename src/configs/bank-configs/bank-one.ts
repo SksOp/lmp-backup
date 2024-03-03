@@ -140,7 +140,7 @@ export const Bank1: BankConfig = {
         en: "Enter the Car Details",
         ar: "",
       },
-      input_field_type: "text",
+      input_field_type: "radio_multimedia",
     },
     {
       input_field_id: "select_model",
@@ -162,7 +162,7 @@ export const Bank1: BankConfig = {
         en: "Enter the Car Details",
         ar: "",
       },
-      input_field_type: "text",
+      input_field_type: "radio_multimedia",
     },
     {
       input_field_id: "select_varient",
@@ -184,7 +184,7 @@ export const Bank1: BankConfig = {
         en: "Enter the Car Details",
         ar: "",
       },
-      input_field_type: "radio",
+      input_field_type: "text",
     },
     {
       input_field_id: "cost",

@@ -15,14 +15,15 @@ function ApplicationDrawerContent() {
       <p className="text-center text-xl font-semibold">New Leasing Application</p>
       <p className="text-center text-sm text-foreground/70">Initiate the application with customer/vehicle details</p>
       <ProgressBar group={group} />
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4 h-[70vh] overflow-auto pb-15">
         {group === 0 && (
           <Selectbank banks={banks} selectedBank={bank} setBank={(bank: Bank) => setBank(bank)} setGroup={setGroup} setData={setdata} data={data} />
         )}
-        {group === 1 && <Group config={bank.config} group={1} setGroup={setGroup} setData={setdata} data={data} />}
-        {group === 2 && <Group config={bank.config} group={2} setGroup={setGroup} setData={setdata} data={data} />}
-        {group === 3 && <Group config={bank.config} group={3} setGroup={setGroup} setData={setdata} data={data} />}
-        {group === 4 && <Success />}
+        {group === 1 && <Group config={bank.config} selectedBank={bank} group={1} setGroup={setGroup} setData={setdata} data={data} />}
+        {group === 2 && <Group config={bank.config} selectedBank={bank}  group={2} setGroup={setGroup} setData={setdata} data={data} />}
+        {group === 3 && <Group config={bank.config} selectedBank={bank}  group={3} setGroup={setGroup} setData={setdata} data={data} />}
+        {group === 4 && <Group config={bank.config} selectedBank={bank}  group={4} setGroup={setGroup} setData={setdata} data={data} />}
+        {group === 5 && <Success />}
       </div>
     </div>
   );
