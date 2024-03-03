@@ -4,6 +4,7 @@ import { Input } from "../ui/input";
 import { RadioGroup } from "../ui/radio-group";
 import { Honda, Jeep } from "@/configs/brand-configs/models";
 import { cn } from "@/lib/utils";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 interface InputFieldProp {
   inputName: string;
@@ -15,10 +16,10 @@ interface Option {
   name: string;
   logo?: string;
 }
-interface RadioMultiMediaProp extends InputFieldProp {
+interface MultiInput extends InputFieldProp {
   options: Option[];
 }
-function RadioMultiMedia(props: RadioMultiMediaProp) {
+function RadioMultiMedia(props: MultiInput) {
   const { inputName, inputType, data, setData, options } = props;
   useEffect(() => {
     setData({ ...data, [inputName]: options[0].name });
@@ -52,6 +53,16 @@ function RadioMultiMedia(props: RadioMultiMediaProp) {
   );
 }
 
+function AccordionAndRadio(props: MultiInput) {
+  return (
+    <Accordion type="single" collapsible>
+      <AccordionItem value="item-1">
+        <AccordionTrigger>Is it accessible?</AccordionTrigger>
+        <AccordionContent>Yes. It adheres to the WAI-ARIA design pattern.</AccordionContent>
+      </AccordionItem>
+    </Accordion>
+  );
+}
 function InputsField({ inputName, inputType, data, setData }: InputFieldProp) {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setData({ ...data, [e.target.name]: e.target.value });
@@ -70,7 +81,20 @@ function InputsField({ inputName, inputType, data, setData }: InputFieldProp) {
     }
   };
 
-  return <>{inputType === "radio_multimedia" ? renderRadio() : <Input name={inputName} type={inputType} onChange={handleChange} />}</>;
+  // return <>{inputType === "radio_multimedia" && renderRadio()
+  //  <Input name={inputName} type={inputType} onChange={handleChange} />}</>;
+  switch (inputType) {
+    case "radio_multimedia":
+      return renderRadio() ?? <></>;
+    case "radio":
+      // TODO: handle radio input
+      // for now we only have one radio input
+      // other wise e also need to pass options as props
+      // pr handle it like radio_multimedia
+      return <AccordionAndRadio inputName={inputName} inputType="radio" data={data} setData={setData} options={brands} />;
+    default:
+      return <Input name={inputName} type={inputType} onChange={handleChange} />;
+  }
 }
 
 export default InputsField;
