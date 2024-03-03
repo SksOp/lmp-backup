@@ -10,184 +10,291 @@ export const Bank3: BankConfig = {
   actor: "dealer",
   input_fields: [
     {
-      input_field_id: "vehicle_registration_number",
+      input_field_id: "customer_iqama_id",
       label: {
-        en: "Vehicle Registration Number",
-        ar: "رقم تسجيل المركبة",
+        en: "Customer National ID/Iqama Number",
+        ar: "",
+      },
+      description:{
+        en: "Enter the Customer National ID/Iqama Number",
+        ar: ""
       },
       rank: 1,
       group: 1,
+      group_name: {
+        en: "Customer Details", 
+        ar: "",
+      },
+      group_description:{
+        en: "Enter the Customer Details",
+        ar: "",
+      },
+      input_field_type: "text",
     },
     {
-      input_field_id: "brand",
+      input_field_id: "customer_mobile_no",
       label: {
-        en: "Brand",
-        ar: "العلامة التجارية",
+        en: "Customer Mobile Number",
+        ar: "",
+      },
+      description:{
+        en: "Enter the Customer Mobile Number",
+        ar: ""
+      },
+      group_description:{
+        en: "Enter the Customer Details",
+        ar: "",
       },
       rank: 2,
       group: 1,
-    },
-    {
-      input_field_id: "variant",
-      label: {
-        en: "Variant",
-        ar: "المتغير",
+      group_name: {
+        en: "Customer Details", 
+        ar: "",
       },
-      rank: 3,
-      group: 1,
-    },
-    {
-      input_field_id: "color",
-      label: {
-        en: "Color",
-        ar: "اللون",
-      },
-      rank: 4,
-      group: 1,
-    },
-    {
-      input_field_id: "addons",
-      label: {
-        en: "Addons",
-        ar: "الإضافات",
-      },
-      rank: 5,
-      group: 1,
-    },
-    {
-      input_field_id: "name",
-      label: {
-        en: "Full Name",
-        ar: "الاسم",
-      },
-      rank: 6,
-      group: 2,
-    },
-    {
-      input_field_id: "customer_phone",
-      label: {
-        en: "Customer Phone",
-        ar: "هاتف العميل",
-      },
-      type: "phone",
-      validationRegex: "^\\+[1-9]{1}[0-9]{3,14}$",
-      verificationRequired: true,
-      apiValidation: {
-        initiateEndpoint: "/initiatePhoneVerification",
-        verifyEndpoint: "/verifyPhoneOTP",
-        expectedResponse: "verified",
-      },
-      rank: 7,
-      group: 2,
-    },
-    {
-      input_field_id: "alternate_phone",
-      label: {
-        en: "Alternate Phone",
-        ar: "الهاتف البديل",
-      },
-      rank: 8,
-      group: 2,
+      input_field_type: "phone",
     },
     {
       input_field_id: "customer_email",
       label: {
         en: "Customer Email",
-        ar: "بريد العميل الإلكتروني",
+        ar: "",
       },
-      type: "email",
-      validationRegex: "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$",
-      verificationRequired: false,
-      rank: 9,
+      description:{
+        en: "Enter the Customer Email Address",
+        ar: ""
+      },
+      
+      rank: 3,
+      group: 1,
+      group_name: {
+        en: "Customer Details", 
+        ar: "",
+      },
+      group_description:{
+        en: "Enter the Customer Details",
+        ar: "",
+      },
+      input_field_type: "text",
+    },
+    {
+      input_field_id: "mobile_otp",
+      label: {
+        en: "Enter Mobile Number OTP",
+        ar: "",
+      },
+      description:{
+        en: "We sent you a 4 digit OTP, please check and enter below",
+        ar: ""
+      },
+      rank: 1,
       group: 2,
+      group_name: {
+        en: "Enter OTP", 
+        ar: "",
+      },
+      group_description:{
+        en: "Enter the OTP",
+        ar: "",
+      },
+      input_field_type: "number",
     },
     {
-      input_field_id: "customer_iqama_id",
+      input_field_id: "email_otp",
       label: {
-        en: "Customer Iqama ID",
-        ar: "هوية إقامة العميل",
+        en: "Enter Email OTP",
+        ar: "الهاتف",
       },
-      type: "Iqama ID",
-      validationRegex: "^[0-9]{10}$",
-      apiValidation: {
-        endpoint: "/validateIqamaID",
-        dataFields: ["customer_name", "customer_dob"],
-        expectedResponse: "matched",
+      description:{
+        en: "We sent you a 4 digit OTP, please check and enter below",
+        ar: ""
       },
-      rank: 10,
+      rank: 2,
       group: 2,
+      group_name: {
+        en: "Enter OTP", 
+        ar: "",
+      },
+      group_description:{
+        en: "Enter the OTP",
+        ar: "",
+      },
+      input_field_type: "number",
     },
     {
-      input_field_id: "customer_dob",
+      input_field_id: "select_brand",
       label: {
-        en: "Customer DOB",
-        ar: "تاريخ ميلاد العميل",
+        en: "Select Brand",
+        ar: "",
       },
-      type: "date",
-      dateConfiguration: {
-        format: "YYYY-MM-DD",
+      description:{
+        en: "Please select your car Brand",
+        ar: ""
       },
-      rank: 11,
-      group: 2,
-    },
-    {
-      input_field_id: "salaried_or_employed",
-      label: {
-        en: "Salaried or Employed",
-        ar: "موظف أو مستخدم",
-      },
-      rank: 12,
+      rank: 1,
       group: 3,
+      group_name: {
+        en: "Car Details", 
+        ar: "",
+      },
+      group_description:{
+        en: "Enter the Car Details",
+        ar: "",
+      },
+      input_field_type: "text",
     },
     {
-      input_field_id: "employer_name",
+      input_field_id: "select_model",
       label: {
-        en: "Name of the Employer",
-        ar: "اسم جهة العمل",
+        en: "Select Model",
+        ar: "",
       },
-      rank: 13,
+      description:{
+        en: "Please select your car model",
+        ar: ""
+      },
+      rank: 2,
       group: 3,
+      group_name: {
+        en: "Car Details", 
+        ar: "",
+      },
+      group_description:{
+        en: "Enter the Car Details",
+        ar: "",
+      },
+      input_field_type: "text",
     },
     {
-      input_field_id: "monthly_income",
+      input_field_id: "select_varient",
       label: {
-        en: "Monthly Income",
-        ar: "الدخل الشهري",
+        en: "Select varient",
+        ar: "",
       },
-      rank: 14,
+      description:{
+        en: "Please select your car varient",
+        ar: ""
+      },
+      rank: 3,
       group: 3,
+      group_name: {
+        en: "Car Details", 
+        ar: "",
+      },
+      group_description:{
+        en: "Enter the Car Details",
+        ar: "",
+      },
+      input_field_type: "radio",
     },
     {
-      input_field_id: "any_other_loan",
+      input_field_id: "cost",
       label: {
-        en: "Any other loan?",
-        ar: "أي قرض آخر",
+        en: "Cost",
+        ar: "",
       },
-      rank: 15,
+      description:{
+        en: "Enter the cost of the car",
+        ar: ""
+      },
+      rank: 4,
       group: 3,
+      group_name: {
+        en: "Car Details", 
+        ar: "",
+      },
+      group_description:{
+        en: "Enter the Car Details",
+        ar: "",
+      },
+      input_field_type: "number",
     },
     {
-      input_field_id: "monthly_estimated_expense",
+      input_field_id: "additional_details",
       label: {
-        en: "Overall anticipated expense?",
-        ar: "المصروف الشهري المتوقع بشكل عام",
+        en: "Additional Details",
+        ar: "",
       },
-      rank: 16,
+      description:{
+        en: "Enter additional details about your car",
+        ar: ""
+      },
+      rank: 5,
       group: 3,
+      group_name: {
+        en: "Car Details", 
+        ar: "",
+      },
+      group_description:{
+        en: "Enter the Car Details",
+        ar: "",
+      },
+      input_field_type: "text",
     },
     {
-      input_field_id: "appointment_date",
+      input_field_id: "driving_license",
       label: {
-        en: "Appointment Date",
-        ar: "موعد الموعد",
+        en: "Driving License",
+        ar: "",
       },
-      type: "date",
-      dateConfiguration: {
-        format: "YYYY-MM-DDTHH:mm:ssZ",
-        includeTime: true,
+      description:{
+        en: "Press to upload file here",
+        ar: ""
       },
-      rank: 17,
-      group: 2,
+      rank: 1,
+      group: 4,
+      group_name: {
+        en: "Customer Documents", 
+        ar: "",
+      },
+      group_description:{
+        en: "Enter the Car Details",
+        ar: "",
+      },
+      input_field_type: "file",
+    },
+    {
+      input_field_id: "driving_license",
+      label: {
+        en: "Driving License",
+        ar: "",
+      },
+      description:{
+        en: "Press to upload file here",
+        ar: ""
+      },
+      rank: 2,
+      group: 4,
+      group_name: {
+        en: "Customer Documents", 
+        ar: "",
+      },
+      group_description:{
+        en: "Enter the Car Details",
+        ar: "",
+      },
+      input_field_type: "file",
+    },
+    {
+      input_field_id: "driving_license",
+      label: {
+        en: "Driving License",
+        ar: "",
+      },
+      description:{
+        en: "Press to upload file here",
+        ar: ""
+      },
+      rank: 3,
+      group: 4,
+      group_name: {
+        en: "Customer Documents", 
+        ar: "",
+      },
+      group_description:{
+        en: "Enter the Car Details",
+        ar: "",
+      },
+      input_field_type: "file",
     },
   ],
 };
