@@ -16,10 +16,10 @@ interface Option {
   name: string;
   logo?: string;
 }
-interface MultiInput extends InputFieldProp {
+interface MultiMediaRadio extends InputFieldProp {
   options: Option[];
 }
-function RadioMultiMedia(props: MultiInput) {
+function RadioMultiMedia(props: MultiMediaRadio) {
   const { inputName, inputType, data, setData, options } = props;
   useEffect(() => {
     setData({ ...data, [inputName]: options[0].name });
@@ -53,14 +53,42 @@ function RadioMultiMedia(props: MultiInput) {
   );
 }
 
-function AccordionAndRadio(props: MultiInput) {
+interface RadioInput extends InputFieldProp {
+  options: string[];
+}
+function AccordionAndRadio(props: RadioInput) {
+  const { inputName, inputType, data, setData, options } = props;
+  useEffect(() => {
+    setData({ ...data, [inputName]: options[0] });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  const handleChange = (val: string) => {
+    setData({ ...data, [inputName]: val });
+  };
   return (
-    <Accordion type="single" collapsible>
-      <AccordionItem value="item-1">
-        <AccordionTrigger>Is it accessible?</AccordionTrigger>
-        <AccordionContent>Yes. It adheres to the WAI-ARIA design pattern.</AccordionContent>
-      </AccordionItem>
-    </Accordion>
+    <RadioGroup>
+      <Accordion type="single" collapsible>
+        <AccordionItem value="item-1">
+          <AccordionTrigger>{data[inputName]}</AccordionTrigger>
+          <AccordionContent>
+            {options.map((option) => {
+              const isSelected = data[inputName] === option;
+              return (
+                <>
+                  <div onClick={() => handleChange(option)} className={cn("flex justify-between items-center p-4 cursor-pointer")}>
+                    <p>{option}</p>
+                    <div className={cn("w-6 h-6 rounded-full border-2 border-primary flex items-center justify-center")}>
+                      {isSelected && <div className="w-3 h-3 rounded-full bg-primary" />}
+                    </div>
+                  </div>
+                  <p className="p-4">{option}</p>
+                </>
+              );
+            })}
+          </AccordionContent>
+        </AccordionItem>
+      </Accordion>
+    </RadioGroup>
   );
 }
 function InputsField({ inputName, inputType, data, setData }: InputFieldProp) {
@@ -85,13 +113,19 @@ function InputsField({ inputName, inputType, data, setData }: InputFieldProp) {
   //  <Input name={inputName} type={inputType} onChange={handleChange} />}</>;
   switch (inputType) {
     case "radio_multimedia":
-      return renderRadio() ?? <></>;
+      return renderRadio() ?? <></>; // if renderRadio returns undefined, return an empty fragment
     case "radio":
       // TODO: handle radio input
       // for now we only have one radio input
       // other wise e also need to pass options as props
       // pr handle it like radio_multimedia
-      return <AccordionAndRadio inputName={inputName} inputType="radio" data={data} setData={setData} options={brands} />;
+      const brandOptions = brands.find((brand) => data?.select_brand && brand.name === (data.select_brand as string));
+      const thisOption = brandOptions?.models.find((model) => data?.select_model && model.name === (data.select_model as string));
+      return thisOption ? (
+        <AccordionAndRadio inputName={inputName} inputType="radio" data={data} setData={setData} options={thisOption.variants} />
+      ) : (
+        <></>
+      );
     default:
       return <Input name={inputName} type={inputType} onChange={handleChange} />;
   }

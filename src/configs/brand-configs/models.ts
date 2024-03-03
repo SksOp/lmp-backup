@@ -15,22 +15,22 @@ export const Honda: CarModel[] = [
   {
     name: "Amaze",
     logo: "/assets/car.png",
-    variants: ["V CVT Petrol", "VX CVT Petrol", "VX Diesel", "VX MT Diesel", "ZX CVT Petrol", "ZX Diesel"],
+    variants: ["V CVT Petrol", "VX CVT Petrol"],
   },
   {
     name: "Pilot",
     logo: "/assets/car.png",
-    variants: ["V CVT Petrol", "VX CVT Petrol", "VX Diesel", "VX MT Diesel", "ZX CVT Petrol", "ZX Diesel"],
+    variants: ["VX Diesel", "VX MT Diesel"],
   },
   {
     name: "ballade",
     logo: "/assets/car.png",
-    variants: ["V CVT Petrol", "VX CVT Petrol", "VX Diesel", "VX MT Diesel", "ZX CVT Petrol", "ZX Diesel"],
+    variants: ["ZX CVT Petrol", "ZX Diesel"],
   },
   {
     name: "Civic Type R",
     logo: "/assets/car.png",
-    variants: ["V CVT Petrol", "VX CVT Petrol", "VX Diesel", "VX MT Diesel", "ZX CVT Petrol", "ZX Diesel"],
+    variants: ["V CVT Petrol", "ZX CVT Petrol", "ZX Diesel"],
   },
   // {
   //   name: "BRV",
