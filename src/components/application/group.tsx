@@ -63,7 +63,7 @@ function Group({
             field.group === group && (
               <div className="w-full">
                 <Label>{field.label.en}</Label>
-                <p>{field.description.en}</p>
+                {field.input_field_type !== "file" && <p>{field.description.en}</p>}
                 <InputsField inputName={field.input_field_id} inputType={field.input_field_type} data={data} setData={setData} />
               </div>
             )

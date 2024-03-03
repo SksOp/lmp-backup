@@ -1,10 +1,11 @@
 import { brands } from "@/configs/brand-configs/brand";
 import React, { useEffect, useState } from "react";
 import { Input } from "../ui/input";
-import { RadioGroup } from "../ui/radio-group";
+import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
 import { Honda, Jeep } from "@/configs/brand-configs/models";
 import { cn } from "@/lib/utils";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
+import { InputFile } from "../ui/input-file";
 
 interface InputFieldProp {
   inputName: string;
@@ -58,31 +59,26 @@ interface RadioInput extends InputFieldProp {
 }
 function AccordionAndRadio(props: RadioInput) {
   const { inputName, inputType, data, setData, options } = props;
-  useEffect(() => {
-    setData({ ...data, [inputName]: options[0] });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  // useEffect(() => {
+  //   setData({ ...data, [inputName]: options[0] });
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, []);
   const handleChange = (val: string) => {
     setData({ ...data, [inputName]: val });
   };
   return (
-    <RadioGroup>
+    <RadioGroup value={data[inputName]}>
       <Accordion type="single" collapsible>
-        <AccordionItem value="item-1">
-          <AccordionTrigger>{data[inputName]}</AccordionTrigger>
+        <AccordionItem value="item-1" className="border rounded-sm">
+          <AccordionTrigger className="p-3">{data[inputName] ?? <span className=" opacity-30 "> Select prefered variant</span>}</AccordionTrigger>
           <AccordionContent>
             {options.map((option) => {
               const isSelected = data[inputName] === option;
               return (
-                <>
-                  <div onClick={() => handleChange(option)} className={cn("flex justify-between items-center p-4 cursor-pointer")}>
-                    <p>{option}</p>
-                    <div className={cn("w-6 h-6 rounded-full border-2 border-primary flex items-center justify-center")}>
-                      {isSelected && <div className="w-3 h-3 rounded-full bg-primary" />}
-                    </div>
-                  </div>
-                  <p className="p-4">{option}</p>
-                </>
+                <div onClick={() => handleChange(option)} className={cn("flex justify-left items-center gap-3 p-4 cursor-pointer")}>
+                  <RadioGroupItem value={option} />
+                  <p>{option}</p>
+                </div>
               );
             })}
           </AccordionContent>
@@ -126,6 +122,8 @@ function InputsField({ inputName, inputType, data, setData }: InputFieldProp) {
       ) : (
         <></>
       );
+    case "file":
+      return <InputFile name={inputName} onChange={handleChange} label="Press to Upload file here" description="Max Size: 50MB" />;
     default:
       return <Input name={inputName} type={inputType} onChange={handleChange} />;
   }
