@@ -5,9 +5,18 @@ import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import { LeadLogo } from "../leadLogo";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
-import { DetailViewer } from "../leadCard";
 import { Icon } from "@iconify/react";
 import InputsField from "./inputsField";
+import { ClassValue } from "clsx";
+
+const DetailViewer = ({ title, value, className }: { title: string; value: string; className?: ClassValue }) => {
+  return (
+    <div className="flex gap-5">
+      <p className="text-md  opacity-50">{title}:</p>
+      <p className="text-md  ">{value}</p>
+    </div>
+  );
+};
 
 function Group({
   config,
@@ -42,29 +51,35 @@ function Group({
       <div className="flex flex-col gap-4">
         {group >= 2 && (
           <Card>
-            <CardHeader className="flex flex-row gap-2">
+            <CardHeader className="flex flex-row gap-2 py-3 pb-0">
               <LeadLogo imageName={"Camer Will"} />
-              <CardTitle>Camerson Williamson</CardTitle>
+              <CardTitle className="text-md">Camerson Williamson</CardTitle>
               <Icon icon="mage:verified-check-fill" className="w-6 h-6 text-primary" />
             </CardHeader>
-            <CardContent>
+            <CardContent className="py-3 flex flex-col gap-3">
               <DetailViewer title="Bank" value={selectedBank.name} />
               <DetailViewer title="Iqama Number" value="XXXXXXXXXXXX" />
               <DetailViewer title="Driving License" value="XXXXXXXXXXXX" />
             </CardContent>
           </Card>
         )}
-        <h3 className="text-3xl font-bold">{groupFinder?.group_name.en}</h3>
+        <h3 className="text-3xl font-bold pb-3 ">{groupFinder?.group_name.en}</h3>
       </div>
 
       {config &&
         config.input_fields?.map(
           (field) =>
             field.group === group && (
-              <div className="w-full">
-                <Label>{field.label.en}</Label>
-                {field.input_field_type !== "file" && <p>{field.description.en}</p>}
-                <InputsField inputName={field.input_field_id} inputType={field.input_field_type} data={data} setData={setData} />
+              <div className="w-full flex flex-col gap-1">
+                <Label className="text-lg">{field.label.en}</Label>
+                {/* {field.input_field_type !== "file" && <p className="text-md">{field.description.en}</p>} */}
+                <InputsField
+                  placeholder={field.description.en}
+                  inputName={field.input_field_id}
+                  inputType={field.input_field_type}
+                  data={data}
+                  setData={setData}
+                />
               </div>
             )
         )}

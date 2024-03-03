@@ -77,50 +77,6 @@ export const Bank1: BankConfig = {
       input_field_type: "text",
     },
     {
-      input_field_id: "mobile_otp",
-      label: {
-        en: "Enter Mobile Number OTP",
-        ar: "",
-      },
-      description: {
-        en: "We sent you a 4 digit OTP, please check and enter below",
-        ar: "",
-      },
-      rank: 1,
-      group: 2,
-      group_name: {
-        en: "Enter OTP",
-        ar: "",
-      },
-      group_description: {
-        en: "Enter the OTP",
-        ar: "",
-      },
-      input_field_type: "number",
-    },
-    {
-      input_field_id: "email_otp",
-      label: {
-        en: "Enter Email OTP",
-        ar: "الهاتف",
-      },
-      description: {
-        en: "We sent you a 4 digit OTP, please check and enter below",
-        ar: "",
-      },
-      rank: 2,
-      group: 2,
-      group_name: {
-        en: "Enter OTP",
-        ar: "",
-      },
-      group_description: {
-        en: "Enter the OTP",
-        ar: "",
-      },
-      input_field_type: "number",
-    },
-    {
       input_field_id: "select_brand",
       label: {
         en: "Select Brand",
@@ -131,7 +87,7 @@ export const Bank1: BankConfig = {
         ar: "",
       },
       rank: 1,
-      group: 3,
+      group: 2,
       group_name: {
         en: "Car Details",
         ar: "",
@@ -153,7 +109,7 @@ export const Bank1: BankConfig = {
         ar: "",
       },
       rank: 2,
-      group: 3,
+      group: 2,
       group_name: {
         en: "Car Details",
         ar: "",
@@ -175,7 +131,7 @@ export const Bank1: BankConfig = {
         ar: "",
       },
       rank: 3,
-      group: 3,
+      group: 2,
       group_name: {
         en: "Car Details",
         ar: "",
@@ -197,7 +153,7 @@ export const Bank1: BankConfig = {
         ar: "",
       },
       rank: 4,
-      group: 3,
+      group: 2,
       group_name: {
         en: "Car Details",
         ar: "",
@@ -219,7 +175,7 @@ export const Bank1: BankConfig = {
         ar: "",
       },
       rank: 5,
-      group: 3,
+      group: 2,
       group_name: {
         en: "Car Details",
         ar: "",
@@ -241,7 +197,7 @@ export const Bank1: BankConfig = {
         ar: "",
       },
       rank: 1,
-      group: 4,
+      group: 3,
       group_name: {
         en: "Customer Documents",
         ar: "",
@@ -263,7 +219,7 @@ export const Bank1: BankConfig = {
         ar: "",
       },
       rank: 2,
-      group: 4,
+      group: 3,
       group_name: {
         en: "Customer Documents",
         ar: "",
@@ -285,7 +241,7 @@ export const Bank1: BankConfig = {
         ar: "",
       },
       rank: 3,
-      group: 4,
+      group: 3,
       group_name: {
         en: "Customer Documents",
         ar: "",

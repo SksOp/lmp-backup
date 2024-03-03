@@ -1,4 +1,4 @@
-import { Bank1, Bank2, Bank3, BankConfig } from "./bank-configs";
+import { Bank1, BankConfig } from "./bank-configs";
 
 export * from "./bank-configs";
 
@@ -16,12 +16,12 @@ export const banks: Bank[] = [
     config: Bank1,
     image: "https://1000logos.net/wp-content/uploads/2021/06/HDFC-Bank-emblem.png",
   },
-  // {
-  //   logo: "",
-  //   name: "SBI",
-  //   config: Bank2,
-  //   image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/SBI-logo.svg/2048px-SBI-logo.svg.png",
-  // },
+  {
+    logo: "",
+    name: "SBI",
+    config: Bank1,
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/SBI-logo.svg/2048px-SBI-logo.svg.png",
+  },
   // {
   //   logo: "",
   //   name: "ICICI Bank",

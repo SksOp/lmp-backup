@@ -28,7 +28,7 @@ export const Honda: CarModel[] = [
     variants: ["ZX CVT Petrol", "ZX Diesel"],
   },
   {
-    name: "Civic Type R",
+    name: "Civic",
     logo: "/assets/car.png",
     variants: ["V CVT Petrol", "ZX CVT Petrol", "ZX Diesel"],
   },

@@ -11,6 +11,7 @@ interface InputFieldProp {
   inputName: string;
   inputType: string;
   data: any;
+  placeholder?: string;
   setData: (data: object) => void;
 }
 interface Option {
@@ -87,7 +88,7 @@ function AccordionAndRadio(props: RadioInput) {
     </RadioGroup>
   );
 }
-function InputsField({ inputName, inputType, data, setData }: InputFieldProp) {
+function InputsField({ inputName, inputType, data, setData, placeholder }: InputFieldProp) {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setData({ ...data, [e.target.name]: e.target.value });
   };
@@ -125,7 +126,7 @@ function InputsField({ inputName, inputType, data, setData }: InputFieldProp) {
     case "file":
       return <InputFile name={inputName} onChange={handleChange} label="Press to Upload file here" description="Max Size: 50MB" />;
     default:
-      return <Input name={inputName} type={inputType} onChange={handleChange} />;
+      return <Input name={inputName} type={inputType} placeholder={placeholder} onChange={handleChange} />;
   }
 }
 
