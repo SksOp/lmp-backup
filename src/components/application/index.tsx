@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 import Selectbank from "./selectbank";
-import GroupOne from "./groupOne";
 import { Bank, BankConfig, banks } from "@/configs";
 import ProgressBar from "./progressBar";
-import GroupTwo from "./groupTwo";
-import GroupThree from "./groupThree";
 import Success from "./success";
+import Group from "./group";
 
 function ApplicationDrawerContent() {
   const [data, setdata] = useState({});
@@ -21,9 +19,9 @@ function ApplicationDrawerContent() {
         {group === 0 && (
           <Selectbank banks={banks} selectedBank={bank} setBank={(bank: Bank) => setBank(bank)} setGroup={setGroup} setData={setdata} data={data} />
         )}
-        {group === 1 && <GroupOne config={bank.config} group={1} setGroup={setGroup} setData={setdata} data={data} />}
-        {group === 2 && <GroupTwo config={bank.config} group={2} setGroup={setGroup} setData={setdata} data={data} />}
-        {group === 3 && <GroupThree config={bank.config} group={3} setGroup={setGroup} setData={setdata} data={data} />}
+        {group === 1 && <Group config={bank.config} group={1} setGroup={setGroup} setData={setdata} data={data} />}
+        {group === 2 && <Group config={bank.config} group={2} setGroup={setGroup} setData={setdata} data={data} />}
+        {group === 3 && <Group config={bank.config} group={3} setGroup={setGroup} setData={setdata} data={data} />}
         {group === 4 && <Success />}
       </div>
     </div>

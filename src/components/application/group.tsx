@@ -1,11 +1,10 @@
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { BankConfig } from "@/configs";
 import React from "react";
+import { Label } from "../ui/label";
+import { Input } from "../ui/input";
+import { Button } from "../ui/button";
 
-function GroupTwo({
+function Group({
   config,
   group,
   setGroup,
@@ -18,15 +17,17 @@ function GroupTwo({
   setData: (data: object) => void;
   data: object;
 }) {
-  const handleOnClick = () => {
-    setGroup(3);
-  };
-  const handleBackClick = () => {
-    setGroup(1);
-  };
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setData({ ...data, [e.target.name]: e.target.value });
-  };
+
+    const handleOnClick = () => {
+        setGroup(group + 1);
+      };
+      const handleBackClick = () => {
+        setGroup(group - 1);
+      };
+    
+      const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setData({ ...data, [e.target.name]: e.target.value });
+      };
 
   return (
     <>
@@ -52,4 +53,4 @@ function GroupTwo({
   );
 }
 
-export default GroupTwo;
+export default Group;
