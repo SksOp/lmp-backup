@@ -15,17 +15,17 @@ export const Bank1: BankConfig = {
         en: "Customer National ID/Iqama Number",
         ar: "",
       },
-      description:{
+      description: {
         en: "Enter the Customer National ID/Iqama Number",
-        ar: ""
+        ar: "",
       },
       rank: 1,
       group: 1,
       group_name: {
-        en: "Customer Details", 
+        en: "Customer Details",
         ar: "",
       },
-      group_description:{
+      group_description: {
         en: "Enter the Customer Details",
         ar: "",
       },
@@ -37,18 +37,18 @@ export const Bank1: BankConfig = {
         en: "Customer Mobile Number",
         ar: "",
       },
-      description:{
+      description: {
         en: "Enter the Customer Mobile Number",
-        ar: ""
+        ar: "",
       },
-      group_description:{
+      group_description: {
         en: "Enter the Customer Details",
         ar: "",
       },
       rank: 2,
       group: 1,
       group_name: {
-        en: "Customer Details", 
+        en: "Customer Details",
         ar: "",
       },
       input_field_type: "phone",
@@ -59,18 +59,18 @@ export const Bank1: BankConfig = {
         en: "Customer Email",
         ar: "",
       },
-      description:{
+      description: {
         en: "Enter the Customer Email Address",
-        ar: ""
+        ar: "",
       },
-      
+
       rank: 3,
       group: 1,
       group_name: {
-        en: "Customer Details", 
+        en: "Customer Details",
         ar: "",
       },
-      group_description:{
+      group_description: {
         en: "Enter the Customer Details",
         ar: "",
       },
@@ -82,17 +82,17 @@ export const Bank1: BankConfig = {
         en: "Enter Mobile Number OTP",
         ar: "",
       },
-      description:{
+      description: {
         en: "We sent you a 4 digit OTP, please check and enter below",
-        ar: ""
+        ar: "",
       },
       rank: 1,
       group: 2,
       group_name: {
-        en: "Enter OTP", 
+        en: "Enter OTP",
         ar: "",
       },
-      group_description:{
+      group_description: {
         en: "Enter the OTP",
         ar: "",
       },
@@ -104,17 +104,17 @@ export const Bank1: BankConfig = {
         en: "Enter Email OTP",
         ar: "الهاتف",
       },
-      description:{
+      description: {
         en: "We sent you a 4 digit OTP, please check and enter below",
-        ar: ""
+        ar: "",
       },
       rank: 2,
       group: 2,
       group_name: {
-        en: "Enter OTP", 
+        en: "Enter OTP",
         ar: "",
       },
-      group_description:{
+      group_description: {
         en: "Enter the OTP",
         ar: "",
       },
@@ -126,17 +126,17 @@ export const Bank1: BankConfig = {
         en: "Select Brand",
         ar: "",
       },
-      description:{
+      description: {
         en: "Please select your car Brand",
-        ar: ""
+        ar: "",
       },
       rank: 1,
       group: 3,
       group_name: {
-        en: "Car Details", 
+        en: "Car Details",
         ar: "",
       },
-      group_description:{
+      group_description: {
         en: "Enter the Car Details",
         ar: "",
       },
@@ -148,17 +148,17 @@ export const Bank1: BankConfig = {
         en: "Select Model",
         ar: "",
       },
-      description:{
+      description: {
         en: "Please select your car model",
-        ar: ""
+        ar: "",
       },
       rank: 2,
       group: 3,
       group_name: {
-        en: "Car Details", 
+        en: "Car Details",
         ar: "",
       },
-      group_description:{
+      group_description: {
         en: "Enter the Car Details",
         ar: "",
       },
@@ -170,21 +170,21 @@ export const Bank1: BankConfig = {
         en: "Select varient",
         ar: "",
       },
-      description:{
+      description: {
         en: "Please select your car varient",
-        ar: ""
+        ar: "",
       },
       rank: 3,
       group: 3,
       group_name: {
-        en: "Car Details", 
+        en: "Car Details",
         ar: "",
       },
-      group_description:{
+      group_description: {
         en: "Enter the Car Details",
         ar: "",
       },
-      input_field_type: "text",
+      input_field_type: "radio",
     },
     {
       input_field_id: "cost",
@@ -192,17 +192,17 @@ export const Bank1: BankConfig = {
         en: "Cost",
         ar: "",
       },
-      description:{
+      description: {
         en: "Enter the cost of the car",
-        ar: ""
+        ar: "",
       },
       rank: 4,
       group: 3,
       group_name: {
-        en: "Car Details", 
+        en: "Car Details",
         ar: "",
       },
-      group_description:{
+      group_description: {
         en: "Enter the Car Details",
         ar: "",
       },
@@ -214,17 +214,17 @@ export const Bank1: BankConfig = {
         en: "Additional Details",
         ar: "",
       },
-      description:{
+      description: {
         en: "Enter additional details about your car",
-        ar: ""
+        ar: "",
       },
       rank: 5,
       group: 3,
       group_name: {
-        en: "Car Details", 
+        en: "Car Details",
         ar: "",
       },
-      group_description:{
+      group_description: {
         en: "Enter the Car Details",
         ar: "",
       },
@@ -236,17 +236,17 @@ export const Bank1: BankConfig = {
         en: "Driving License",
         ar: "",
       },
-      description:{
+      description: {
         en: "Press to upload file here",
-        ar: ""
+        ar: "",
       },
       rank: 1,
       group: 4,
       group_name: {
-        en: "Customer Documents", 
+        en: "Customer Documents",
         ar: "",
       },
-      group_description:{
+      group_description: {
         en: "Enter the Car Details",
         ar: "",
       },
@@ -258,17 +258,17 @@ export const Bank1: BankConfig = {
         en: "Driving License",
         ar: "",
       },
-      description:{
+      description: {
         en: "Press to upload file here",
-        ar: ""
+        ar: "",
       },
       rank: 2,
       group: 4,
       group_name: {
-        en: "Customer Documents", 
+        en: "Customer Documents",
         ar: "",
       },
-      group_description:{
+      group_description: {
         en: "Enter the Car Details",
         ar: "",
       },
@@ -280,17 +280,17 @@ export const Bank1: BankConfig = {
         en: "Driving License",
         ar: "",
       },
-      description:{
+      description: {
         en: "Press to upload file here",
-        ar: ""
+        ar: "",
       },
       rank: 3,
       group: 4,
       group_name: {
-        en: "Customer Documents", 
+        en: "Customer Documents",
         ar: "",
       },
-      group_description:{
+      group_description: {
         en: "Enter the Car Details",
         ar: "",
       },
