@@ -25,15 +25,20 @@ function Group({
   setData,
   data,
   selectedBank,
+  setRequestOtp,
+  requestOtp,
 }: {
   config: BankConfig | null;
   group: number;
-  setGroup: (group: number) => void;
-  setData: (data: object) => void;
+  setGroup: React.Dispatch<React.SetStateAction<number>>;
+  setData: React.Dispatch<React.SetStateAction<object>>;
   data: object;
   selectedBank: Bank;
+  requestOtp: { next: boolean; view: boolean };
+  setRequestOtp: React.Dispatch<React.SetStateAction<{ next: boolean; view: boolean }>>;
 }) {
-  const handleOnClick = () => {
+  const handleNextClick = () => {
+    if (requestOtp.next) setRequestOtp({ next: false, view: true });
     setGroup(group + 1);
   };
   const handleBackClick = () => {
@@ -49,45 +54,38 @@ function Group({
   return (
     <>
       <div className="flex flex-col gap-4">
-        {group >= 2 && (
-          <Card>
-            <CardHeader className="flex flex-row gap-2 py-3 pb-0">
-              <LeadLogo imageName={"Camer Will"} />
-              <CardTitle className="text-md">Camerson Williamson</CardTitle>
-              <Icon icon="mage:verified-check-fill" className="w-6 h-6 text-primary" />
-            </CardHeader>
-            <CardContent className="py-3 flex flex-col gap-3">
-              <DetailViewer title="Bank" value={selectedBank.name} />
-              <DetailViewer title="Iqama Number" value="XXXXXXXXXXXX" />
-              <DetailViewer title="Driving License" value="XXXXXXXXXXXX" />
-            </CardContent>
-          </Card>
-        )}
+        {group >= 2 && <RenderCard name={selectedBank.name} />}
         <h3 className="text-3xl font-bold pb-3 ">{groupFinder?.group_name.en}</h3>
       </div>
 
       {config &&
-        config.input_fields?.map(
-          (field) =>
-            field.group === group && (
-              <div className="w-full flex flex-col gap-1">
-                <Label className="text-lg">{field.label.en}</Label>
-                {/* {field.input_field_type !== "file" && <p className="text-md">{field.description.en}</p>} */}
-                <InputsField
-                  placeholder={field.description.en}
-                  inputName={field.input_field_id}
-                  inputType={field.input_field_type}
-                  data={data}
-                  setData={setData}
-                />
-              </div>
-            )
-        )}
+        config.input_fields?.map((field) => {
+          if (field.group !== group) return null;
+          field.verificationRequired &&
+            setRequestOtp((data) => {
+              // asumming the data.view is always false for this scenerio
+              return { ...data, next: true };
+            });
+          //  TODO handle Bussiness logic for otp Verification
+          return (
+            <div className="w-full flex flex-col gap-1">
+              <Label className="text-lg">{field.label.en}</Label>
+              {/* {field.input_field_type !== "file" && <p className="text-md">{field.description.en}</p>} */}
+              <InputsField
+                placeholder={field.description.en}
+                inputName={field.input_field_id}
+                inputType={field.input_field_type}
+                data={data}
+                setData={setData}
+              />
+            </div>
+          );
+        })}
       <div className="flex absolute bottom-2 w-full gap-3 left-1/2 -translate-x-1/2 p-3 ">
         <Button variant="outline" className="flex-grow " onClick={() => handleBackClick()}>
           Back
         </Button>
-        <Button variant="default" className="flex-grow" onClick={() => handleOnClick()}>
+        <Button variant="default" className="flex-grow" onClick={() => handleNextClick()}>
           Continue
         </Button>
       </div>
@@ -96,3 +94,18 @@ function Group({
 }
 
 export default Group;
+
+const RenderCard = ({ name }: { name: string }) => (
+  <Card>
+    <CardHeader className="flex flex-row gap-2 py-3 pb-0">
+      <LeadLogo imageName={"Camer Will"} />
+      <CardTitle className="text-md">Camerson Williamson</CardTitle>
+      <Icon icon="mage:verified-check-fill" className="w-6 h-6 text-primary" />
+    </CardHeader>
+    <CardContent className="py-3 flex flex-col gap-3">
+      <DetailViewer title="Bank" value={name} />
+      <DetailViewer title="Iqama Number" value="XXXXXXXXXXXX" />
+      <DetailViewer title="Driving License" value="XXXXXXXXXXXX" />
+    </CardContent>
+  </Card>
+);
