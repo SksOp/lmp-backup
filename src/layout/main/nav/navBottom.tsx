@@ -1,4 +1,5 @@
 import ApplicationDrawerContent from "@/components/application";
+import HomeIcon, { LeadIcon } from "@/components/svgs/icon";
 import { Button } from "@/components/ui/button";
 import {
   Drawer,
@@ -17,7 +18,10 @@ function NavBottom() {
   return (
     <nav className="w-full h-14 bg-background flex justify-between  items-center z-10 px-3 py-5 fixed bottom-0  shadow-[0_-8px_15px_-8px_rgba(0,0,0,0.2)] border-t-2">
       <Link to={paths.home}>
-        <Icon icon="solar:home-2-bold" className="h-8 w-8" />
+        <div className="flex flex-col justify-center items-center p-2">
+      <HomeIcon />
+      <p className="text-black">Home</p>
+        </div>
       </Link>
 
       <Drawer>
@@ -29,7 +33,11 @@ function NavBottom() {
         </DrawerContent>
       </Drawer>
       <Link to={paths.allLead}>
-        <Icon icon="fluent:people-20-regular" className="h-7 w-7" />
+      <div className="flex flex-col justify-center items-center p-2">
+      <LeadIcon />
+      <p className="text-black">Leads</p>
+        </div>
+        
       </Link>
     </nav>
   );

@@ -168,7 +168,7 @@ const PlatformCard = ({
   );
 };
 
-function OtpView({ otp, setOtp, onOtpSubmit }: any) {
+export function OtpView({ otp, setOtp, onOtpSubmit }: any) {
   const otpLength = 6;
   return (
     <div className="p-6 max-w-xl  m-auto flex flex-col gap-2">

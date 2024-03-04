@@ -1,4 +1,4 @@
-import { CarModel, Honda, Jeep } from "./models";
+import { Audi, BMW, CarModel, Honda, Jeep, Mercedes, Nisan, Renault } from "./models";
 
 export interface Brand {
   name: string;
@@ -13,9 +13,9 @@ export const brands: Brand[] = [
     models: Jeep,
   },
   {
-    name: "nishan",
+    name: "nisan",
     logo: "https://upload.wikimedia.org/wikipedia/commons/8/8c/Nissan_logo.png",
-    models: Honda,
+    models: Nisan,
   },
   {
     name: "Honda",
@@ -24,27 +24,27 @@ export const brands: Brand[] = [
   },
   {
     name: "Volvo",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/8/8c/Nissan_logo.png",
+    logo: "https://www.carlogos.org/logo/Volvo-logo-2014-1920x1080.png",
     models: Honda,
   },
   {
     name: "Mercedes",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/BMW.svg/1015px-BMW.svg.png",
-    models: Honda,
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Mercedes-Logo.svg/1024px-Mercedes-Logo.svg.png",
+    models: Mercedes,
   },
-  //   {
-  //     name: "Audi",
-  //     logo: "https://www.freeiconspng.com/thumbs/honda-logo-png/honda-logo-png-picture-20.png",
-  //     models: Honda,
-  //   },
-  //   {
-  //     name: "Renault",
-  //     logo: "https://www.freeiconspng.com/thumbs/honda-logo-png/honda-logo-png-picture-20.png",
-  //     models: Honda,
-  //   },
+    {
+      name: "Audi",
+      logo: "https://static.wixstatic.com/media/f2bf43_fd166301e7aa405b980f5b38a7b256c9~mv2.png",
+      models: Audi,
+    },
+    {
+      name: "Renault",
+      logo: "https://purepng.com/public/uploads/large/purepng.com-renault-logorenaultgroupe-renaultautomobile-manufacturerrenault-automobilesrenault-logo-17015276106938bcdq.png",
+      models: Renault,
+    },
   {
     name: "BMW",
     logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/BMW.svg/1015px-BMW.svg.png",
-    models: Honda,
+    models: BMW,
   },
 ];
