@@ -7,6 +7,7 @@ import { Progress } from "./ui/progress";
 import { cn } from "@/lib/utils";
 import { LeadLogo } from "./leadLogo";
 import { MinimalLead } from "@/types";
+import Call, { Mail, SMS, Whatsapp } from "./svgs/contacts";
 
 export interface Props {
   className?: ClassValue;
@@ -50,10 +51,20 @@ function LeadCard({ className, data, hideIcons, noHoverEffect }: Props) {
       <CardFooter className="flex justify-between">
         {!hideIcons && (
           <>
-            <Icon icon="ion:call-outline" className="w-16 h-16 p-4 bg-secondary rounded-full" />
-            <Icon icon="akar-icons:whatsapp-fill" className="w-16 h-16 p-4 bg-secondary rounded-full" />
-            <Icon icon="material-symbols-light:alternate-email" className="w-16 h-16 p-4 bg-secondary rounded-full" />
-            <Icon icon="ic:baseline-sms" className="w-16 h-16 p-4 bg-secondary rounded-full" />
+
+            <div className=" p-4 bg-secondary rounded-full items-center justify-center">
+            <Call  />
+            </div>
+            <div className=" p-4 bg-secondary rounded-full items-center justify-center">
+            <Whatsapp  />
+            </div>
+            <div className=" p-4 bg-secondary rounded-full items-center justify-center">
+            <Mail  />
+            </div>
+            <div className=" p-4 bg-secondary rounded-full items-center justify-center">
+            <SMS  />
+            </div>
+
           </>
         )}
       </CardFooter>

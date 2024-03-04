@@ -1,6 +1,6 @@
 import { BankConfig } from "./types";
 
-export const Bank1: BankConfig = {
+export const Bank2: BankConfig = {
   state_id: 1,
   state_name: {
     en: "Initiate Application",
@@ -75,7 +75,6 @@ export const Bank1: BankConfig = {
         ar: "",
       },
       input_field_type: "text",
-      verificationRequired: true,
     },
     {
       input_field_id: "select_brand",

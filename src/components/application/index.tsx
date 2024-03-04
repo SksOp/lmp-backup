@@ -4,6 +4,7 @@ import { Bank, BankConfig, banks } from "@/configs";
 import ProgressBar from "./progressBar";
 import Success from "./success";
 import Group from "./group";
+import GroupOtp from "./groupOtp";
 
 function ApplicationDrawerContent() {
   const [data, setdata] = useState({});
@@ -22,8 +23,8 @@ function ApplicationDrawerContent() {
         {group === 1 && <Group config={bank.config} selectedBank={bank} group={1} setGroup={setGroup} setData={setdata} data={data} />}
         {group === 2 && <Group config={bank.config} selectedBank={bank} group={2} setGroup={setGroup} setData={setdata} data={data} />}
         {group === 3 && <Group config={bank.config} selectedBank={bank} group={3} setGroup={setGroup} setData={setdata} data={data} />}
-        {/* {group === 4 && <Group config={bank.config} selectedBank={bank} group={4} setGroup={setGroup} setData={setdata} data={data} />} */}
-        {group === 4 && <Success />}
+        {group === 4 && <GroupOtp group={4} setGroup={setGroup} setData={setdata} data={data} />} 
+        {group === 5 && <Success />}
       </div>
     </div>
   );
