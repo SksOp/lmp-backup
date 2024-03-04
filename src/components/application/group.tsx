@@ -100,3 +100,9 @@ const RenderCard = ({ name }: { name: string }) => (
     </CardContent>
   </Card>
 );
+
+const VehicleCard = ({bank,vechicle,cost}:{bank:string,vechicle:string,cost:string}) => (
+  <Card>
+    
+  </Card>
+);
