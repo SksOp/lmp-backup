@@ -35,6 +35,6 @@ export type AuthContextType = {
   // auth provider context itself from where we are calling this function
   requestResetPasswordWithEmail: () => Promise<boolean>;
   requestResetPasswordWithPhone: () => Promise<boolean>;
-  validateOtp: (otp: string, platform: Platform) => Promise<boolean>;
+  validateOtp: (otp: number, platform: Platform) => Promise<boolean>;
   resetPassword: (password: string) => Promise<boolean>;
 };
