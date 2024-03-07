@@ -1,5 +1,5 @@
 import { Bank, BankConfig } from "@/configs";
-import React from "react";
+import React, { useEffect } from "react";
 import { Label } from "../ui/label";
 import { Button } from "../ui/button";
 import { LeadLogo } from "../leadLogo";
@@ -38,9 +38,17 @@ function Group({
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setData({ ...data, [e.target.name]: e.target.value });
   };
-   
 
   const groupFinder = config?.input_fields.find((field) => field.group === group);
+
+  useEffect(() => {
+    const isVerificationRequired = config?.input_fields.find((field) => field.group === group && field.verificationRequired === true);
+    if (isVerificationRequired) {
+      setRequestOtp({ next: true, view: false });
+    } else {
+      setRequestOtp({ next: false, view: false });
+    }
+  }, [config, group, setRequestOtp]);
 
   return (
     <>
@@ -50,13 +58,9 @@ function Group({
       </div>
 
       {config &&
-        config.input_fields?.map((field) => {
+        config.input_fields.map((field) => {
           if (field.group !== group) return null;
-          field.verificationRequired &&
-            setRequestOtp((data) => {
-              // asumming the data.view is always false for this scenerio
-              return { ...data, next: true };
-            });
+
           //  TODO handle Bussiness logic for otp Verification
           return (
             <div className="w-full flex flex-col gap-1">
@@ -101,8 +105,4 @@ const RenderCard = ({ name }: { name: string }) => (
   </Card>
 );
 
-const VehicleCard = ({bank,vechicle,cost}:{bank:string,vechicle:string,cost:string}) => (
-  <Card>
-    
-  </Card>
-);
+const VehicleCard = ({ bank, vechicle, cost }: { bank: string; vechicle: string; cost: string }) => <Card></Card>;

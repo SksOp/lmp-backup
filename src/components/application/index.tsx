@@ -26,8 +26,8 @@ function ApplicationDrawerContent() {
       <p className="text-center text-xl font-semibold">New Leasing Application</p>
       <p className="text-center text-sm text-foreground/70">Initiate the application with customer/vehicle details</p>
       <ProgressBar group={group} />
-      {requestOtp.view ? (<></>
-        // <GroupOtp group={group} setGroup={setGroup} setData={setData} data={data} />
+      {requestOtp.view ? (
+        <GroupOtp group={group} setGroup={setGroup} setData={setData} data={data} />
       ) : (
         <div className="flex flex-col gap-4 h-[70vh] overflow-auto pb-10 px-3">
           {group === 0 && (
