@@ -7,26 +7,10 @@ import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 import { DetailViewer } from "../leadCard";
 import { Icon } from "@iconify/react";
 import InputsField from "./inputsField";
+import { GroupProps } from "./type";
 
-function Group({
-  config,
-  group,
-  setGroup,
-  setData,
-  data,
-  selectedBank,
-  setRequestOtp,
-  requestOtp,
-}: {
-  config: BankConfig | null;
-  group: number;
-  setGroup: React.Dispatch<React.SetStateAction<number>>;
-  setData: React.Dispatch<React.SetStateAction<object>>;
-  data: object;
-  selectedBank: Bank;
-  requestOtp: { next: boolean; view: boolean };
-  setRequestOtp: React.Dispatch<React.SetStateAction<{ next: boolean; view: boolean }>>;
-}) {
+function Group(props: GroupProps) {
+  const { config, group, setGroup, setData, data, selectedBank, setRequestOtp, requestOtp } = props;
   const handleNextClick = () => {
     if (requestOtp.next) setRequestOtp({ next: false, view: true });
     setGroup(group + 1);
