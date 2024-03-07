@@ -74,7 +74,7 @@ export function AuthProvider({ children }: Props) {
     return true;
   }, []);
 
-  const validateOtp = useCallback(async (otp: string, platform: Platform) => {
+  const validateOtp = useCallback(async (otp: number, platform: Platform) => {
     // TODO : Call the reset password API
     return true;
   }, []);
@@ -96,16 +96,7 @@ export function AuthProvider({ children }: Props) {
       validateOtp,
       resetPassword,
     }),
-    [
-      state.loading,
-      state.user,
-      login,
-      logout,
-      requestResetPasswordWithEmail,
-      requestResetPasswordWithPhone,
-      validateOtp,
-      resetPassword,
-    ]
+    [state.loading, state.user, login, logout, requestResetPasswordWithEmail, requestResetPasswordWithPhone, validateOtp, resetPassword]
   );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

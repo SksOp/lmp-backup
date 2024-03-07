@@ -24,7 +24,7 @@ export interface User {
   role: "dealer" | "customer";
 }
 export type Platform = "email" | "phone";
-export type AuthContextType = {
+export interface AuthContextType {
   user: User | null;
   loading: boolean;
   authenticated: boolean;
@@ -37,4 +37,4 @@ export type AuthContextType = {
   requestResetPasswordWithPhone: () => Promise<boolean>;
   validateOtp: (otp: number, platform: Platform) => Promise<boolean>;
   resetPassword: (password: string) => Promise<boolean>;
-};
+}
