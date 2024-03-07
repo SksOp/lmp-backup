@@ -18,11 +18,6 @@ export const brands: Brand[] = [
     models: Honda,
   },
   {
-    name: "Volvo",
-    logo: "https://www.carlogos.org/logo/Volvo-logo-2014-1920x1080.png",
-    models: Honda,
-  },
-  {
     name: "Mercedes",
     logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Mercedes-Logo.svg/1024px-Mercedes-Logo.svg.png",
     models: Mercedes,

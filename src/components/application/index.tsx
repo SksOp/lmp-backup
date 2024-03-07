@@ -30,9 +30,7 @@ function ApplicationDrawerContent() {
         <GroupOtp group={group} {...props} />
       ) : (
         <div className="flex flex-col gap-4 h-[70vh] overflow-auto pb-10 px-3">
-          {group === 0 && (
-            <Selectbank banks={banks} selectedBank={bank} setBank={(bank: Bank) => setBank(bank)} setGroup={setGroup} setData={setData} data={data} />
-          )}
+          {group === 0 && <Selectbank banks={banks} selectedBank={bank} setBank={(bank: Bank) => setBank(bank)} setGroup={setGroup} />}
           {group === 1 && <Group group={1} {...props} />}
           {group === 2 && <Group group={2} {...props} />}
           {group === 3 && <Group group={3} {...props} />}

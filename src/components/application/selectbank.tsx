@@ -17,21 +17,16 @@ const BankCard = ({ children, bank, onClick }: { children: React.ReactNode; bank
 function Selectbank({
   setBank,
   setGroup,
-  data,
-  setData,
   banks,
   selectedBank,
 }: {
   setBank: (config: Bank) => void;
   setGroup: (group: number) => void;
-  data: object;
-  setData: (data: any) => void;
   banks: Bank[];
   selectedBank: Bank;
 }) {
   const handleSelectBank = (bank: Bank) => {
     setBank(bank);
-    setData({ ...data, bank });
   };
   return (
     <>
