@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Selectbank from "./selectbank";
-import { Bank, BankConfig, banks } from "@/configs";
+import { Bank, banks } from "@/configs";
 import ProgressBar from "./progressBar";
 import Success from "./success";
 import Group from "./group";
