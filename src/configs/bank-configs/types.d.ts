@@ -10,9 +10,9 @@ export interface BankConfig {
 
 type InputFields = {
   input_field_id: string; //customer_iqama_id
-
+  isOptional?: boolean;
   label: LangOptions;
-  description?: LangOptions;
+  description: LangOptions;
   rank: number;
   group: number;
   group_name: LangOptions;
@@ -40,12 +40,11 @@ interface Datefield {
   };
 }
 
-type RadioField = {
+interface RadioField {
   input_field_type: "radio";
   options?: LangOptions[];
-};
+}
 
 interface RadioMultimedia {
   input_field_type: "radio_multimedia";
-  options?: LangOptions[];
 }

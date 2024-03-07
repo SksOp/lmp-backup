@@ -1,10 +1,5 @@
-import { Audi, BMW, CarModel, Honda, Jeep, Mercedes, Nisan, Renault } from "./models";
-
-export interface Brand {
-  name: string;
-  logo: string;
-  models: CarModel[];
-}
+import { Audi, BMW, Honda, Jeep, Mercedes, Nisan, Renault } from "./models";
+import { Brand } from "./types";
 
 export const brands: Brand[] = [
   {
@@ -32,16 +27,16 @@ export const brands: Brand[] = [
     logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Mercedes-Logo.svg/1024px-Mercedes-Logo.svg.png",
     models: Mercedes,
   },
-    {
-      name: "Audi",
-      logo: "https://static.wixstatic.com/media/f2bf43_fd166301e7aa405b980f5b38a7b256c9~mv2.png",
-      models: Audi,
-    },
-    {
-      name: "Renault",
-      logo: "https://purepng.com/public/uploads/large/purepng.com-renault-logorenaultgroupe-renaultautomobile-manufacturerrenault-automobilesrenault-logo-17015276106938bcdq.png",
-      models: Renault,
-    },
+  {
+    name: "Audi",
+    logo: "https://static.wixstatic.com/media/f2bf43_fd166301e7aa405b980f5b38a7b256c9~mv2.png",
+    models: Audi,
+  },
+  {
+    name: "Renault",
+    logo: "https://purepng.com/public/uploads/large/purepng.com-renault-logorenaultgroupe-renaultautomobile-manufacturerrenault-automobilesrenault-logo-17015276106938bcdq.png",
+    models: Renault,
+  },
   {
     name: "BMW",
     logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/BMW.svg/1015px-BMW.svg.png",

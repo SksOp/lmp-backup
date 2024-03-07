@@ -15,6 +15,10 @@ export const Bank2: BankConfig = {
         en: "Vehicle Registration Number",
         ar: "رقم تسجيل المركبة",
       },
+      description: {
+        en: "Enter the Vehicle Registration Number",
+        ar: "أدخل رقم تسجيل المركبة",
+      },
       rank: 1,
       group: 1,
       group_name: {
@@ -28,10 +32,14 @@ export const Bank2: BankConfig = {
       input_field_type: "text",
     },
     {
-      input_field_id: "brand",
+      input_field_id: "select_brand",
       label: {
         en: "Brand",
         ar: "العلامة التجارية",
+      },
+      description: {
+        en: "Enter the Vehicle Brand",
+        ar: "أدخل علامة المركبة",
       },
       rank: 2,
       group: 1,
@@ -43,15 +51,41 @@ export const Bank2: BankConfig = {
         en: "Enter the Vehicle Details",
         ar: "أدخل تفاصيل المركبة",
       },
-      input_field_type: "text",
+      input_field_type: "radio_multimedia",
     },
     {
-      input_field_id: "variant",
+      input_field_id: "select_model",
+      label: {
+        en: "Select Model",
+        ar: "",
+      },
+      description: {
+        en: "Please select your car model",
+        ar: "",
+      },
+      rank: 3,
+      group: 1,
+      group_name: {
+        en: "Car Details",
+        ar: "",
+      },
+      group_description: {
+        en: "Enter the Car Details",
+        ar: "",
+      },
+      input_field_type: "radio_multimedia",
+    },
+    {
+      input_field_id: "select_varient",
       label: {
         en: "Variant",
         ar: "المتغير",
       },
-      rank: 3,
+      description: {
+        en: "Please select your car varient",
+        ar: "",
+      },
+      rank: 4,
       group: 1,
       group_name: {
         en: "Vehicle Details",
@@ -61,7 +95,7 @@ export const Bank2: BankConfig = {
         en: "Enter the Vehicle Details",
         ar: "أدخل تفاصيل المركبة",
       },
-      input_field_type: "text",
+      input_field_type: "radio",
     },
     {
       input_field_id: "color",
@@ -69,7 +103,11 @@ export const Bank2: BankConfig = {
         en: "Color",
         ar: "اللون",
       },
-      rank: 4,
+      description: {
+        en: "Enter the Vehicle Color",
+        ar: "أدخل لون المركبة",
+      },
+      rank: 5,
       group: 1,
       group_name: {
         en: "Vehicle Details",
@@ -87,7 +125,11 @@ export const Bank2: BankConfig = {
         en: "Addons",
         ar: "الإضافات",
       },
-      rank: 5,
+      description: {
+        en: "Enter the Vehicle Addons",
+        ar: "أدخل إضافات المركبة",
+      },
+      rank: 6,
       group: 1,
       group_name: {
         en: "Vehicle Details",
@@ -105,7 +147,11 @@ export const Bank2: BankConfig = {
         en: "Full Name",
         ar: "الاسم",
       },
-      rank: 6,
+      description: {
+        en: "Enter the Customer Full Name",
+        ar: "أدخل الاسم الكامل للعميل",
+      },
+      rank: 7,
       group: 2,
       group_name: {
         en: "Customer Details",
@@ -123,6 +169,10 @@ export const Bank2: BankConfig = {
         en: "Customer Phone",
         ar: "هاتف العميل",
       },
+      description: {
+        en: "Enter the Customer Phone Number",
+        ar: "أدخل رقم هاتف العميل",
+      },
       input_field_type: "phone",
       validationRegex: "^\\+[1-9]{1}[0-9]{3,14}$",
       verificationRequired: true,
@@ -131,7 +181,7 @@ export const Bank2: BankConfig = {
         verifyEndpoint: "/verifyPhoneOTP",
         expectedResponse: "verified",
       },
-      rank: 7,
+      rank: 8,
       group: 2,
       group_name: {
         en: "Customer Details",
@@ -148,7 +198,11 @@ export const Bank2: BankConfig = {
         en: "Alternate Phone",
         ar: "الهاتف البديل",
       },
-      rank: 8,
+      description: {
+        en: "Enter the Customer Alternate Phone Number",
+        ar: "أدخل رقم هاتف العميل البديل",
+      },
+      rank: 9,
       group: 2,
       group_name: {
         en: "Customer Details",
@@ -166,10 +220,14 @@ export const Bank2: BankConfig = {
         en: "Customer Email",
         ar: "بريد العميل الإلكتروني",
       },
+      description: {
+        en: "Enter the Customer Email Address",
+        ar: "أدخل عنوان بريد العميل الإلكتروني",
+      },
       input_field_type: "text",
       validationRegex: "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$",
       verificationRequired: false,
-      rank: 9,
+      rank: 10,
       group: 2,
       group_name: {
         en: "Customer Details",
@@ -186,6 +244,10 @@ export const Bank2: BankConfig = {
         en: "Customer Iqama ID",
         ar: "هوية إقامة العميل",
       },
+      description: {
+        en: "Enter the Customer Iqama ID",
+        ar: "أدخل هوية إقامة العميل",
+      },
       input_field_type: "text",
       validationRegex: "^[0-9]{10}$",
       apiValidation: {
@@ -193,7 +255,7 @@ export const Bank2: BankConfig = {
         dataFields: ["customer_name", "customer_dob"],
         expectedResponse: "matched",
       },
-      rank: 10,
+      rank: 11,
       group: 2,
       group_name: {
         en: "Customer Details",
@@ -214,7 +276,11 @@ export const Bank2: BankConfig = {
       date_configuration: {
         format: "YYYY-MM-DD",
       },
-      rank: 11,
+      description: {
+        en: "Enter the Customer Date of Birth",
+        ar: "أدخل تاريخ ميلاد العميل",
+      },
+      rank: 12,
       group: 2,
       group_name: {
         en: "Customer Details",
@@ -231,12 +297,17 @@ export const Bank2: BankConfig = {
         en: "Appointment Date",
         ar: "موعد الموعد",
       },
+      description: {
+        en: "Enter the Appointment Date",
+        ar: "أدخل تاريخ الموعد",
+      },
+
       input_field_type: "date",
       date_configuration: {
         format: "YYYY-MM-DDTHH:mm:ssZ",
         includeTime: true,
       },
-      rank: 12,
+      rank: 13,
       group: 2,
       group_name: {
         en: "Customer Details",
@@ -253,7 +324,11 @@ export const Bank2: BankConfig = {
         en: "Salaried or Employed",
         ar: "موظف أو مستخدم",
       },
-      rank: 13,
+      description: {
+        en: "Enter the Employment Details",
+        ar: "أدخل تفاصيل التوظيف",
+      },
+      rank: 14,
       group: 3,
       group_name: {
         en: "Employment Details",
@@ -281,7 +356,11 @@ export const Bank2: BankConfig = {
         en: "Name of the Employer",
         ar: "اسم جهة العمل",
       },
-      rank: 14,
+      description: {
+        en: "Enter the Name of the Employer",
+        ar: "أدخل اسم جهة العمل",
+      },
+      rank: 15,
       group: 3,
       group_name: {
         en: "Employment Details",
@@ -299,7 +378,11 @@ export const Bank2: BankConfig = {
         en: "Monthly Income",
         ar: "الدخل الشهري",
       },
-      rank: 15,
+      description: {
+        en: "Enter the Monthly Income",
+        ar: "أدخل الدخل الشهري",
+      },
+      rank: 16,
       group: 3,
       group_name: {
         en: "Employment Details",
@@ -317,7 +400,11 @@ export const Bank2: BankConfig = {
         en: "Any other loan?",
         ar: "أي قرض آخر",
       },
-      rank: 16,
+      description: {
+        en: "Enter the Employment Details",
+        ar: "أدخل تفاصيل التوظيف",
+      },
+      rank: 17,
       group: 3,
       group_name: {
         en: "Employment Details",
@@ -345,7 +432,11 @@ export const Bank2: BankConfig = {
         en: "Overall anticipated expense?",
         ar: "المصروف الشهري المتوقع بشكل عام",
       },
-      rank: 17,
+      description: {
+        en: "Enter the Employment Details",
+        ar: "أدخل تفاصيل التوظيف",
+      },
+      rank: 18,
       group: 3,
       group_name: {
         en: "Employment Details",

@@ -1,8 +1,4 @@
-export interface CarModel {
-  name: string;
-  logo?: string;
-  variants: string[];
-}
+import { CarModel } from "./types";
 
 export const Honda: CarModel[] = [
   {

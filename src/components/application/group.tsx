@@ -22,9 +22,6 @@ function Group(props: GroupProps) {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setData({ ...data, [e.target.name]: e.target.value });
   };
-
-  const groupFinder = config?.input_fields.find((field) => field.group === group);
-
   useEffect(() => {
     const isVerificationRequired = config?.input_fields.find((field) => field.group === group && field.verificationRequired === true);
     if (isVerificationRequired) {
@@ -33,6 +30,9 @@ function Group(props: GroupProps) {
       setRequestOtp({ next: false, view: false });
     }
   }, [config, group, setRequestOtp]);
+
+  if (!config) return null;
+  const groupFinder = config.input_fields.find((field) => field.group === group);
 
   return (
     <>

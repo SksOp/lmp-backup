@@ -1,9 +1,7 @@
-import { Bank1, BankConfig } from "./bank-configs";
-
+import { Bank1, BankConfig, Bank2 } from "./bank-configs";
 export * from "./bank-configs";
-
+export * from "./brand-configs";
 export type Bank = {
-  logo: string;
   name: string;
   config: BankConfig;
   image: string;
@@ -11,19 +9,16 @@ export type Bank = {
 
 export const banks: Bank[] = [
   {
-    logo: "",
     name: "HDFC Bank",
     config: Bank1,
     image: "https://1000logos.net/wp-content/uploads/2021/06/HDFC-Bank-emblem.png",
   },
   {
-    logo: "",
     name: "SBI",
-    config: Bank1,
+    config: Bank2,
     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/SBI-logo.svg/2048px-SBI-logo.svg.png",
   },
   {
-    logo: "",
     name: "ICICI Bank",
     config: Bank1,
     image:
