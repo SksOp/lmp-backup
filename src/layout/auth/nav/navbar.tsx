@@ -7,12 +7,7 @@ function Navbar() {
       {/* an absolute help button to keep the above h3 in middle */}
       <div className="absolute right-4 flex items-center gap-1">
         <p className="text-primary text-sm ">Help</p>
-        <Icon
-          icon="mdi:tooltip-help-outline"
-          width="1.2rem"
-          height="1.2rem"
-          className="text-primary translate-y-[2px]"
-        />
+        <Icon icon="mdi:tooltip-help-outline" width="1.2rem" height="1.2rem" className="text-primary translate-y-[2px]" />
       </div>
     </nav>
   );

@@ -10,7 +10,7 @@ import { MinimalLeads } from "@/constants/leads";
 function MainSection() {
   return (
     <>
-      <Tabs defaultValue="applications" className="w-full mb-16 px-4">
+      <Tabs defaultValue="applications" className="w-full mb-16">
         <TabsList className="grid w-full grid-cols-2 gap-1 my-4 bg-background border ">
           <TabsTrigger value="applications">Active Applications</TabsTrigger>
           <TabsTrigger value="action">Required Action</TabsTrigger>
@@ -29,9 +29,7 @@ function MainSection() {
             (lead) =>
               lead.application_id.current_actor === "Dealer" && (
                 <>
-                  <Link
-                    to={`${paths.lead}/${lead.application_id.application_id}`}
-                  >
+                  <Link to={`${paths.lead}/${lead.application_id.application_id}`}>
                     <LeadCard hideIcons data={lead} />
                   </Link>
                 </>

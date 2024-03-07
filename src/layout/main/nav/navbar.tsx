@@ -1,4 +1,4 @@
-import { NotificationIcon, ProfileIcon } from "@/components/svgs/icon";
+import { NotificationIcon, ProfileIcon, SearchIcon } from "@/components/svgs/icon";
 import { paths } from "@/router";
 import { Icon } from "@iconify/react";
 import { Link } from "react-router-dom";
@@ -10,11 +10,14 @@ function Navbar() {
         <ProfileIcon />
       </Link>
       <Link to={paths.home}>
-        <h3 className="text-lg font-bold">Tamweel</h3>
+        <h3 className="text-lg font-bold text-primary">Tamweeli</h3>
       </Link>
-      <Link to={paths.home}>
-        <NotificationIcon />
-      </Link>
+      <div className="flex gap-3">
+        <SearchIcon />
+        <Link to={paths.home}>
+          <NotificationIcon />
+        </Link>
+      </div>
     </nav>
   );
 }

@@ -2,8 +2,6 @@ import LeadCard from "@/components/leadCard";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { MinimalLeads } from "@/constants/leads";
 import { paths } from "@/router";
-import path from "path";
-import React from "react";
 import { Link } from "react-router-dom";
 
 function LeadTabs() {
@@ -20,8 +18,7 @@ function LeadTabs() {
         </Link>
       )
   );
-
-  const requiredActions = MinimalLeads.map(
+  const pending = MinimalLeads.map(
     (lead) =>
       lead.application_id.current_actor === "Dealer" && (
         <Link to={`${paths.lead}/${lead.application_id.application_id}`}>
@@ -31,11 +28,12 @@ function LeadTabs() {
   );
   return (
     <>
-      <Tabs defaultValue="all-leads" className="w-full p-4">
-        <TabsList className="grid w-full grid-cols-3 gap-1 my-4 bg-background border h-none">
-          <TabsTrigger value="all-leads">View All Leads</TabsTrigger>
-          <TabsTrigger value="active">Active Leads</TabsTrigger>
-          <TabsTrigger value="action">Required Action</TabsTrigger>
+      <Tabs defaultValue="all-leads" className="w-full">
+        <TabsList className="grid w-full grid-cols-4 gap-1 px-2 my-4 bg-background border h-none">
+          <TabsTrigger value="all-leads">All</TabsTrigger>
+          <TabsTrigger value="active">Active</TabsTrigger>
+          <TabsTrigger value="action">Pending</TabsTrigger>
+          <TabsTrigger value="action">Drafts</TabsTrigger>
         </TabsList>
         <TabsContent value="all-leads" className="flex flex-col gap-3">
           {allLeads}
@@ -44,7 +42,7 @@ function LeadTabs() {
           {activeLeads}
         </TabsContent>
         <TabsContent value="action" className="flex flex-col gap-3">
-          {requiredActions}
+          {pending}
         </TabsContent>
       </Tabs>
     </>

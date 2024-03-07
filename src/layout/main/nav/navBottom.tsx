@@ -16,11 +16,11 @@ import { Icon } from "@iconify/react";
 import { Link } from "react-router-dom";
 function NavBottom() {
   return (
-    <nav className="w-full h-14 bg-background flex justify-between  items-center z-10 px-3 py-5 fixed bottom-0  shadow-[0_-8px_15px_-8px_rgba(0,0,0,0.2)] border-t-2">
+    <footer className="w-full h-14 bg-background flex justify-between  items-center z-10 px-3 py-5 fixed bottom-0  shadow-[0_-8px_15px_-8px_rgba(0,0,0,0.2)] border-t-2">
       <Link to={paths.home}>
         <div className="flex flex-col justify-center items-center p-2">
-      <HomeIcon />
-      <p className="text-black">Home</p>
+          <HomeIcon />
+          <p className="text-black">Home</p>
         </div>
       </Link>
 
@@ -33,13 +33,12 @@ function NavBottom() {
         </DrawerContent>
       </Drawer>
       <Link to={paths.allLead}>
-      <div className="flex flex-col justify-center items-center p-2">
-      <LeadIcon />
-      <p className="text-black">Leads</p>
+        <div className="flex flex-col justify-center items-center p-2">
+          <LeadIcon />
+          <p className="text-black">Leads</p>
         </div>
-        
       </Link>
-    </nav>
+    </footer>
   );
 }
 
