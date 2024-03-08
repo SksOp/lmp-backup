@@ -11,19 +11,15 @@ import { GroupProps } from "./type";
 
 function Group(props: GroupProps) {
   const { config, group, setGroup, setData, data, selectedBank, setRequestOtp, requestOtp } = props;
+
   const handleNextClick = () => {
     if (requestOtp.next) setRequestOtp({ next: false, view: true });
     setGroup(group + 1);
   };
+
   const handleBackClick = () => {
     setGroup(group - 1);
   };
-  console.log(data);
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setData({ ...data, [e.target.name]: e.target.value });
-  };
-
-  const groupFinder = config?.input_fields.find((field) => field.group === group);
 
   useEffect(() => {
     const isVerificationRequired = config?.input_fields.find((field) => field.group === group && field.verificationRequired === true);
@@ -33,6 +29,9 @@ function Group(props: GroupProps) {
       setRequestOtp({ next: false, view: false });
     }
   }, [config, group, setRequestOtp]);
+
+  if (!config) return null;
+  const groupFinder = config.input_fields.find((field) => field.group === group);
 
   return (
     <>
@@ -52,7 +51,7 @@ function Group(props: GroupProps) {
               {/* {field.input_field_type !== "file" && <p className="text-md">{field.description.en}</p>} */}
               <InputsField
                 placeholder={field.description.en}
-                inputName={field.input_field_id}
+                name={field.input_field_id}
                 inputType={field.input_field_type}
                 data={data}
                 setData={setData}
