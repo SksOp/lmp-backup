@@ -143,6 +143,41 @@ export function VerifiedLeadIcon({ className }: Props) {
   );
 }
 
+export function EditIcon({ className }: Props) {
+  return (
+    <svg className={cn("", className)} width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g filter="url(#filter0_d_4440_4821)">
+        <rect x="6" y="2" width="60" height="60" rx="30" fill="#10B981" />
+        <g clip-path="url(#clip0_4440_4821)">
+          <path d="M42 22L46 26" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+          <path
+            d="M31.5 40.5L43 29L39 25L27.5 36.5L26 42L31.5 40.5Z"
+            stroke="white"
+            stroke-width="3"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </g>
+      </g>
+      <defs>
+        <filter id="filter0_d_4440_4821" x="0" y="0" width="72" height="72" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+          <feOffset dy="4" />
+          <feGaussianBlur stdDeviation="3" />
+          <feComposite in2="hardAlpha" operator="out" />
+          <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.09 0" />
+          <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_4440_4821" />
+          <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_4440_4821" result="shape" />
+        </filter>
+        <clipPath id="clip0_4440_4821">
+          <rect width="24" height="24" fill="white" transform="translate(24 20)" />
+        </clipPath>
+      </defs>
+    </svg>
+  );
+}
+
 export function SortDescIcon({ className }: Props) {
   return (
     <svg className={cn("", className)} width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
