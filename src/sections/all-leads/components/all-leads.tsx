@@ -26,6 +26,15 @@ function LeadTabs() {
         </Link>
       )
   );
+
+  const draft = MinimalLeads.map(
+    (lead) =>
+      lead.application_id.is_draft && (
+        <Link to={`${paths.lead}/${lead.application_id.application_id}`}>
+          <LeadCard hideIcons data={lead} />
+        </Link>
+      )
+  );
   return (
     <>
       <Tabs defaultValue="all-leads" className="w-full">
@@ -33,7 +42,7 @@ function LeadTabs() {
           <TabsTrigger value="all-leads">All</TabsTrigger>
           <TabsTrigger value="active">Active</TabsTrigger>
           <TabsTrigger value="action">Pending</TabsTrigger>
-          <TabsTrigger value="action">Drafts</TabsTrigger>
+          <TabsTrigger value="draft">Drafts</TabsTrigger>
         </TabsList>
         <TabsContent value="all-leads" className="flex flex-col gap-3">
           {allLeads}
@@ -43,6 +52,9 @@ function LeadTabs() {
         </TabsContent>
         <TabsContent value="action" className="flex flex-col gap-3">
           {pending}
+        </TabsContent>
+        <TabsContent value="draft" className="flex flex-col gap-3">
+          {draft}
         </TabsContent>
       </Tabs>
     </>

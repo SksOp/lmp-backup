@@ -94,7 +94,7 @@ export type MinimalLead = {
       };
     };
     progress_measure: string;
-    is_draft: string;
+    is_draft: boolean;
     dealer_details: {
       dealer_id: string;
       dealer_name: {
