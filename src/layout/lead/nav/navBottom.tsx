@@ -1,4 +1,3 @@
-import ApplicationDrawerContent from "@/components/application";
 import { HamburgerMenuIcon } from "@/components/svgs/icon";
 
 import { Drawer, DrawerContent, DrawerTrigger } from "@/components/ui/drawer";

@@ -1,9 +1,7 @@
 import LeadCard from "@/components/leadCard";
 import { MinimalLeads } from "@/constants/leads";
-import React from "react";
 import Progress from "./components/progress";
 import { Navigate, useParams } from "react-router-dom";
-import Layout from "@/layout/lead";
 
 function LeadView() {
   const { id } = useParams();

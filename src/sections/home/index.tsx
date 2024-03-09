@@ -1,13 +1,11 @@
 import LeadsFunnel from "@/components/leadsFunnel";
-import MainSection from "@/components/mainSection";
-import LeadsView from "../all-leads";
+import LeadTabs from "./components/all-leads";
 
 function HomeView() {
   return (
     <>
       <LeadsFunnel />
-      {/* <MainSection /> */}
-      <LeadsView />
+      <LeadTabs />
     </>
   );
 }

@@ -1,4 +1,3 @@
-import React from "react";
 import { Button } from "@/components/ui/button";
 import {
   Drawer,
@@ -10,11 +9,8 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer";
-import InputField from "./inputField";
-import { LeadLogo } from "./leadLogo";
 import { Icon } from "@iconify/react";
-import { Link, Navigate, useParams } from "react-router-dom";
-import { paths } from "@/router";
+import { Navigate, useParams } from "react-router-dom";
 import LeadCard from "./leadCard";
 import { MinimalLeads } from "@/constants/leads";
 import { ClassValue } from "clsx";

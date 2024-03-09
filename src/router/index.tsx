@@ -7,7 +7,6 @@ const Home = React.lazy(() => import("@/pages/home"));
 const Login = React.lazy(() => import("@/pages/auth/login"));
 const Logout = React.lazy(() => import("@/pages/auth/logout"));
 const ResetPassword = React.lazy(() => import("@/pages/auth/reset-password"));
-const Leads = React.lazy(() => import("@/pages/all-leads"));
 const Lead = React.lazy(() => import("@/pages/lead"));
 
 export default function Router() {
@@ -52,12 +51,12 @@ const root = [
     ),
     children: [
       {
-        path: paths.allLead,
-        element: <Leads />,
-      },
-      {
         path: ":id",
         element: <Lead />,
+      },
+      {
+        path: "",
+        element: <Navigate to={paths.home} replace />,
       },
     ],
   },
