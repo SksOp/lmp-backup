@@ -474,6 +474,7 @@ export const MinimalLeads: MinimalLead[] = [
 
 export const DetailedLeads: DetailedLead = {
   personal_details: {
+    national_id: "12341241",
     name: "John Duo",
     phone_number: "+1234567890",
     email: "john.duo@example.com",
@@ -508,14 +509,33 @@ export const DetailedLeads: DetailedLead = {
     monthly_EMI: "2400",
     credit_score: "546",
   },
-  uploaded_docs: {
-    //name, type, link
-    driving_license: "https://www.img.com/8765678",
-    iqama_doc: "https://www.img.com/8765678",
-    photo: "https://www.img.com/8765678",
-    salary_certificate: "https://www.img.com/8765678",
-    income_statement: "https://www.img.com/8765678",
-  },
+  uploaded_docs: [
+    {
+      name: "Driving License",
+      type: "pdf",
+      link: "https://www.img.com/8765678",
+    },
+    {
+      name: "IQAMA Document",
+      type: "pdf",
+      link: "https://www.img.com/8765678",
+    },
+    {
+      name: "Photo",
+      type: "jpeg",
+      link: "https://www.img.com/8765678",
+    },
+    {
+      name: "Salary Certificate",
+      type: "pdf",
+      link: "https://www.img.com/8765678",
+    },
+    {
+      name: "Income Statement",
+      type: "pdf",
+      link: "https://www.img.com/8765678",
+    },
+  ],
   booking_payment_details: {
     booking_amount: "5000",
     amount_paid: "5000",
