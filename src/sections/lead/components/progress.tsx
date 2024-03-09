@@ -1,20 +1,15 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Icon } from "@iconify/react";
-import { ClassValue } from "clsx";
-import React from "react";
 import States from "./stages";
-import { MinimalLeads, DetailedLeads } from "@/constants/leads";
-import { Navigate, useParams } from "react-router-dom";
-import { forEachChild } from "typescript";
-import { PersonalInfo, ProfessionalInfo } from "./personalInfo";
+import { DetailedLeads } from "@/constants/leads";
 import InfoDisplay from "./infoDisplay";
 import { LightBulb } from "@/components/svgs/icon";
+import { UploadedDocuments } from "./uploadedDocs";
 
 function formattedDate(date: string) {
   const dateObj = new Date(date);
   return dateObj.toLocaleDateString("en-GB", {
     day: "numeric", // Numeric day of the month
-    month: "long", // Full name of the month
+    month: "short", // Full name of the month
   });
 }
 
@@ -55,12 +50,8 @@ function Progress() {
         </TabsContent>
         <TabsContent value="info">
           <div className="flex flex-col gap-4 justify-between mb-8">
-            <InfoDisplay title="Personal Info" items={DetailedLeads.personal_details} />
-            <InfoDisplay title="Professional Info" items={DetailedLeads.professional_details} />
-            <InfoDisplay title="Educational Details" items={DetailedLeads.eductation_details} />
-            <InfoDisplay title="Vehicle Info" items={DetailedLeads.vehicle_details} />
-            <InfoDisplay title="Lessor Offer Details" items={DetailedLeads.lease_offer_details} />
-            <InfoDisplay title="Booking Payment Details" items={DetailedLeads.booking_payment_details} />
+            <InfoDisplay title="Personal Info" item={DetailedLeads.personal_details} />
+            <UploadedDocuments uploadedDocs={DetailedLeads.uploaded_docs} />
           </div>
         </TabsContent>
       </Tabs>
