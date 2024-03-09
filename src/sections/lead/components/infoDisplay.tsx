@@ -1,27 +1,27 @@
-import { DetailViewer } from '@/components/leadCard';
-import { Card, CardContent, CardHeader } from '@/components/ui/card';
-import React from 'react'
+import { DetailViewer } from "@/components/leadCard";
+import { Card, CardContent } from "@/components/ui/card";
 
 interface InfoProps {
-    title: string;
-    items: { [key: string]: string };
-  }
+  title: string;
+  item: { [key: string]: string };
+}
 
-function InfoDisplay({ title, items }: InfoProps) {
+function InfoDisplay({ title, item }: InfoProps) {
   return (
     <div>
-      <Card className="w-full p-4">
-        <CardHeader className="flex flex-row gap-2 items-center">
-          {title}
-        </CardHeader>
-        <CardContent>
-          {Object.entries(items).map(([key, value]) => (
+      <Card className="w-full">
+        <CardContent className="p-6">
+          {/* {Object.entries(items).map(([key, value]) => (
             <DetailViewer key={key} title={key} value={value} />
-          ))}
+          ))} */}
+          <DetailViewer title="National ID" value={item.national_id} />
+          <DetailViewer title="Date of birth" value={item.dob} />
+          <DetailViewer title="Mobile number" value={item.phone_number} />
+          <DetailViewer title="Email address" value={item.email} />
         </CardContent>
       </Card>
     </div>
-  )
+  );
 }
 
-export default InfoDisplay
+export default InfoDisplay;

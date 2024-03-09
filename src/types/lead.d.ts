@@ -19,7 +19,7 @@ interface States {
   [key: string]: State;
 }
 
-interface Action {
+interface GenericAction {
   en: string;
   ar: string;
 
@@ -38,9 +38,15 @@ interface NonGenericAction {
 }
 
 interface Actions {
-  generic: Action[];
+  generic: GenericAction[];
   non_generic: NonGenericAction[];
 }
+
+type UploadedDoc = {
+  name: string;
+  type: string;
+  link: string;
+};
 
 export type MinimalLead = {
   application_id: {
@@ -121,6 +127,7 @@ export type MinimalLead = {
 
 export type DetailedLead = {
   personal_details: {
+    national_id: string;
     name: string;
     phone_number: string;
     email: string;
@@ -155,13 +162,7 @@ export type DetailedLead = {
     monthly_EMI: string;
     credit_score: string;
   };
-  uploaded_docs: {
-    driving_license: string;
-    iqama_doc: string;
-    photo: string;
-    salary_certificate: string;
-    income_statement: string;
-  };
+  uploaded_docs: UploadedDoc[];
   booking_payment_details: {
     booking_amount: string;
     amount_paid: string;
