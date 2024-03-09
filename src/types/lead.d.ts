@@ -20,23 +20,26 @@ interface States {
 }
 
 interface Action {
-  key: string;
   en: string;
   ar: string;
 
   actor: string;
   fields: {
-    [key: string]: {
-      name: string;
-      type: string;
-      max_size: string;
-      accepted_count: string;
-    };
-  };
+    name: string;
+    type: string;
+    max_size: string;
+    accepted_count: string;
+  }[];
+}
+
+interface NonGenericAction {
+  en: string;
+  ar: string;
 }
 
 interface Actions {
-  [key: string]: Action;
+  generic: Action[];
+  non_generic: NonGenericAction[];
 }
 
 export type MinimalLead = {

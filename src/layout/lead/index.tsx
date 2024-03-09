@@ -1,13 +1,15 @@
 import React from "react";
 import Navbar from "./nav/navbar";
-import NavBottom from "../main/nav/navBottom";
+import NavBottom from "./nav/navBottom";
 
 function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <Navbar />
-      {children}
-      <NavBottom />
+      <div className="p-4">
+        {children}
+        <NavBottom />
+      </div>
     </>
   );
 }

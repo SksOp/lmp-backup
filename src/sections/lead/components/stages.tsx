@@ -1,6 +1,7 @@
 import DocUpload from "@/components/docUpload";
-import { InitialState } from "@/components/svgs/icon";
+import { CautionIcon, InitialStateIcon, StatusIcon } from "@/components/svgs/icon";
 import { cn } from "@/lib/utils";
+import { NonGenericAction } from "@/types";
 import { Icon } from "@iconify/react";
 import { ClassValue } from "clsx";
 
@@ -11,38 +12,41 @@ interface Props {
   title: string;
   doneBy: string;
   status: string;
-  action?: string;
+  action: NonGenericAction[];
   noOfStates: number;
 }
 
 function ConditionalIcon({ id, noOfStates, status }: Omit<Props, "className" | "date" | "title" | "doneBy" | "action">) {
   return (
-    <>
+    <div className="flex w-8 h-8">
       {id === noOfStates ? (
-        <InitialState className="w-8 h-8" />
+        <InitialStateIcon className="" />
       ) : status === "completed" ? (
-        <Icon icon="teenyicons:tick-circle-solid" className="w-6 h-6" />
+        <StatusIcon isCompleted className="" />
       ) : status === "current" ? (
-        <Icon icon="icon-park-solid:caution" className="w-6 h-6" />
+        <CautionIcon className="" />
       ) : (
-        <div className="w-6 h-6  rounded-full border border-gray-600"></div>
+        <StatusIcon className="" />
       )}
-    </>
+    </div>
   );
 }
 
 function States({ id, noOfStates, className, date, title, doneBy, status, action }: Props) {
+  // console.log(action);
   return (
-    <div className={cn("flex items-start gap-6")}>
-      <div className="text-sm text-foreground/50 font-medium">{date}</div>
-      <div className="flex flex-col items-center">
+    <div className={cn("flex h-full items-start gap-2")}>
+      <div className="text-sm py-1 text-foreground/50 font-medium min-w-[5.8rem]">{date}</div>
+      <div className="h-full items-center flex flex-col">
         <ConditionalIcon id={id} noOfStates={noOfStates} status={status} />
-        <div className={cn("h-14 my-2 border-l border-[2px] border-primary")}></div>
+        <div
+          className={cn("flex h-[200px] w-[3px] flex-grow my-2 ", status === "completed" || status === "current" ? "bg-primary" : "bg-primary/20")}
+        ></div>
       </div>
-      <div className="flex flex-col gap-1">
-        <p className="text-lg font-bold col-span-2">{title}</p>
-        <p className="text-lg opacity-50  ">Done By: {doneBy}</p>
-        {action === "doc" ? <DocUpload /> : null}
+      <div className="flex flex-col gap-2 items-start">
+        <p className=" font-medium col-span-2">{title}</p>
+        <p className="text-xs opacity-50">Done By: {doneBy}</p>
+        {status === "current" ? <DocUpload action={action} /> : null}
       </div>
     </div>
   );

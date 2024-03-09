@@ -3,7 +3,7 @@ import { MinimalLeads } from "@/constants/leads";
 import React from "react";
 import Progress from "./components/progress";
 import { Navigate, useParams } from "react-router-dom";
-import Layout from "@/layout/main";
+import Layout from "@/layout/lead";
 
 function LeadView() {
   const { id } = useParams();
@@ -15,10 +15,10 @@ function LeadView() {
   }
 
   return (
-    <Layout>
+    <>
       <LeadCard noHoverEffect data={leadExists} className="p-4" />
       <Progress />
-    </Layout>
+    </>
   );
 }
 

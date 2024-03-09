@@ -1,6 +1,5 @@
 import { NotificationIcon, ProfileIcon, SearchIcon } from "@/components/svgs/icon";
 import { paths } from "@/router";
-import { Icon } from "@iconify/react";
 import { Link } from "react-router-dom";
 
 function Navbar() {

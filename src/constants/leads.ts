@@ -509,6 +509,7 @@ export const DetailedLeads: DetailedLead = {
     credit_score: "546",
   },
   uploaded_docs: {
+    //name, type, link
     driving_license: "https://www.img.com/8765678",
     iqama_doc: "https://www.img.com/8765678",
     photo: "https://www.img.com/8765678",
@@ -533,7 +534,7 @@ export const DetailedLeads: DetailedLead = {
         status: "completed",
         actor: "dealer",
         completed_by: "dealer_ID_764326543",
-        completed_at: "2023-12-31T08:00:00Z",
+        completed_at: "2023-11-31T08:00:00Z",
         updated_by: "internal_ID_764326543",
         updated_at: "2023-12-31T08:00:00Z",
         state_type: "start",
@@ -613,7 +614,7 @@ export const DetailedLeads: DetailedLead = {
         status: "upcoming",
         actor: "dealer",
         completed_by: "dealer_ID_764326543",
-        completed_at: "2023-12-31T08:00:00Z",
+        completed_at: "2023-05-31T08:00:00Z",
         updated_by: "internal_ID_764326543",
         updated_at: "2023-12-31T08:00:00Z",
         state_type: "intermediate",
@@ -629,7 +630,7 @@ export const DetailedLeads: DetailedLead = {
         status: "upcoming",
         actor: "dealer",
         completed_by: "dealer_ID_764326543",
-        completed_at: "2023-12-31T08:00:00Z",
+        completed_at: "2023-10-31T08:00:00Z",
         updated_by: "internal_ID_764326543",
         updated_at: "2023-12-31T08:00:00Z",
         state_type: "close-won",
@@ -639,33 +640,40 @@ export const DetailedLeads: DetailedLead = {
     ],
   },
   actions: {
-    "1": {
-      key: "1",
-      en: "Upload Documents",
-      ar: "Upload Documents",
+    generic: [
+      {
+        en: "Upload Documents",
+        ar: "Upload Documents",
 
-      actor: "customer",
-      fields: {
-        "1": {
-          name: "Salary Certificate",
-          type: "mm/pdf",
-          max_size: "1MB",
-          accepted_count: "1",
-        },
-        "2": {
-          name: "Income Proof",
-          type: "mm/pdf",
-          max_size: "1MB",
-          accepted_count: "3",
-        },
-        "3": {
-          name: "Passport Photo",
-          type: "mm/JPEG",
-          max_size: "1MB",
-          accepted_count: "1",
-        },
+        actor: "customer",
+        fields: [
+          {
+            name: "Salary Certificate",
+            type: "mm/pdf",
+            max_size: "1MB",
+            accepted_count: "1",
+          },
+          {
+            name: "Income Proof",
+            type: "mm/pdf",
+            max_size: "1MB",
+            accepted_count: "3",
+          },
+          {
+            name: "Passport Photo",
+            type: "mm/JPEG",
+            max_size: "1MB",
+            accepted_count: "1",
+          },
+        ],
       },
-    },
+    ],
+    non_generic: [
+      {
+        en: "Upload Documents",
+        ar: "Upload Documents",
+      },
+    ],
   },
   nba: {
     en: "Awaiting for customer to upload all the necessery documentes, followup today to fastrack",

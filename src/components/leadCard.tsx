@@ -19,8 +19,8 @@ function LeadCard({ className, data, hideIcons, noHoverEffect }: Props) {
   return (
     <Card className={cn("transition-all duration-300", !noHoverEffect && "hover:bg-primary/5  hover:scale-[101%]", className)}>
       <CardHeader className="flex flex-row gap-2 items-center">
-        <LeadLogo className="w-14 h-14 text-2xl" imageName={data.application_id.lead_name} />
-        <CardTitle className="">{data.application_id.lead_name}</CardTitle>
+        <LeadLogo className="w-12 h-12 text-xl" imageName={data.application_id.lead_name} />
+        <CardTitle className="text-xl">{data.application_id.lead_name}</CardTitle>
         {data.application_id.is_verified === "yes" ? <VerifiedLeadIcon className="w-8 h-8" /> : null}
       </CardHeader>
 
@@ -49,16 +49,16 @@ function LeadCard({ className, data, hideIcons, noHoverEffect }: Props) {
 
       {!hideIcons && (
         <CardFooter className="flex justify-between">
-          <div className=" p-4 bg-secondary rounded-full items-center justify-center">
+          <div className=" p-3 bg-secondary rounded-full items-center justify-center">
             <Call />
           </div>
-          <div className=" p-4 bg-secondary rounded-full items-center justify-center">
+          <div className=" p-3 bg-secondary rounded-full items-center justify-center">
             <Whatsapp />
           </div>
-          <div className=" p-4 bg-secondary rounded-full items-center justify-center">
+          <div className=" p-3 bg-secondary rounded-full items-center justify-center">
             <Mail />
           </div>
-          <div className=" p-4 bg-secondary rounded-full items-center justify-center">
+          <div className=" p-3 bg-secondary rounded-full items-center justify-center">
             <SMS />
           </div>
         </CardFooter>
