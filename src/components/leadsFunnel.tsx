@@ -42,12 +42,14 @@ function LeadsFunnel() {
           <ul>
             {data.labels.map((label, index) => (
               <li key={index} className="flex text-xl my-2 items-center">
-                <div
-                  className="w-3 h-3 bg-[#9F43CC] rounded-full "
+                <span
+                  className="text-sm"
                   style={{
-                    backgroundColor: data.datasets[0].backgroundColor[index],
+                    color: data.datasets[0].backgroundColor[index],
                   }}
-                ></div>
+                >
+                  ⬤
+                </span>
                 <span className="font-medium sm:text-lg min-[500px]:text-base text-sm ml-2">
                   {data.datasets[0].data[index]} {label}
                 </span>

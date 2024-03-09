@@ -167,7 +167,7 @@ export type DetailedLead = {
     payment_date: string;
   };
   history_timeline: {
-    states: States;
+    states: State[];
   };
   actions: Actions;
   nba: {

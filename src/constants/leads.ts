@@ -15,7 +15,7 @@ export const MinimalLeads: MinimalLead[] = [
       },
       current_actor: "Dealer",
       created_date: "2023-12-31T08:00:00Z",
-      last_updated_at: "2023-12-31T08:00:00ZZ",
+      last_updated_at: "2023-12-31T08:00:00Z",
       iqama_id: "123456789012",
       driving_license_number: "MH12 20211234567",
       phone_number: "+1234567890",
@@ -82,7 +82,7 @@ export const MinimalLeads: MinimalLead[] = [
       },
       current_actor: "Bank",
       created_date: "2023-12-30T09:00:00Z",
-      last_updated_at: "2023-12-31T08:00:00ZZ",
+      last_updated_at: "2023-12-31T08:00:00Z",
       iqama_id: "987654321098",
       driving_license_number: "MH12 20211234567",
       phone_number: "+19876543210",
@@ -149,7 +149,7 @@ export const MinimalLeads: MinimalLead[] = [
       },
       current_actor: "Dealer",
       created_date: "2023-12-31T08:00:00Z",
-      last_updated_at: "2023-12-31T08:00:00ZZ",
+      last_updated_at: "2023-12-31T08:00:00Z",
       iqama_id: "123456789012",
       driving_license_number: "MH12 20211234567",
       phone_number: "+1234567890",
@@ -216,7 +216,7 @@ export const MinimalLeads: MinimalLead[] = [
       },
       current_actor: "Bank",
       created_date: "2023-12-30T09:00:00Z",
-      last_updated_at: "2023-12-31T08:00:00ZZ",
+      last_updated_at: "2023-12-31T08:00:00Z",
       iqama_id: "987654321098",
       driving_license_number: "MH12 20211234567",
       phone_number: "+19876543210",
@@ -283,7 +283,7 @@ export const MinimalLeads: MinimalLead[] = [
       },
       current_actor: "Dealer",
       created_date: "2023-12-31T08:00:00Z",
-      last_updated_at: "2023-12-31T08:00:00ZZ",
+      last_updated_at: "2023-12-31T08:00:00Z",
       iqama_id: "123456789012",
       driving_license_number: "MH12 20211234567",
       phone_number: "+1234567890",
@@ -350,7 +350,7 @@ export const MinimalLeads: MinimalLead[] = [
       },
       current_actor: "Bank",
       created_date: "2023-12-30T09:00:00Z",
-      last_updated_at: "2023-12-31T08:00:00ZZ",
+      last_updated_at: "2023-12-31T08:00:00Z",
       iqama_id: "987654321098",
       driving_license_number: "MH12 20211234567",
       phone_number: "+19876543210",
@@ -417,7 +417,7 @@ export const MinimalLeads: MinimalLead[] = [
       },
       current_actor: "Dealer",
       created_date: "2023-12-31T08:00:00Z",
-      last_updated_at: "2023-12-31T08:00:00ZZ",
+      last_updated_at: "2023-12-31T08:00:00Z",
       iqama_id: "123456789012",
       driving_license_number: "MH12 20211234567",
       phone_number: "+1234567890",
@@ -523,8 +523,8 @@ export const DetailedLeads: DetailedLead = {
     payment_date: "2023-12-31T08:00:00Z",
   },
   history_timeline: {
-    states: {
-      "1": {
+    states: [
+      {
         key: "1",
         name: {
           en: "Application Initiated",
@@ -533,14 +533,14 @@ export const DetailedLeads: DetailedLead = {
         status: "completed",
         actor: "dealer",
         completed_by: "dealer_ID_764326543",
-        completed_at: "2023-12-31T08:00:00ZZ",
+        completed_at: "2023-12-31T08:00:00Z",
         updated_by: "internal_ID_764326543",
-        updated_at: "2023-12-31T08:00:00ZZ",
+        updated_at: "2023-12-31T08:00:00Z",
         state_type: "start",
         view_permission_actors: "dealer, bank, customer",
         edit_permission_actors: "dealer, bank, customer",
       },
-      "2": {
+      {
         key: "2",
         name: {
           en: "Bank Verifications",
@@ -549,14 +549,14 @@ export const DetailedLeads: DetailedLead = {
         status: "completed",
         actor: "bank",
         completed_by: "dealer_ID_764326543",
-        completed_at: "2023-12-31T08:00:00ZZ",
+        completed_at: "2023-12-31T08:00:00Z",
         updated_by: "internal_ID_764326543",
-        updated_at: "2023-12-31T08:00:00ZZ",
+        updated_at: "2023-12-31T08:00:00Z",
         state_type: "intermediate",
         view_permission_actors: "dealer, bank, customer",
         edit_permission_actors: "dealer, bank, customer",
       },
-      "3": {
+      {
         key: "3",
         name: {
           en: "Document Upload by Customer",
@@ -572,7 +572,7 @@ export const DetailedLeads: DetailedLead = {
         view_permission_actors: "dealer, bank, customer",
         edit_permission_actors: "dealer, bank, customer",
       },
-      "4": {
+      {
         key: "4",
         name: {
           en: "Dealer Acknowledgement",
@@ -588,7 +588,7 @@ export const DetailedLeads: DetailedLead = {
         view_permission_actors: "dealer, bank, customer",
         edit_permission_actors: "dealer, bank, customer",
       },
-      "5": {
+      {
         key: "5",
         name: {
           en: "Loan Approved",
@@ -604,7 +604,7 @@ export const DetailedLeads: DetailedLead = {
         view_permission_actors: "dealer, bank, customer",
         edit_permission_actors: "dealer, bank, customer",
       },
-      "6": {
+      {
         key: "6",
         name: {
           en: "Vehicle Delivery",
@@ -620,7 +620,7 @@ export const DetailedLeads: DetailedLead = {
         view_permission_actors: "dealer, bank, customer",
         edit_permission_actors: "dealer, bank, customer",
       },
-      "7": {
+      {
         key: "7",
         name: {
           en: "Loan Disbursed",
@@ -636,7 +636,7 @@ export const DetailedLeads: DetailedLead = {
         view_permission_actors: "dealer, bank, customer",
         edit_permission_actors: "dealer, bank, customer",
       },
-    },
+    ],
   },
   actions: {
     "1": {
