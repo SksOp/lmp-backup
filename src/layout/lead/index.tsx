@@ -6,10 +6,8 @@ function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <Navbar />
-      <div className="p-4">
-        {children}
-        <NavBottom />
-      </div>
+      <div className="p-4">{children}</div>
+      <NavBottom />
     </>
   );
 }
