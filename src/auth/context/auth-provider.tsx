@@ -33,6 +33,16 @@ type Props = {
   children: React.ReactNode;
 };
 
+// Custom event for login
+const loginEvent = new CustomEvent("authChange", {
+  detail: { isLoggedIn: true },
+});
+
+// Custom event for logout
+const logoutEvent = new CustomEvent("authChange", {
+  detail: { isLoggedIn: false },
+});
+
 export function AuthProvider({ children }: Props) {
   const [state, dispatch] = useReducer(reducer, initialState);
 
@@ -56,12 +66,14 @@ export function AuthProvider({ children }: Props) {
     };
     localStorage.setItem("user", JSON.stringify(user));
     dispatch({ type: Types.INITIAL, payload: { user } });
+    window.dispatchEvent(loginEvent);
   }, []);
 
   const logout = useCallback(async () => {
     // TODO : Call the logout API
     localStorage.removeItem("user");
     dispatch({ type: Types.INITIAL, payload: { user: null } });
+    window.dispatchEvent(logoutEvent);
   }, []);
 
   const requestResetPasswordWithEmail = useCallback(async () => {
@@ -84,6 +96,28 @@ export function AuthProvider({ children }: Props) {
     return true;
   }, []);
 
+  const onAuthStateChange = useCallback((callback: (user?: User | null) => void) => {
+    const handleAuthChange = (event: Event) => {
+      const authEvent = event as CustomEvent<{ isLoggedIn: boolean }>;
+
+      const localUser = localStorage.getItem("user");
+
+      console.log("localUser", localUser);
+
+      if (authEvent.detail.isLoggedIn) {
+        callback(localUser ? JSON.parse(localUser) : null);
+      } else {
+        callback(null);
+      }
+    };
+
+    window.addEventListener("authChange", handleAuthChange);
+
+    return () => {
+      window.removeEventListener("authChange", handleAuthChange);
+    };
+  }, []);
+
   const value = useMemo(
     () => ({
       loading: state.loading,
@@ -95,8 +129,19 @@ export function AuthProvider({ children }: Props) {
       requestResetPasswordWithPhone,
       validateOtp,
       resetPassword,
+      onAuthStateChange,
     }),
-    [state.loading, state.user, login, logout, requestResetPasswordWithEmail, requestResetPasswordWithPhone, validateOtp, resetPassword]
+    [
+      state.loading,
+      state.user,
+      onAuthStateChange,
+      login,
+      logout,
+      requestResetPasswordWithEmail,
+      requestResetPasswordWithPhone,
+      validateOtp,
+      resetPassword,
+    ]
   );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

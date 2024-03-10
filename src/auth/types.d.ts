@@ -37,4 +37,5 @@ export interface AuthContextType {
   requestResetPasswordWithPhone: () => Promise<boolean>;
   validateOtp: (otp: number, platform: Platform) => Promise<boolean>;
   resetPassword: (password: string) => Promise<boolean>;
+  onAuthStateChange: (callback: (user?: User | null) => void) => void;
 }

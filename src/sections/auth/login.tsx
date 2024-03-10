@@ -26,32 +26,15 @@ function LoginView() {
         <h2 className="text-2xl font-bold mt-10">Login to Tamweel account</h2>
         <p className=" opacity-50">Start your car leasing process with us </p>
       </div>
-      {currentPage === "id" && (
-        <IdView id={id} setId={setId} setCurrentPage={setCurrentPage} />
-      )}
-      {currentPage === "password" && (
-        <PasswordView
-          id={id}
-          password={password}
-          setPassword={setPassword}
-          login={login}
-        />
-      )}
+      {currentPage === "id" && <IdView id={id} setId={setId} setCurrentPage={setCurrentPage} />}
+      {currentPage === "password" && <PasswordView id={id} password={password} setPassword={setPassword} login={login} />}
     </div>
   );
 }
 
 export default LoginView;
 
-const IdView = ({
-  id,
-  setId,
-  setCurrentPage,
-}: {
-  id: string;
-  setId: (id: string) => void;
-  setCurrentPage: (page: "id" | "password") => void;
-}) => {
+const IdView = ({ id, setId, setCurrentPage }: { id: string; setId: (id: string) => void; setCurrentPage: (page: "id" | "password") => void }) => {
   return (
     <>
       <div className="p-6 max-w-xl  m-auto flex flex-col gap-2">
@@ -59,11 +42,7 @@ const IdView = ({
         <Input value={id} onChange={(e) => setId(e.target.value)} name="id" />
       </div>
       <div className="w-full max-w-xl  absolute bottom-0 left-1/2 transform -translate-x-1/2 p-6">
-        <Button
-          className={cn("w-full bg-primary ")}
-          disabled={id.length < 2}
-          onClick={() => setCurrentPage("password")}
-        >
+        <Button className={cn("w-full bg-primary ")} disabled={id.length < 2} onClick={() => setCurrentPage("password")}>
           Next
         </Button>
       </div>
@@ -86,19 +65,10 @@ const PasswordView = ({
     <>
       <div className="p-6 max-w-xl  m-auto flex flex-col gap-2">
         <Label htmlFor="password">Password</Label>
-        <Input
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          name="password"
-          type="password"
-        />
+        <Input value={password} onChange={(e) => setPassword(e.target.value)} name="password" type="password" />
       </div>
       <div className="w-full max-w-xl  absolute bottom-0 left-1/2 transform -translate-x-1/2 p-6">
-        <Button
-          className={cn("w-full bg-primary ")}
-          disabled={password.length < 2}
-          onClick={() => login(id, password)}
-        >
+        <Button className={cn("w-full bg-primary ")} disabled={password.length < 2} onClick={() => login(id, password)}>
           Login
         </Button>
       </div>
