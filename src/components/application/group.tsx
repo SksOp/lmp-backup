@@ -31,14 +31,14 @@ function Group(props: GroupProps) {
     const isOptional = config.input_fields.filter((field) => field.group === group && field.isOptional !== true);
     const isFilled = isOptional.every((field) => data[field.input_field_id as keyof typeof data]);
 
-    // if (!isFilled) {
-    //   toast({
-    //     title: "Error",
-    //     description: "Please fill all the required fields",
-    //     variant: "destructive",
-    //   });
-    //   return;
-    // }
+    if (!isFilled) {
+      toast({
+        title: "Error",
+        description: "Please fill all the required fields",
+        variant: "destructive",
+      });
+      return;
+    }
     if (requestOtp.next) setRequestOtp({ next: false, view: true });
     setGroup(group + 1);
   };
@@ -59,6 +59,7 @@ function Group(props: GroupProps) {
           if (field.group !== group) return null;
 
           //  TODO handle Bussiness logic for otp Verification
+
           return (
             <div key={field.input_field_id} className="w-full flex flex-col gap-1">
               <Label className="text-md font-bold">{field.label.en}</Label>
@@ -69,6 +70,9 @@ function Group(props: GroupProps) {
                 inputType={field.input_field_type}
                 data={data}
                 setData={setData}
+                {...(field.input_field_type === "radio" && {
+                  options: field.options,
+                })}
               />
             </div>
           );

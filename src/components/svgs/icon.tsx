@@ -48,6 +48,22 @@ export function InitialStateIcon({ className }: Props) {
   );
 }
 
+export function SuccessIcon({ className }: Props) {
+  return (
+    <svg width="102" className={cn("", className)} height="101" viewBox="0 0 102 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M51 12.625C45.9 12.625 40.8 15.15 38.25 19.7792C35.7051 19.134 33.0353 19.1485 30.4977 19.8214C27.9602 20.4942 25.6403 21.8026 23.7615 23.6207C21.8828 25.4388 20.5084 27.7052 19.7707 30.2018C19.0331 32.6983 18.9571 35.3409 19.55 37.875C15.3 40.4 12.325 45.45 12.325 50.5C12.325 55.55 15.3 60.6 19.55 63.125C18.275 68.175 19.55 73.6458 23.8 77.4333C27.2 80.8 32.7249 82.4833 37.8249 81.6417C40.3749 85.85 45.475 88.375 50.575 88.375C55.6749 88.375 60.775 85.85 63.325 81.2208C68.4249 82.4833 73.95 81.2208 77.7749 77.0125C81.1749 73.6458 82.8749 68.5958 82.0249 63.125C86.2749 60.6 88.825 55.55 88.825 50.5C88.825 45.45 86.275 40.4 81.6 37.875C82.875 32.825 81.6 27.3542 77.35 23.5667C75.5329 21.7904 73.3064 20.479 70.8628 19.7458C68.4192 19.0126 65.8321 18.8796 63.325 19.3583C60.775 15.15 55.6749 12.625 50.575 12.625H51Z"
+        fill="#1E1E1E"
+        stroke="#1E1E1E"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path d="M38.25 50.5L46.75 58.9167L63.75 42.0833" stroke="white" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+  );
+}
+
 export function StatusIcon({ isCompleted, className }: { isCompleted?: boolean; className?: ClassValue }) {
   return (
     <svg className={cn("", className)} viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">

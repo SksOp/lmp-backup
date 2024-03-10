@@ -12,6 +12,7 @@ import { CalendarIcon } from "@radix-ui/react-icons";
 import { Calendar } from "../ui/calendar";
 import { format } from "date-fns";
 import { PhoneInput } from "../ui/phone-input";
+import { LangOptions } from "@/types";
 
 interface InputFieldProp {
   name: string;
@@ -19,9 +20,10 @@ interface InputFieldProp {
   data: any;
   placeholder?: string;
   setData: (data: object) => void;
+  options?: LangOptions[];
 }
 
-function InputsField({ name, inputType, data, setData, placeholder }: InputFieldProp) {
+function InputsField({ name, inputType, data, setData, placeholder, options }: InputFieldProp) {
   console.log(name);
   const renderMultimediaRadio = (name: string) => {
     switch (name) {
@@ -43,9 +45,17 @@ function InputsField({ name, inputType, data, setData, placeholder }: InputField
       // for now we only have one radio input
       // other wise e also need to pass options as props
       // pr handle it like radio_multimedia
-      const brandOptions = brands.find((brand) => data?.select_brand && brand.name === (data.select_brand as string));
-      const thisOption = brandOptions?.models.find((model) => data?.select_model && model.name === (data.select_model as string));
-      return thisOption ? <AccordionAndRadio name={name} inputType="radio" data={data} setData={setData} options={thisOption.variants} /> : <></>;
+      if (name === "select_varient") {
+        const brandOptions = brands.find((brand) => data?.select_brand && brand.name === (data.select_brand as string));
+        const thisOption = brandOptions?.models.find((model) => data?.select_model && model.name === (data.select_model as string));
+        return thisOption ? (
+          <AccordionAndRadio label="Select prefered variant" name={name} data={data} setData={setData} options={thisOption.variants} />
+        ) : (
+          <></>
+        );
+      }
+      const thisOption = options?.map((option) => option.en);
+      return <AccordionAndRadio label={"Select"} name={name} data={data} setData={setData} options={thisOption ?? []} />;
 
     case "file":
       console.log(data);
@@ -113,7 +123,7 @@ interface Option {
  *
  */
 
-interface RadioMultiMediaProps extends Omit<InputFieldProp, "inputType"> {
+interface RadioMultiMediaProps extends Omit<InputFieldProp, "inputType" | "options"> {
   options: Option[];
   dependancy?: string;
 }
@@ -151,12 +161,13 @@ function RadioMultiMedia(props: RadioMultiMediaProps) {
   );
 }
 
-interface RadioInput extends InputFieldProp {
+interface RadioInput extends Omit<InputFieldProp, "inputType" | "options"> {
   options: string[];
+  label: string;
 }
 
 function AccordionAndRadio(props: RadioInput) {
-  const { name, data, setData, options } = props;
+  const { name, data, setData, options, label } = props;
   // useEffect(() => {
   //   setData({ ...data, [inputName]: options[0] });
   //   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -168,7 +179,7 @@ function AccordionAndRadio(props: RadioInput) {
     <RadioGroup value={data[name]}>
       <Accordion type="single" collapsible>
         <AccordionItem value="item-1" className="border rounded-sm">
-          <AccordionTrigger className="p-3">{data[name] ?? <span className=" opacity-30 "> Select prefered variant</span>}</AccordionTrigger>
+          <AccordionTrigger className="p-3">{data[name] ?? <span className=" opacity-30 "> {label}</span>}</AccordionTrigger>
           <AccordionContent>
             {options.map((option) => {
               return (
