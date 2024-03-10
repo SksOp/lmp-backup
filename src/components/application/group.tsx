@@ -37,7 +37,7 @@ function Group(props: GroupProps) {
     <>
       <div className="flex flex-col gap-4">
         {group >= 2 && <RenderCard name={selectedBank.name} />}
-        <h3 className="text-3xl font-bold pb-3 ">{groupFinder?.group_name.en}</h3>
+        <h3 className="text-xl font-semibold py-3">{groupFinder?.group_name.en}</h3>
       </div>
 
       {config &&
@@ -47,7 +47,7 @@ function Group(props: GroupProps) {
           //  TODO handle Bussiness logic for otp Verification
           return (
             <div className="w-full flex flex-col gap-1">
-              <Label className="text-lg">{field.label.en}</Label>
+              <Label className="text-md font-bold">{field.label.en}</Label>
               {/* {field.input_field_type !== "file" && <p className="text-md">{field.description.en}</p>} */}
               <InputsField
                 placeholder={field.description.en}
@@ -59,8 +59,8 @@ function Group(props: GroupProps) {
             </div>
           );
         })}
-      <div className="flex absolute bottom-2 w-full gap-3 left-1/2 -translate-x-1/2 p-3 ">
-        <Button variant="outline" className="flex-grow " onClick={() => handleBackClick()}>
+      <div className="flex absolute bottom-0 w-full gap-3 left-1/2 -translate-x-1/2 p-3 ">
+        <Button variant="outline" className="flex-grow" onClick={() => handleBackClick()}>
           Back
         </Button>
         <Button variant="default" className="flex-grow" onClick={() => handleNextClick()}>
@@ -75,12 +75,12 @@ export default Group;
 
 const RenderCard = ({ name }: { name: string }) => (
   <Card>
-    <CardHeader className="flex flex-row gap-2 py-3 pb-0">
+    <CardHeader className="flex flex-row gap-2 px-4 py-4 pb-1 items-center">
       <LeadLogo imageName={"Camer Will"} />
-      <CardTitle className="text-md">Camerson Williamson</CardTitle>
+      <CardTitle className="text-md">Cameron Williamson</CardTitle>
       <Icon icon="mage:verified-check-fill" className="w-6 h-6 text-primary" />
     </CardHeader>
-    <CardContent className="py-3 flex flex-col gap-3">
+    <CardContent className="px-4 py-3 flex flex-col gap-3">
       <DetailViewer title="Bank" value={name} />
       <DetailViewer title="Iqama Number" value="XXXXXXXXXXXX" />
       <DetailViewer title="Driving License" value="XXXXXXXXXXXX" />

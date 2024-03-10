@@ -104,11 +104,11 @@ function RadioMultiMedia(props: RadioMultiMediaProps) {
               src={option?.logo}
               alt={option.name}
               className={cn(
-                "cursor-pointer w-full h-auto object-contain p-6 bg-foreground/5 rounded-lg aspect-square",
+                "cursor-pointer w-full h-auto object-contain p-3 bg-foreground/5 rounded-lg aspect-square",
                 isSelected && "border-2 border-primary"
               )}
             />
-            <p className=" text-foreground/70">{option.name}</p>
+            <p className="text-xs text-foreground/70">{option.name}</p>
           </div>
         );
       })}
