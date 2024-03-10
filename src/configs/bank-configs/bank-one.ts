@@ -52,6 +52,7 @@ export const Bank1: BankConfig = {
         ar: "",
       },
       input_field_type: "phone",
+      verificationRequired: true,
     },
     {
       input_field_id: "customer_email",
@@ -254,5 +255,4 @@ export const Bank1: BankConfig = {
       input_field_type: "file",
     },
   ],
-  
 };

@@ -8,6 +8,7 @@ import { DetailViewer } from "../leadCard";
 import { Icon } from "@iconify/react";
 import InputsField from "./inputsField";
 import { GroupProps } from "./type";
+import { CustomerDetailCard } from "./customer-detail-card";
 
 function Group(props: GroupProps) {
   const { config, group, setGroup, setData, data, selectedBank, setRequestOtp, requestOtp } = props;
@@ -36,7 +37,7 @@ function Group(props: GroupProps) {
   return (
     <>
       <div className="flex flex-col gap-4">
-        {group >= 2 && <RenderCard name={selectedBank.name} />}
+        {group >= 2 && <CustomerDetailCard name={selectedBank.name} />}
         <h3 className="text-xl font-semibold py-3">{groupFinder?.group_name.en}</h3>
       </div>
 
@@ -72,20 +73,5 @@ function Group(props: GroupProps) {
 }
 
 export default Group;
-
-const RenderCard = ({ name }: { name: string }) => (
-  <Card>
-    <CardHeader className="flex flex-row gap-2 px-4 py-4 pb-1 items-center">
-      <LeadLogo imageName={"Camer Will"} />
-      <CardTitle className="text-md">Cameron Williamson</CardTitle>
-      <Icon icon="mage:verified-check-fill" className="w-6 h-6 text-primary" />
-    </CardHeader>
-    <CardContent className="px-4 py-3 flex flex-col gap-3">
-      <DetailViewer title="Bank" value={name} />
-      <DetailViewer title="Iqama Number" value="XXXXXXXXXXXX" />
-      <DetailViewer title="Driving License" value="XXXXXXXXXXXX" />
-    </CardContent>
-  </Card>
-);
 
 const VehicleCard = ({ bank, vechicle, cost }: { bank: string; vechicle: string; cost: string }) => <Card></Card>;
