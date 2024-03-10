@@ -9,19 +9,11 @@ import { Icon } from "@iconify/react";
 import InputsField from "./inputsField";
 import { GroupProps } from "./type";
 import { CustomerDetailCard } from "./customer-detail-card";
+import { useToast } from "../ui/use-toast";
 
 function Group(props: GroupProps) {
   const { config, group, setGroup, setData, data, selectedBank, setRequestOtp, requestOtp } = props;
-
-  const handleNextClick = () => {
-    if (requestOtp.next) setRequestOtp({ next: false, view: true });
-    setGroup(group + 1);
-  };
-
-  const handleBackClick = () => {
-    setGroup(group - 1);
-  };
-
+  const { toast } = useToast();
   useEffect(() => {
     const isVerificationRequired = config?.input_fields.find((field) => field.group === group && field.verificationRequired === true);
     if (isVerificationRequired) {
@@ -33,6 +25,27 @@ function Group(props: GroupProps) {
 
   if (!config) return null;
   const groupFinder = config.input_fields.find((field) => field.group === group);
+
+  const handleNextClick = () => {
+    // verifyall the non isOptional fields are filled
+    const isOptional = config.input_fields.filter((field) => field.group === group && field.isOptional !== true);
+    const isFilled = isOptional.every((field) => data[field.input_field_id as keyof typeof data]);
+
+    if (!isFilled) {
+      toast({
+        title: "Error",
+        description: "Please fill all the required fields",
+        variant: "destructive",
+      });
+      return;
+    }
+    if (requestOtp.next) setRequestOtp({ next: false, view: true });
+    setGroup(group + 1);
+  };
+
+  const handleBackClick = () => {
+    setGroup(group - 1);
+  };
 
   return (
     <>
