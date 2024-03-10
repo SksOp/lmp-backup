@@ -26,11 +26,9 @@ function ApplicationDrawerContent() {
       <p className="text-center text-xl font-bold">New Leasing Application</p>
       <p className="text-center text-sm text-foreground/70">Initiate the application with customer/vehicle details</p>
       <ProgressBar group={group} />
-      {
-        //turn the below on for otp verification
-        // requestOtp.view ? (
-        //   <GroupOtp group={group} {...props} />
-        // ) :
+      {requestOtp.view ? (
+        <GroupOtp group={group} {...props} />
+      ) : (
         <div className="flex flex-col gap-4 h-[70vh] overflow-auto pb-10 px-2">
           {group === 0 && <Selectbank banks={banks} selectedBank={bank} setBank={(bank: Bank) => setBank(bank)} setGroup={setGroup} />}
           {group === 1 && <Group group={1} {...props} />}
@@ -39,7 +37,7 @@ function ApplicationDrawerContent() {
           {/* {group === 4 && <Group config={bank.config} selectedBank={bank} group={4} setGroup={setGroup} setData={setdata} data={data} />} */}
           {group === 4 && <Success />}
         </div>
-      }
+      )}
     </div>
   );
 }
