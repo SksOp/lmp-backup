@@ -34,7 +34,6 @@ function Progress() {
             <div className="flex flex-col">
               {reversedStates.map((state, index) => (
                 <States
-                  className=""
                   key={state.key}
                   id={Number(state.key)}
                   date={formattedDate(state.completed_at)}
