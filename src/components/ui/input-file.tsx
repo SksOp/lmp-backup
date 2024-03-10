@@ -18,26 +18,45 @@ const UploadIcon = () => (
     />
   </svg>
 );
-const InputFile = React.forwardRef<HTMLInputElement, InputProps>(({ className, label, description, ...props }, ref) => {
+const InputFile = React.forwardRef<HTMLInputElement, InputProps>(({ className, label, onChange, description, ...props }, ref) => {
+  const [fileName, setFileName] = React.useState<string | null>(null);
   return (
-    <div className={cn("flex items-center justify-start px-4 py-2 gap-3 border w-full rounded-md", className)}>
-      <div className="bg-foreground/5 p-3 rounded-full">
-        <UploadIcon />
+    <label htmlFor="dropzone-file" className="w-full">
+      <div className={cn("flex items-center justify-start px-4 py-2 gap-3 border w-full rounded-md", className)}>
+        <div className="bg-foreground/5 p-3 rounded-full">
+          <UploadIcon />
+        </div>
+        <div className="flex flex-col items-left justify-center ">
+          <p className="mb-1 text-sm">
+            {fileName ? (
+              <span className="">{fileName}</span>
+            ) : label ? (
+              <span className="">{label}</span>
+            ) : (
+              <>
+                <span className="font-semibold">Click to upload</span> or drag and drop
+              </>
+            )}
+          </p>
+          <p className="text-xs opacity-65">{description ?? "SVG, PNG, JPG or GIF (MAX. 800x400px)"}</p>
+        </div>
+        <input
+          id="dropzone-file"
+          type="file"
+          className="hidden"
+          onChange={(e) => {
+            if (e.target.files) {
+              setFileName(e.target.files[0].name);
+            }
+            if (onChange) {
+              onChange(e);
+            }
+          }}
+          ref={ref}
+          {...props}
+        />
       </div>
-      <div className="flex flex-col items-left justify-center ">
-        <p className="mb-1 text-sm">
-          {label ? (
-            <span className="">{label}</span>
-          ) : (
-            <>
-              <span className="font-semibold">Click to upload</span> or drag and drop
-            </>
-          )}
-        </p>
-        <p className="text-xs opacity-65">{description ?? "SVG, PNG, JPG or GIF (MAX. 800x400px)"}</p>
-      </div>
-      <input id="dropzone-file" type="file" className="hidden" ref={ref} {...props} />
-    </div>
+    </label>
   );
 });
 InputFile.displayName = "InputFile";

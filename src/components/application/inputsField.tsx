@@ -6,6 +6,12 @@ import { cn } from "@/lib/utils";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 import { InputFile } from "../ui/input-file";
 import { Brand, CarModel } from "@/configs";
+import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
+import { Button } from "../ui/button";
+import { CalendarIcon } from "@radix-ui/react-icons";
+import { Calendar } from "../ui/calendar";
+import { format } from "date-fns";
+import { PhoneInput } from "../ui/phone-input";
 
 interface InputFieldProp {
   name: string;
@@ -50,6 +56,29 @@ function InputsField({ name, inputType, data, setData, placeholder }: InputField
         />
       );
 
+    case "date":
+      const date = data[name];
+      return (
+        <Popover>
+          <PopoverTrigger asChild>
+            <Button variant={"outline"} className={cn("py-6 w-full justify-start text-left font-normal", !date && "text-muted-foreground")}>
+              <CalendarIcon className="mr-2 h-4 w-4" />
+              {date ? format(date, "PPP") : <span>Select date</span>}
+            </Button>
+          </PopoverTrigger>
+          <PopoverContent className="w-auto p-0">
+            <Calendar
+              mode="single"
+              onSelect={(date) => {
+                setData({ ...data, [name]: date });
+              }}
+              initialFocus
+            />
+          </PopoverContent>
+        </Popover>
+      );
+    case "phone":
+      return <PhoneInput value={data[name]} onChange={(phone) => (data[name] = phone)} defaultCountry="IN" placeholder="9876543210" />;
     default:
       return (
         <Input

@@ -211,7 +211,7 @@ export const Bank1: BankConfig = {
       input_field_type: "file",
     },
     {
-      input_field_id: "driving_license",
+      input_field_id: "driving_license_1",
       label: {
         en: "Driving License",
         ar: "",
@@ -233,7 +233,7 @@ export const Bank1: BankConfig = {
       input_field_type: "file",
     },
     {
-      input_field_id: "driving_license",
+      input_field_id: "driving_license_2",
       label: {
         en: "Driving License",
         ar: "",
