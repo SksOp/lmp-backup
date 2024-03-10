@@ -33,19 +33,13 @@ const InputDoc = ({ title, desc, size, className }: { title: string; desc: strin
 
 function DocUpload({ action }: { action: NonGenericAction[] }) {
   const { id } = useParams();
-
-  console.log(action);
   const leadExists = MinimalLeads.find((lead) => lead.application_id.application_id === (id as string));
   if (!leadExists) {
     return <Navigate to="/404" replace />;
   }
   return (
     <Drawer>
-      <DrawerTrigger>
-        <Button variant={"secondary"} size={"sm"} className="border border-foreground bg-background">
-          {action[0].en}
-        </Button>
-      </DrawerTrigger>
+      <DrawerTrigger className="border border-foreground bg-background rounded-sm py-1 px-2 text-sm">{action[0].en}</DrawerTrigger>
       <DrawerContent className="h-[90vh]">
         <DrawerHeader>
           <DrawerTitle className="text-bold">Upload Documents</DrawerTitle>
