@@ -22,7 +22,8 @@ interface InputFieldProp {
 }
 
 function InputsField({ name, inputType, data, setData, placeholder }: InputFieldProp) {
-  const renderRadio = (name: string) => {
+  console.log(name);
+  const renderMultimediaRadio = (name: string) => {
     switch (name) {
       case "select_brand":
         return <RadioMultiMedia name={name} data={data} setData={setData} options={brands} />;
@@ -35,7 +36,7 @@ function InputsField({ name, inputType, data, setData, placeholder }: InputField
 
   switch (inputType) {
     case "radio_multimedia":
-      return renderRadio(name);
+      return renderMultimediaRadio(name);
 
     case "radio":
       // TODO: handle radio input
@@ -47,10 +48,15 @@ function InputsField({ name, inputType, data, setData, placeholder }: InputField
       return thisOption ? <AccordionAndRadio name={name} inputType="radio" data={data} setData={setData} options={thisOption.variants} /> : <></>;
 
     case "file":
+      console.log(data);
       return (
         <InputFile
-          name={name}
-          onChange={(e: React.ChangeEvent<HTMLInputElement>) => setData({ ...data, [name]: e.target.files?.[0] })}
+          name={data[name]?.name}
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+            console.log(name);
+            setData({ ...data, [name]: e.target?.files?.[0] });
+          }}
+          id={name}
           label="Press to Upload file here"
           description="Max Size: 50MB"
         />
@@ -184,9 +190,9 @@ interface SelectModelProp extends Omit<InputFieldProp, "inputType"> {
 }
 function SelectModel(props: SelectModelProp) {
   const { name, data, setData, brands } = props;
-  console.log(props);
+  // console.log(props);
   const [options, setOptions] = useState<CarModel[]>([]);
-  console.log(options);
+  // console.log(options);
 
   useEffect(() => {
     const thisOption = brands.find((brand) => data?.select_brand && brand.name === (data.select_brand as string));
