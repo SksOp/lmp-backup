@@ -17,14 +17,14 @@ export interface Props {
 
 function LeadCard({ className, data, hideIcons, noHoverEffect }: Props) {
   return (
-    <Card className={cn("transition-all duration-300", !noHoverEffect && "hover:bg-primary/5  hover:scale-[101%]", className)}>
-      <CardHeader className="flex flex-row gap-2 items-center">
-        <LeadLogo className="w-12 h-12 text-xl" imageName={data.application_id.lead_name} />
-        <CardTitle className="text-xl">{data.application_id.lead_name}</CardTitle>
+    <Card className={cn("transition-all duration-300", !noHoverEffect && "hover:bg-primary/5  hover:scale-[101%] p-3 px-4", className)}>
+      <CardHeader className="flex flex-row gap-2 items-center p-0 pb-2">
+        <LeadLogo className="w-12 h-12 text-lg" imageName={data.application_id.lead_name} />
+        <CardTitle className="text-md">{data.application_id.lead_name}</CardTitle>
         {data.application_id.is_verified === "yes" ? <VerifiedLeadIcon className="w-8 h-8" /> : null}
       </CardHeader>
 
-      <CardContent className="flex flex-col gap-2">
+      <CardContent className="flex flex-col gap-2 p-0 pt-2">
         <div className="flex justify-between items-center pb-2">
           <div className="flex flex-col gap-1">
             <DetailViewer title="Bank" value={data.application_id.lessor_details.lessor_name.en} />
@@ -48,17 +48,17 @@ function LeadCard({ className, data, hideIcons, noHoverEffect }: Props) {
       </CardContent>
 
       {!hideIcons && (
-        <CardFooter className="flex justify-between">
-          <div className=" p-3 bg-secondary rounded-full items-center justify-center">
+        <CardFooter className="flex justify-between mt-3 mb-0 p-0 px-4 ">
+          <div className=" p-3 bg-[#E2E8F0] rounded-full items-center justify-center">
             <Call />
           </div>
-          <div className=" p-3 bg-secondary rounded-full items-center justify-center">
+          <div className=" p-3 bg-[#E2E8F0] rounded-full items-center justify-center">
             <Whatsapp />
           </div>
-          <div className=" p-3 bg-secondary rounded-full items-center justify-center">
+          <div className=" p-3 bg-[#E2E8F0] rounded-full items-center justify-center">
             <Mail />
           </div>
-          <div className=" p-3 bg-secondary rounded-full items-center justify-center">
+          <div className=" p-3 bg-[#E2E8F0] rounded-full items-center justify-center">
             <SMS />
           </div>
         </CardFooter>

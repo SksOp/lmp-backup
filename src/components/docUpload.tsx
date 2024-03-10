@@ -15,21 +15,7 @@ import LeadCard from "./leadCard";
 import { MinimalLeads } from "@/constants/leads";
 import { ClassValue } from "clsx";
 import { NonGenericAction } from "@/types";
-
-const InputDoc = ({ title, desc, size, className }: { title: string; desc: string; size: string; className?: ClassValue }) => {
-  return (
-    <div className="flex flex-col items-start justify-between my-2 gap-2">
-      <h3 className="text-lg font-bold">{title}</h3>
-      <div className="flex items-center justify-start gap-3 border-2 w-full">
-        <Icon icon="ep:upload-filled" className="h-8 w-8" />
-        <div className="flex flex-col items-center justify-start">
-          <p className="text-lg ">{desc}</p>
-          <p className="text-lg opacity-50">{size}</p>
-        </div>
-      </div>
-    </div>
-  );
-};
+import { InputFile } from "./ui/input-file";
 
 function DocUpload({ action }: { action: NonGenericAction[] }) {
   const { id } = useParams();
@@ -45,8 +31,7 @@ function DocUpload({ action }: { action: NonGenericAction[] }) {
           <DrawerTitle className="text-bold">Upload Documents</DrawerTitle>
           <DrawerDescription>We require you to confirm the car availability</DrawerDescription>
           <LeadCard data={leadExists} className="p-4" />
-          <InputDoc title="Driving Licence" desc="Press to Upload file here" size="Max Size: 50MB" />
-          <InputDoc title="Driving Licence" desc="Press to Upload file here" size="Max Size: 50MB" />
+          <InputFile label="Press to Upload file here" description="Max Size: 50MB" className="py-2" />
         </DrawerHeader>
         <DrawerFooter>
           <Button variant="default">Submit Documents</Button>

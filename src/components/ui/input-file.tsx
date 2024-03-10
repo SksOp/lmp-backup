@@ -37,7 +37,7 @@ const InputFile = React.forwardRef<HTMLInputElement, InputProps>(({ id, name, cl
               </>
             )}
           </p>
-          <p className="text-xs opacity-65">{description ?? "SVG, PNG, JPG or GIF (MAX. 800x400px)"}</p>
+          <p className="text-xs text-left opacity-65">{description ?? "SVG, PNG, JPG or GIF (MAX. 800x400px)"}</p>
         </div>
         <input id={id} type="file" className="hidden" onChange={onChange} ref={ref} {...props} />
       </div>
