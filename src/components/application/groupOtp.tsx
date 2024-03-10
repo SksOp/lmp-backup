@@ -31,12 +31,12 @@ function GroupOtp(props: GroupProps) {
     <>
       <div className="w-full flex flex-col gap-1">
         <CustomerDetailCard name={selectedBank.name} />
-        <Label className="text-xl font-semibold py-3">Enter OTP</Label>
+        <Label className="text-lg font-semibold py-3">Enter OTP</Label>
         {fields.map((field, index) => {
           return (
             <>
-              <Label className="text-md font-bold">Enter {field.label.en} OTP</Label>
-              <p className="text-sm opacity-40 mb-1">
+              <Label className="text-sm ">Enter {field.label.en} OTP</Label>
+              <p className="text-[0.7rem] opacity-40 mb-2">
                 We have sent a 4 digit OTP on {field.label.en} {data[field.input_field_id as keyof typeof data]}. Please enter the OTP to verify
               </p>
               <div className="flex justify-center sm:gap-6 gap-4 ">
@@ -49,7 +49,7 @@ function GroupOtp(props: GroupProps) {
                       return [...prev];
                     })
                   }
-                  className="h-14 rounded-lg"
+                  className="h-10 rounded-lg mb-5"
                 />
               </div>
             </>
