@@ -15,7 +15,6 @@ function formattedDate(date: string) {
 
 function Progress() {
   const states = DetailedLeads.history_timeline.states;
-  const reversedStates = [...states].reverse();
 
   return (
     <>
@@ -32,7 +31,7 @@ function Progress() {
           <div className="flex flex-col gap-5 justify-start  px-4 py-5 rounded-md bg-primary/5">
             <h2 className="font-bold">Personal Details</h2>
             <div className="flex flex-col">
-              {reversedStates.map((state, index) => (
+              {states.map((state, index) => (
                 <States
                   key={state.key}
                   id={Number(state.key)}
@@ -40,7 +39,7 @@ function Progress() {
                   title={state.name.en}
                   doneBy={state.completed_by}
                   status={state.status}
-                  noOfStates={reversedStates.length}
+                  noOfStates={states.length}
                   action={DetailedLeads.actions.non_generic}
                 />
               ))}

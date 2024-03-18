@@ -1,5 +1,5 @@
 import DocUpload from "@/components/docUpload";
-import { CautionIcon, InitialStateIcon, StatusIcon } from "@/components/svgs/icon";
+import { CautionIcon, InitialStateIcon, StatusCompletedIcon, StatusIcon } from "@/components/svgs/icon";
 import { cn } from "@/lib/utils";
 import { NonGenericAction } from "@/types";
 import { ClassValue } from "clsx";
@@ -17,11 +17,11 @@ interface Props {
 
 function ConditionalIcon({ id, noOfStates, status }: Omit<Props, "className" | "date" | "title" | "doneBy" | "action">) {
   return (
-    <div className="flex w-8 h-8">
+    <div className="flex w-8 h-8 items-center justify-center">
       {id === noOfStates ? (
         <InitialStateIcon className="" />
       ) : status === "completed" ? (
-        <StatusIcon isCompleted className="" />
+        <StatusCompletedIcon />
       ) : status === "current" ? (
         <CautionIcon className="" />
       ) : (
