@@ -1,20 +1,24 @@
 import * as React from "react";
 
 import { cn } from "@/lib/utils";
+import { ClassValue } from "clsx";
 
 export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label?: string;
   description?: string;
 }
 
-const UploadIcon = () => (
-  <svg className="w-8 h-8  text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+const UploadIcon = ({ className }: { className?: ClassValue }) => (
+  <svg className="" width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12.5003 13.0005L10.0002 10.5004" stroke="#151515" stroke-width="1.25005" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M10.0003 10.5004L7.50024 13.0005" stroke="#151515" stroke-width="1.25005" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M10.0004 17.1673L10.0004 10.5004" stroke="#151515" stroke-width="1.25005" stroke-linecap="round" stroke-linejoin="round" />
     <path
-      stroke="currentColor"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="2"
-      d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"
+      d="M6.66693 16.334H5.0002C3.15919 16.334 1.66675 14.8415 1.66675 13.0005C1.66675 11.1595 3.15919 9.66704 5.0002 9.66704L4.99187 9.60841C4.78445 8.15648 5.2173 6.68599 6.17826 5.57798C7.13922 4.46998 8.53371 3.83351 10.0004 3.8335C11.4671 3.83351 12.8615 4.46998 13.8225 5.57798C14.7835 6.68599 15.2163 8.15648 15.0089 9.60841L15.0006 9.66704C16.8416 9.66704 18.334 11.1595 18.334 13.0005C18.334 14.8415 16.8416 16.334 15.0006 16.334H13.3338"
+      stroke="#151515"
+      stroke-width="1.25005"
+      stroke-linecap="round"
+      stroke-linejoin="round"
     />
   </svg>
 );
@@ -22,8 +26,8 @@ const InputFile = React.forwardRef<HTMLInputElement, InputProps>(({ id, name, cl
   return (
     <label htmlFor={id} className="w-full">
       <div className={cn("flex items-center justify-start px-4 py-2 gap-3 border w-full rounded-md", className)}>
-        <div className="bg-foreground/5 p-3 rounded-full">
-          <UploadIcon />
+        <div className="bg-[#CAD1D9]/30 p-2 rounded-full">
+          <UploadIcon className />
         </div>
         <div className="flex flex-col items-left justify-center ">
           <p className="mb-1 text-sm">

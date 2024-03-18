@@ -19,7 +19,7 @@ function NavBottom() {
         <DrawerTrigger>
           <EditIcon className="" />
         </DrawerTrigger>
-        <DrawerContent className="min-h-[90vh]">
+        <DrawerContent className="min-h-[60vh]">
           <ApplicationDrawerContent />
         </DrawerContent>
       </Drawer>

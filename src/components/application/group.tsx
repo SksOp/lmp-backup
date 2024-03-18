@@ -51,7 +51,7 @@ function Group(props: GroupProps) {
     <>
       <div className="flex flex-col gap-4">
         {group >= 2 && <CustomerDetailCard name={selectedBank.name} />}
-        <h3 className="text-xl font-semibold py-3">{groupFinder?.group_name.en}</h3>
+        <h3 className="text-lg font-semibold py-1">{groupFinder?.group_name.en}</h3>
       </div>
 
       {config &&
@@ -62,7 +62,7 @@ function Group(props: GroupProps) {
 
           return (
             <div key={field.input_field_id} className="w-full flex flex-col gap-1">
-              <Label className="text-md font-bold">{field.label.en}</Label>
+              <Label className="text-md ">{field.label.en}</Label>
               {/* {field.input_field_type !== "file" && <p className="text-md">{field.description.en}</p>} */}
               <InputsField
                 placeholder={field.description.en}

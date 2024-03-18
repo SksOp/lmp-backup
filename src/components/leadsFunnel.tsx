@@ -34,14 +34,14 @@ function LeadsFunnel() {
   const total = data.datasets[0].data.reduce((a, b) => a + b, 0);
   return (
     <Card className="bg-none w-full">
-      <CardHeader className="flex justify-between pb-3">
-        <h1 className="text-xl font-bold">Applications Funnel</h1>
-      </CardHeader>
-      <CardContent>
-        <div className="flex min-[500px]:flex-row  justify-between items-center">
-          <ul>
+      <CardContent className="p-6">
+        <div className="flex flex-col justify-between items-start">
+          <h2>
+            <span className="font-bold">{total}</span> <span className="font-medium">Total Applications:</span>
+          </h2>
+          <ul className="flex flex-wrap gap-1">
             {data.labels.map((label, index) => (
-              <li key={index} className="flex text-xl my-2 items-center">
+              <li key={index} className="flex justify-center text-xl my-2 items-center">
                 <span
                   className="text-sm"
                   style={{
@@ -50,22 +50,12 @@ function LeadsFunnel() {
                 >
                   ⬤
                 </span>
-                <span className="font-medium sm:text-lg min-[500px]:text-base text-sm ml-2">
-                  {data.datasets[0].data[index]} {label}
+                <span className="font-bold sm:text-lg min-[500px]:text-base text-xs ml-2">
+                  {data.datasets[0].data[index]} <span className="font-normal ">{label}</span>
                 </span>
               </li>
             ))}
           </ul>
-          <div className={"max-w-xs flex relative justify-end items-center"}>
-            <Doughnut
-              options={options}
-              className="!w-32 !h-32 min-[500px]:!w-52 min-[500px]:!h-52 sm:!w-80 sm:!h-80 transition-all duration-300"
-              data={data}
-            />
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-              <p className="text-4xl sm:text-6xl font-bold transition-all duration-300 "> {total} </p>
-            </div>
-          </div>
         </div>
       </CardContent>
     </Card>
