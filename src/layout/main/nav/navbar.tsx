@@ -13,7 +13,7 @@ function Navbar() {
       </Link>
       <div className="flex gap-3">
         <SearchIcon />
-        <Link to={paths.home}>
+        <Link to={paths.notifications}>
           <NotificationIcon />
         </Link>
       </div>

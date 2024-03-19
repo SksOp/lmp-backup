@@ -8,7 +8,7 @@ const Login = React.lazy(() => import("@/pages/auth/login"));
 const Logout = React.lazy(() => import("@/pages/auth/logout"));
 const ResetPassword = React.lazy(() => import("@/pages/auth/reset-password"));
 const Lead = React.lazy(() => import("@/pages/lead"));
-
+const Notifications = React.lazy(() => import("@/pages/notifications"));
 export default function Router() {
   return useRoutes([...root]);
 }
@@ -19,6 +19,14 @@ const root = [
     element: (
       <AuthGuard>
         <Home />
+      </AuthGuard>
+    ),
+  },
+  {
+    path: paths.notifications,
+    element: (
+      <AuthGuard>
+        <Notifications />
       </AuthGuard>
     ),
   },
