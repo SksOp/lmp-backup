@@ -16,6 +16,23 @@ export interface Props {
 }
 
 function LeadCard({ className, data, hideIcons, noHoverEffect }: Props) {
+  
+  const handleWhatsappClick = () => {
+    window.open(`https://wa.me/${data.application_id.phone_number}`, "_blank");
+  };
+
+  const handleCallClick = () => {
+    window.open(`tel:${data.application_id.phone_number}`);
+  };
+
+  const handleMailClick = () => {
+    window.open(`mailto:${data.application_id.email}`);
+  };
+
+  const handleSMSClick = () => {
+    window.open(`sms:${data.application_id.phone_number}`);
+  };
+
   return (
     <Card className={cn("transition-all duration-300", !noHoverEffect && "hover:bg-primary/5  hover:scale-[101%] p-3 px-4", className)}>
       <CardHeader className="flex flex-row gap-2 items-center p-0 pb-2">
@@ -49,16 +66,16 @@ function LeadCard({ className, data, hideIcons, noHoverEffect }: Props) {
 
       {!hideIcons && (
         <CardFooter className="flex justify-between mt-3 mb-0 p-0 px-4 ">
-          <div className=" p-3 bg-[#E2E8F0] rounded-full items-center justify-center">
+          <div className=" p-3 bg-[#E2E8F0] rounded-full items-center justify-center cursor-pointer" onClick={handleCallClick}>
             <Call />
           </div>
-          <div className=" p-3 bg-[#E2E8F0] rounded-full items-center justify-center">
+          <div className=" p-3 bg-[#E2E8F0] rounded-full items-center justify-center cursor-pointer" onClick={handleWhatsappClick}>
             <Whatsapp />
           </div>
-          <div className=" p-3 bg-[#E2E8F0] rounded-full items-center justify-center">
+          <div className=" p-3 bg-[#E2E8F0] rounded-full items-center justify-center cursor-pointer" onClick={handleMailClick}>
             <Mail />
           </div>
-          <div className=" p-3 bg-[#E2E8F0] rounded-full items-center justify-center">
+          <div className=" p-3 bg-[#E2E8F0] rounded-full items-center justify-center cursor-pointer" onClick={handleSMSClick}>
             <SMS />
           </div>
         </CardFooter>
