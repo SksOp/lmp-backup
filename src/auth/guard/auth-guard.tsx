@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { useAuth } from "@/hooks/useAuth";
 import { paths } from "@/router";
-import { useNavigate } from "react-router-dom";
 import { useRouter } from "@/hooks/useRouter";
 import { Progress } from "@radix-ui/react-progress";
 

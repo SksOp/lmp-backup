@@ -75,6 +75,7 @@ export function StatusIcon({ isCompleted, className }: { isCompleted?: boolean; 
     </svg>
   );
 }
+
 export function StatusCompletedIcon({ isCompleted, className }: { isCompleted?: boolean; className?: ClassValue }) {
   return (
     <svg className={cn("", className)} width="25" height="25" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -88,6 +89,63 @@ export function StatusCompletedIcon({ isCompleted, className }: { isCompleted?: 
         d="M12.4101 6.53526L7.59625 11.344L5.58955 9.33945C5.49451 9.25182 5.38303 9.20801 5.2551 9.20801C5.12717 9.20801 5.01934 9.25182 4.93162 9.33945C4.83658 9.43439 4.78906 9.54575 4.78906 9.67355C4.78906 9.80134 4.83658 9.90906 4.93162 9.99669L7.26728 12.3408C7.35501 12.4285 7.46466 12.4723 7.59625 12.4723C7.72784 12.4723 7.83749 12.4285 7.92522 12.3408L13.0681 7.19249C13.1631 7.10486 13.2106 6.99714 13.2106 6.86935C13.2106 6.74155 13.1631 6.63019 13.0681 6.53526C12.9804 6.44762 12.8725 6.40381 12.7446 6.40381C12.6167 6.40381 12.5052 6.44762 12.4101 6.53526Z"
         fill="white"
       />
+    </svg>
+  );
+}
+
+export function TranslateIcon({ className }: { className?: ClassValue }) {
+  return (
+    <svg className={cn("", className)} width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g clip-path="url(#clip0_4562_15913)">
+        <path d="M4.16663 6.66663L9.16663 11.6666" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M3.33337 11.6666L8.33337 6.66663L10 4.16663" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M1.66663 4.16663H11.6666" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M5.83337 1.66663H6.66671" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M18.3333 18.3333L14.1667 10L10 18.3333" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M11.6666 15H16.6666" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      </g>
+      <defs>
+        <clipPath id="clip0_4562_15913">
+          <rect width="20" height="20" fill="white" />
+        </clipPath>
+      </defs>
+    </svg>
+  );
+}
+
+export function LockIcon({ className }: { className?: ClassValue }) {
+  return (
+    <svg className={cn("", className)} width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M15.8333 9.16663H4.16667C3.24619 9.16663 2.5 9.91282 2.5 10.8333V16.6666C2.5 17.5871 3.24619 18.3333 4.16667 18.3333H15.8333C16.7538 18.3333 17.5 17.5871 17.5 16.6666V10.8333C17.5 9.91282 16.7538 9.16663 15.8333 9.16663Z"
+        stroke="black"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M5.83338 9.16667V5.83334C5.83234 4.80005 6.21528 3.80323 6.90785 3.03639C7.60043 2.26956 8.55323 1.78742 9.5813 1.68358C10.6094 1.57974 11.6393 1.86159 12.4713 2.47443C13.3032 3.08728 13.8778 3.98738 14.0834 5.00001"
+        stroke="black"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  );
+}
+
+export function LogoutIcon({ className }: { className?: ClassValue }) {
+  return (
+    <svg className={cn("", className)} width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M7.5 17.5H4.16667C3.72464 17.5 3.30072 17.3244 2.98816 17.0118C2.67559 16.6993 2.5 16.2754 2.5 15.8333V4.16667C2.5 3.72464 2.67559 3.30072 2.98816 2.98816C3.30072 2.67559 3.72464 2.5 4.16667 2.5H7.5"
+        stroke="#EF4444"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path d="M13.3334 14.1667L17.5 10L13.3334 5.83337" stroke="#EF4444" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M17.5 10H7.5" stroke="#EF4444" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
     </svg>
   );
 }
