@@ -11,6 +11,8 @@ import { cn } from "@/lib/utils";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import Otp from "@/components/ui/otp";
+import { Mail, SMS } from "@/components/svgs/contacts";
+import { InfoIcon } from "@/components/svgs/icon";
 
 enum Page {
   SelectPlatform,
@@ -61,11 +63,11 @@ function ResetPassword() {
     // Confirm User that password has been reset
   };
   return (
-    <div className="pt-16 min-h-screen  bg-muted ">
-      <div className="pt-16 py-6 border-b flex bg-background flex-col gap-2 items-center">
+    <div className="pt-10 min-h-screen  bg-muted ">
+      <div className="pt-10 py-6 border-b flex bg-background flex-col gap-2 items-center">
         <HeroAvatar icon={"prime:lock"} />
-        <h2 className="text-2xl font-bold mt-10">Reset your password</h2>
-        <p className=" opacity-50">Start your car leasing process with us </p>
+        <h2 className="text-xl font-semibold mt-5">Reset your password</h2>
+        <p className="text-sm opacity-50">Start your car leasing process with us </p>
       </div>
       {page === Page.SelectPlatform && <SelectPlatform onSelectPlatform={onSelectPlatform} />}
       {page === Page.OTP && <OtpView otp={otp} setOtp={setOtp} onOtpSubmit={onOtpSubmit} />}
@@ -86,36 +88,47 @@ function SelectPlatform({ onSelectPlatform }: SelectPlatformProps) {
 
   return (
     <div className="p-6 max-w-xl  m-auto flex flex-col gap-2">
-      <p className="text-xl font-bold mt-10">Select how you want to reset your password</p>
-      <RadioGroup value={selectedPlatform} defaultValue={selectedPlatform}>
+      <p className="text-sm font-semibold">Verify your identity with one of the option,</p>
+      <RadioGroup value={selectedPlatform} defaultValue={selectedPlatform} >
         {user?.email && (
-          <PlatformCard onClick={() => setSelectedPlatform("email")} name="Email" label={user.email}>
-            <RadioGroupItem value="email" onClick={() => setSelectedPlatform("email")} />
+          <PlatformCard onClick={() => setSelectedPlatform("email")} name="Email" label={user.email} Icon={SMS}>
+            <RadioGroupItem value="email" onClick={() => setSelectedPlatform("email")} className="text-foreground border-foreground" />
           </PlatformCard>
         )}
 
         {user?.number && (
-          <PlatformCard onClick={() => setSelectedPlatform("phone")} name="Phone" label={user.number}>
-            <RadioGroupItem value="phone" onClick={() => setSelectedPlatform("phone")} />
+          <PlatformCard onClick={() => setSelectedPlatform("phone")} name="Phone" label={user.number} Icon={Mail}>
+            <RadioGroupItem value="phone" onClick={() => setSelectedPlatform("phone")} className="text-foreground border-foreground" />
           </PlatformCard>
         )}
       </RadioGroup>
+      <div className="flex gap-1">
+          <InfoIcon />
+          <p className="text-xs">We will send an OTP to the chosen verification method</p>
+      </div>
       <div className="w-full max-w-xl  absolute bottom-0 left-1/2 transform -translate-x-1/2 p-6">
         <Button className={cn("w-full bg-primary ")} onClick={() => onSelectPlatform(selectedPlatform)}>
-          Next
+          Continue
         </Button>
       </div>
     </div>
   );
 }
 
-const PlatformCard = ({ children, name, label, onClick }: { children: React.ReactNode; name: string; label: string; onClick: () => void }) => {
+const PlatformCard = ({ children, name, label, onClick,Icon }: { children: React.ReactNode; name: string; label: string; onClick: () => void; Icon:React.ComponentType }) => {
   return (
-    <Card onClick={onClick} className="flex gap-3 px-8 py-4 items-center pointer-events-auto cursor-pointer hover:bg-secondary">
+    <Card onClick={onClick} className="flex gap-3 px-8 py-4 items-center justify-start pointer-events-auto cursor-pointer hover:bg-secondary">
       {children}
-      <p className="text-lg font-bold">{name}</p>
+      <div className="flex items-center justify-between gap-2">
+        <Icon />
+        <div>
+        <p className="text-sm text-foreground " >{name}</p>
       <div className="flex-1" />
-      <p className="opacity-50">{label}</p>
+      <p className="text-sm opacity-50">{label}</p>
+
+        </div>
+      </div>
+      
     </Card>
   );
 };
