@@ -41,7 +41,7 @@ export function LeadsData({ setSelectedLead, selectedLead }: { setSelectedLead: 
   const draft = MinimalLeads.map((lead) => lead.application_id.is_draft && createLink(lead));
 
   return (
-    <div className="w-full md:w-[500px]">
+    <div className="w-full">
       <TabsContent value="all-leads" className="flex flex-col gap-3">
         {allLeads}
       </TabsContent>

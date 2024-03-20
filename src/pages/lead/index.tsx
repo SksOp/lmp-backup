@@ -4,7 +4,7 @@ import LeadView from "@/sections/lead";
 function Page() {
   return (
     <Layout>
-      <LeadView />
+      <LeadView showProgress />
     </Layout>
   );
 }
