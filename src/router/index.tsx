@@ -22,6 +22,12 @@ const root = [
         <Home />
       </AuthGuard>
     ),
+    children: [
+      {
+        path: ":id",
+        element: <Lead />,
+      },
+    ],
   },
   {
     path: paths.login,

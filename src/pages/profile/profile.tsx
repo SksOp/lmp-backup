@@ -4,7 +4,6 @@ import { Profile } from "@/sections/profile/profle";
 
 export default function Page() {
   const { user } = useAuth();
-  console.log(user);
   if (!user) return null;
   return (
     <ProfileLayout>

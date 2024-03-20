@@ -34,10 +34,22 @@ const SimpleBarChart: React.FC = () => {
         const value = data.datasets[0].data[index];
         const backgroundColor = data.datasets[0].backgroundColor[index];
         if (index === 0)
-          return <div className="rounded-l-full" style={{ width: `${(value / total) * 100}%`, backgroundColor: backgroundColor, height: "10px" }} />;
+          return (
+            <div
+              key={index}
+              className="rounded-l-full"
+              style={{ width: `${(value / total) * 100}%`, backgroundColor: backgroundColor, height: "10px" }}
+            />
+          );
         if (index === data.labels.length - 1)
-          return <div className="rounded-r-full" style={{ width: `${(value / total) * 100}%`, backgroundColor: backgroundColor, height: "10px" }} />;
-        return <div className="" style={{ width: `${(value / total) * 100}%`, backgroundColor: backgroundColor, height: "10px" }} />;
+          return (
+            <div
+              key={index}
+              className="rounded-r-full"
+              style={{ width: `${(value / total) * 100}%`, backgroundColor: backgroundColor, height: "10px" }}
+            />
+          );
+        return <div key={index} className="" style={{ width: `${(value / total) * 100}%`, backgroundColor: backgroundColor, height: "10px" }} />;
       })}
     </div>
   );

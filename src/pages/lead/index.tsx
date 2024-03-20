@@ -5,7 +5,6 @@ function Page() {
   return (
     <Layout>
       <LeadView />
-      {/* <></> */}
     </Layout>
   );
 }

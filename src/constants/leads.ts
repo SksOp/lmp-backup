@@ -19,7 +19,7 @@ export const MinimalLeads: MinimalLead[] = [
       iqama_id: "123456789012",
       driving_license_number: "MH12 20211234567",
       phone_number: "+1234567890",
-      email: "john.duo@example.com",
+      email: "john.duo@examplo.com",
       is_verified: "yes",
       status: "active",
       car_details: {
