@@ -11,11 +11,39 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer";
+import { cn } from "@/lib/utils";
+import { ClassValue } from "clsx";
 import { Plus } from "lucide-react";
 import { useEffect, useState } from "react";
 
+export function ApplyButtonDrawer({ scrollDirection, className }: { scrollDirection?: "up" | "down"; className?: ClassValue }) {
+  return (
+    <Drawer>
+      <DrawerTrigger className={cn("", className)}>
+        {scrollDirection === "down" && <Plus className=" bg-primary text-white rounded-full w-16 h-16 p-4" />}
+        {scrollDirection ? (
+          scrollDirection === "up" && (
+            <div className="flex items-center text-white rounded-full pl-4 pr-5 py-3 justify-center bg-primary">
+              <Plus className=" bg-primary  rounded-full w-12 h-6 pr-2 " />
+              <h2 className="font-semibold">Apply</h2>
+            </div>
+          )
+        ) : (
+          <div className="flex items-center text-white rounded-full pl-4 pr-5 py-3 justify-center bg-primary md:mb-4">
+            <Plus className=" bg-primary  rounded-full w-12 h-6 pr-2" />
+            <h2 className="font-semibold">Apply</h2>
+          </div>
+        )}
+      </DrawerTrigger>
+      <DrawerContent className="min-h-[60vh]">
+        <ApplicationDrawerContent />
+      </DrawerContent>
+    </Drawer>
+  );
+}
+
 function NavBottom() {
-  const [scrollDirection, setScrollDirection] = useState("down");
+  const [scrollDirection, setScrollDirection] = useState<"up" | "down">("down");
   const [lastScrollTop, setLastScrollTop] = useState(0);
 
   useEffect(() => {
@@ -34,21 +62,8 @@ function NavBottom() {
     return () => window.removeEventListener("scroll", onScroll);
   }, [lastScrollTop]);
   return (
-    <footer className="z-10 fixed bottom-0 right-0 m-7">
-      <Drawer>
-        <DrawerTrigger>
-          {scrollDirection === "down" && <Plus className=" bg-primary text-white rounded-full w-16 h-16 p-4" />}
-          {scrollDirection === "up" && (
-            <div className="flex items-center text-white rounded-full pl-4 pr-5 py-3 justify-center bg-primary">
-              <Plus className=" bg-primary  rounded-full w-10 h-10 pr-2" />
-              <h2 className="font-semibold">Apply</h2>
-            </div>
-          )}
-        </DrawerTrigger>
-        <DrawerContent className="min-h-[60vh]">
-          <ApplicationDrawerContent />
-        </DrawerContent>
-      </Drawer>
+    <footer className="z-10 fixed bottom-0 right-0 m-7 md:hidden">
+      <ApplyButtonDrawer scrollDirection={scrollDirection} />
     </footer>
   );
 }

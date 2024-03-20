@@ -71,7 +71,7 @@ function LeadsFunnel() {
   const total = data.datasets[0].data.reduce((a, b) => a + b, 0);
   return (
     <Card className="bg-none w-full md:border-0 shadow-none">
-      <CardContent className="flex flex-col px-4 py-5 gap-4">
+      <CardContent className="flex flex-col px-4 py-5 gap-4 md:px-0">
         <div className="flex flex-col md:flex-row justify-between md:justify-normal gap-2 items-start md:items-center">
           <h2>
             <span className="font-bold">{total}</span> <span className="font-medium">Total Applications:</span>

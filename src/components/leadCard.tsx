@@ -1,12 +1,23 @@
 import { ClassValue } from "clsx";
-import React from "react";
+import React, { useState } from "react";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "./ui/card";
 import { Progress } from "./ui/progress";
 import { cn } from "@/lib/utils";
 import { LeadLogo } from "./leadLogo";
 import { MinimalLead } from "@/types";
 import Call, { Mail, SMS, Whatsapp } from "./svgs/contacts";
-import { VerifiedLeadIcon } from "./svgs/icon";
+import { EditIcon, HamburgerMenuIcon, PencilIcon, VerifiedLeadIcon } from "./svgs/icon";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { ChevronDown } from "lucide-react";
+import { Actions, CoreActions } from "@/layout/lead/nav/navBottom";
+import { DetailedLeads } from "@/constants/leads";
 
 export interface Props {
   className?: ClassValue;
@@ -16,7 +27,7 @@ export interface Props {
 }
 
 function LeadCard({ className, data, hideIcons, noHoverEffect }: Props) {
-  
+  const [open, setOpen] = useState(false);
   const handleWhatsappClick = () => {
     window.open(`https://wa.me/${data.application_id.phone_number}`, "_blank");
   };
@@ -77,6 +88,20 @@ function LeadCard({ className, data, hideIcons, noHoverEffect }: Props) {
           </div>
           <div className=" p-3 bg-[#E2E8F0] rounded-full items-center justify-center cursor-pointer" onClick={handleSMSClick}>
             <SMS />
+          </div>
+          <div className="hidden md:flex">
+            <DropdownMenu>
+              <DropdownMenuTrigger>
+                <div className="w-full shadow-lg flex items-center bg-primary text-primary-foreground gap-3 rounded-md px-4 py-2 justify-between">
+                  <PencilIcon />
+                  <span className="font-medium">Actions</span>
+                  <ChevronDown />
+                </div>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent>
+                <CoreActions detailedLeads={DetailedLeads} />
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
         </CardFooter>
       )}

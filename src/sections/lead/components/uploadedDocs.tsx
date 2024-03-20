@@ -19,9 +19,9 @@ function UploadedDocument({ uploadedDoc }: { uploadedDoc: UploadedDoc }) {
 
 export function UploadedDocuments({ uploadedDocs }: { uploadedDocs: UploadedDoc[] }) {
   return (
-    <div className="flex flex-col gap-2">
-      <h2 className="font-bold">Uploaded Documents</h2>
+    <div className="flex flex-col gap-2 md:border md:p-6 rounded-lg">
       <div className="flex flex-col gap-3">
+        <h2 className="font-bold">Uploaded Documents</h2>
         {uploadedDocs.map((uploadedDoc) => {
           return <UploadedDocument key={uploadedDoc.name} uploadedDoc={uploadedDoc}></UploadedDocument>;
         })}

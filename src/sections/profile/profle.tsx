@@ -4,15 +4,17 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { cn } from "@/lib/utils";
 import { paths } from "@/router";
+import { ClassValue } from "clsx";
 import { ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
-export function Profile({ user }: { user: User }) {
+export function Profile({ user, className }: { user: User; className?: ClassValue }) {
   const { name, email, number, role } = user;
   return (
-    <div className="flex flex-col gap-2 pt-16 bg-background min-h-screen items-center px-4 text-xs">
-      <div className="flex flex-col border rounded-md gap-2 w-full px-3 py-2 mt-5">
+    <div className={cn("flex flex-col gap-2 pt-16 md:p-0 bg-background  items-center px-4 text-xs md:text-base", className)}>
+      <div className="flex flex-col border md:border-0 rounded-md gap-2 w-full px-3 py-2 mt-5 md:m-0">
         <div className="flex items-center gap-2">
           <Avatar>
             {/* <AvatarImage src={image} alt={imageAlt} /> */}
@@ -33,8 +35,9 @@ export function Profile({ user }: { user: User }) {
           </div>
         </div>
       </div>
+      <hr className="w-full"></hr>
       <Link className="w-full" to={`${paths.resetPassword}`}>
-        <div className="w-full rounded-md border px-3 py-3">
+        <div className="w-full rounded-md border md:border-0 px-3 py-3">
           <div className="flex gap-4 justify-between">
             <div className="flex items-center gap-2 font-normal">
               <LockIcon /> Reset Password
@@ -43,7 +46,7 @@ export function Profile({ user }: { user: User }) {
           </div>
         </div>
       </Link>
-      <Accordion className="w-full rounded-md border px-3" type="single" collapsible>
+      <Accordion className="w-full rounded-md border md:border-0 px-3" type="single" collapsible>
         <AccordionItem className="border-0" value="item-1">
           <AccordionTrigger className=" gap-4  py-3">
             <div className="flex items-center gap-2 font-normal">
@@ -69,7 +72,7 @@ export function Profile({ user }: { user: User }) {
         </AccordionItem>
       </Accordion>
       <Link className="w-full" to={`${paths.logout}`}>
-        <div className="w-full rounded-md border px-3 py-3 text-red-600">
+        <div className="w-full rounded-md border md:border-0 px-3 py-3 text-red-600">
           <div className="flex gap-4 justify-between">
             <div className="flex items-center gap-2 font-normal">
               <LogoutIcon /> Logout

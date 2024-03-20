@@ -11,7 +11,7 @@ function MainSection() {
   return (
     <>
       <Tabs defaultValue="applications" className="w-full mb-16">
-        <TabsList className="grid w-full grid-cols-2 gap-1 my-4 bg-background border ">
+        <TabsList className="grid w-full grid-cols-2 gap-1 my-4 md:my-0 md:mb-4 bg-background border ">
           <TabsTrigger value="applications">Active Applications</TabsTrigger>
           <TabsTrigger value="action">Required Action</TabsTrigger>
         </TabsList>
