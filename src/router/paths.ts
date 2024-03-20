@@ -8,4 +8,5 @@ export const paths = {
   allLead: "/lead/all",
   notifications: "/notifications",
   profile: "/profile",
+  welcome: "/welcome",
 };

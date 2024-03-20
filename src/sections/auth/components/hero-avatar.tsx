@@ -12,7 +12,7 @@ function HeroAvatar({
 }) {
   return (
     <div
-      className={cn(" bg-muted max-w-min p-8 rounded-full ", className)}
+      className={cn("bg-muted max-w-min p-8 rounded-full ", className)}
     >
       <Icon
         icon={icon ?? "prime:user"}

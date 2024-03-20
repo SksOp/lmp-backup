@@ -253,8 +253,9 @@ export function LeadIcon({ className }: Props) {
   );
 }
 
-export function NotificationIcon({ className }: Props) {
+export function NotificationIcon({ className,count }: {className?:ClassValue; count:number}) {
   return (
+    <div className="relative">
     <svg className={cn("", className)} width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M12 6.44V9.77" stroke="#292D32" strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" />
       <path
@@ -271,6 +272,14 @@ export function NotificationIcon({ className }: Props) {
         strokeMiterlimit="10"
       />
     </svg>
+    {count > 0 && (
+      <div
+        className="absolute flex w-4 h-4 top-0 right-0 bg-red-500 text-white rounded-full items-center justify-center text-xs"
+      >
+        {count}
+      </div>
+    )}
+    </div>
   );
 }
 
@@ -338,6 +347,17 @@ export function VerifiedLeadIcon({ className }: Props) {
       <path d="M9 12L11 14L15 10" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
+}
+
+export function GreenSuccessIcon({ className }: Props) {
+  return (
+    <svg className={cn("", className)} width="88" height="89" viewBox="0 0 88 89" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect y="0.5" width="88" height="88" rx="44" fill="#22C55E"/>
+<path d="M36.3478 63.6388L36.1412 63.2869C32.5936 57.2431 23.1688 44.4192 23.074 44.29L22.9531 44.1258L26.1285 40.988L36.2948 48.0865C42.6994 39.7725 48.6747 34.0638 52.5713 30.7308C56.829 27.0889 59.6006 25.4139 59.628 25.3969L59.684 25.3633H65.0454L64.5826 25.7755C57.5932 32.0009 50.345 41.8648 45.4951 49.0439C40.2363 56.8283 36.586 63.2205 36.5498 63.2842L36.3478 63.6388Z" fill="#F3FAFD"/>
+<path d="M59.6842 25.3633L59.6281 25.3969C59.6004 25.4134 56.8292 27.0889 52.5715 30.7308C48.6748 34.0638 42.6994 39.7725 36.2951 48.0869L36.1414 63.2869L36.3479 63.6388L36.5499 63.2842C36.5862 63.2205 40.2364 56.8283 45.4953 49.0439C50.3451 41.8651 57.5933 32.0009 64.5827 25.7755L65.0456 25.3633H59.6842Z" fill="white"/>
+</svg>
+
+  )
 }
 
 export function EditIcon({ className }: Props) {

@@ -1,6 +1,7 @@
 import { NotificationIcon, ProfileIcon, SearchIcon } from "@/components/svgs/icon";
 import { paths } from "@/router";
 import { Link } from "react-router-dom";
+import {notifications} from '@/constants/notifications'
 
 function Navbar() {
   return (
@@ -14,7 +15,7 @@ function Navbar() {
       <div className="flex gap-3">
         <SearchIcon />
         <Link to={paths.notifications}>
-          <NotificationIcon />
+          <NotificationIcon count={notifications.length} />
         </Link>
       </div>
     </nav>

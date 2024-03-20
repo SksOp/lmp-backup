@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useAuth } from "@/hooks/useAuth";
 import { useRouter } from "@/hooks/useRouter";
 import { Input } from "@/components/ui/input";
@@ -6,8 +6,9 @@ import { Label } from "@radix-ui/react-label";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import HeroAvatar from "./components/hero-avatar";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { paths } from "@/router/paths";
+import Success from "../welcome/components/success";
 
 function LoginView() {
   const { login, user } = useAuth();
@@ -21,6 +22,8 @@ function LoginView() {
     if (user) replace("/");
   }, [user, replace]);
 
+
+
   return (
     <div className="pt-10 min-h-screen  bg-muted ">
       <div className="pt-10 py-6 border-b flex bg-background flex-col gap-2 items-center">
@@ -30,6 +33,7 @@ function LoginView() {
       </div>
       {currentPage === "id" && <IdView id={id} setId={setId} setCurrentPage={setCurrentPage} />}
       {currentPage === "password" && <PasswordView id={id} password={password} setPassword={setPassword} login={login} />}
+      
     </div>
   );
 }
@@ -63,6 +67,13 @@ const PasswordView = ({
   setPassword: (password: string) => void;
   login: (id: string, password: string) => void;
 }) => {
+  
+  const navigate = useNavigate();
+  const handleOnClick = () => {
+    login(id, password);
+    navigate(paths.welcome);
+  }
+
   return (
     <>
       <div className="p-6 max-w-xl  m-auto flex flex-col gap-2">
@@ -74,7 +85,7 @@ const PasswordView = ({
         </div>
       </div>
       <div className="w-full max-w-xl  absolute bottom-0 left-1/2 transform -translate-x-1/2 p-6">
-        <Button className={cn("w-full bg-primary ")} disabled={password.length < 2} onClick={() => login(id, password)}>
+        <Button className={cn("w-full bg-primary ")} disabled={password.length < 2} onClick={handleOnClick}>
           Login
         </Button>
       </div>
