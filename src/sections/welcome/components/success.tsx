@@ -30,7 +30,7 @@ function Success() {
   return (
     <div className="w-full m-0 h-[100vh] flex flex-col justify-center items-center gap-4">
       <GreenSuccessIcon />
-      <h1 className="text-4xl font-bold">Welcome! {name}</h1>
+      <h1 className="text-xl font-bold">Welcome! {name}</h1>
       <p className="text-center text-sm opacity-50">You has been successfully Logged in</p>
 
       <div className="absolute bottom-10 ">
