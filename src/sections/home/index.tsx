@@ -13,7 +13,7 @@ function HomeView() {
     <div className="flex flex-col">
       <LeadsFunnel />
       <div className="flex w-full justify-between">
-        <Tabs defaultValue="all-leads" className="flex flex-col">
+        <Tabs defaultValue="all-leads" className="flex flex-col w-full md:w-auto ">
           <LeadsSelector />
           <LeadsData setSelectedLead={setSelectedLead} selectedLead={selectedLead} />
         </Tabs>
