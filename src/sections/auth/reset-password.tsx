@@ -66,8 +66,8 @@ function ResetPassword() {
     <div className="pt-10 min-h-screen  bg-muted ">
       <div className="pt-10 py-6 border-b flex bg-background flex-col gap-2 items-center">
         <HeroAvatar icon={"prime:lock"} />
-        <h2 className="text-2xl font-bold mt-5">Reset your password</h2>
-        <p className=" opacity-50">Start your car leasing process with us </p>
+        <h2 className="text-xl font-semibold mt-5">Reset your password</h2>
+        <p className="text-sm opacity-50">Start your car leasing process with us </p>
       </div>
       {page === Page.SelectPlatform && <SelectPlatform onSelectPlatform={onSelectPlatform} />}
       {page === Page.OTP && <OtpView otp={otp} setOtp={setOtp} onOtpSubmit={onOtpSubmit} />}
@@ -122,9 +122,9 @@ const PlatformCard = ({ children, name, label, onClick,Icon }: { children: React
       <div className="flex items-center justify-between gap-2">
         <Icon />
         <div>
-        <p className="text-lg text-foreground font-semibold" >{name}</p>
+        <p className="text-sm text-foreground " >{name}</p>
       <div className="flex-1" />
-      <p className="opacity-50">{label}</p>
+      <p className="text-sm opacity-50">{label}</p>
 
         </div>
       </div>
