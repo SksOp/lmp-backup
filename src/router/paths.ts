@@ -6,5 +6,6 @@ export const paths = {
   resetPassword: "/reset-password",
   lead: "/lead", // there also a dynamic path for lead /lead/:id
   allLead: "/lead/all",
+  notifications: "/notifications",
   profile: "/profile",
 };
