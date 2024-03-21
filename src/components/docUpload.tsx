@@ -30,7 +30,7 @@ function DocUpload({ action }: { action: NonGenericAction[] }) {
         <DrawerHeader>
           <DrawerTitle className="text-bold">Upload Documents</DrawerTitle>
           <DrawerDescription>We require you to confirm the car availability</DrawerDescription>
-          <LeadCard data={leadExists} className="p-4" />
+          <LeadCard data={leadExists} hideIcons className="p-4" />
           <InputFile label="Press to Upload file here" description="Max Size: 50MB" className="py-2" />
         </DrawerHeader>
         <DrawerFooter>

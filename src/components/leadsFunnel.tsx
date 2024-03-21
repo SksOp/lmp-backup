@@ -14,12 +14,12 @@ import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
 const data = {
-  labels: ["Initiated", "Bank Verifications", "Document Verification", "Dealer Acknowledges", "Amount Disbursed", "Loan Rejected"],
+  labels: ["Initiated", "In progress", "Approved", "Rejected"],
   datasets: [
     {
-      data: [23, 12, 4, 45, 5, 3],
-      backgroundColor: ["#9F43CC", "#EBA10F", "#951919", "#2B87E3", "#EA6200", "#0CA85D"],
-      hoverBackgroundColor: ["#9F43CC", "#EBA10F", "#951919", "#2B87E3", "#EA6200", "#0CA85D"],
+      data: [23, 23, 45, 5],
+      backgroundColor: ["#CBD5E1", "#0EA5E9", "#22C55E", "#EF4444"],
+      hoverBackgroundColor: ["#CBD5E1", "#0EA5E9", "#22C55E", "#EF4444"],
     },
   ],
 };
@@ -87,7 +87,7 @@ function LeadsFunnel() {
                 >
                   ⬤
                 </span>
-                <span className="font-bold text-sm ml-1">
+                <span className="font-bold text-xs ml-1">
                   {data.datasets[0].data[index]} <span className="font-normal ">{label}</span>
                 </span>
               </li>

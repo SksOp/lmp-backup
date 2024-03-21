@@ -58,7 +58,7 @@ function Progress({ className, DetailedLeads }: { className?: ClassValue; Detail
           <TabsTrigger value="info">Application info</TabsTrigger>
         </TabsList>
         <TabsContent value="status">
-          <div className="flex md:hidden text-sm gap-3 mb-4 items-center rounded-md justify-start border-2 border-dashed border-[#475569]/60 p-4 bg-primary/5">
+          <div className="flex md:hidden text-sm gap-3 mb-4 items-center rounded-md justify-start border-2 border-dashed border-[#475569]/60 p-2 bg-primary/5">
             <LightBulb className="h-14 w-14" />
             <p>Aliquam pulvinar vestibulum blandit. Donec sed nisl libero. Fusce dignissim.</p>
           </div>

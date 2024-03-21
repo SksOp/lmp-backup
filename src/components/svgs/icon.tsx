@@ -274,7 +274,7 @@ export function NotificationIcon({ className,count }: {className?:ClassValue; co
     </svg>
     {count > 0 && (
       <div
-        className="absolute flex w-4 h-4 top-0 right-0 bg-red-500 text-white rounded-full items-center justify-center text-xs"
+        className="absolute flex w-4 h-4 -top-1 -right-1 bg-red-500 text-white rounded-full items-center justify-center text-xs"
       >
         {count}
       </div>

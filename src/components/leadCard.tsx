@@ -77,16 +77,16 @@ function LeadCard({ className, data, hideIcons, noHoverEffect }: Props) {
 
       {!hideIcons && (
         <CardFooter className="flex justify-between mt-3 mb-0 p-0 px-4 ">
-          <div className=" p-3 bg-[#E2E8F0] rounded-full items-center justify-center cursor-pointer" onClick={handleCallClick}>
+          <div className=" p-3 bg-[#E2EEE8] rounded-full items-center justify-center cursor-pointer" onClick={handleCallClick}>
             <Call />
           </div>
-          <div className=" p-3 bg-[#E2E8F0] rounded-full items-center justify-center cursor-pointer" onClick={handleWhatsappClick}>
+          <div className=" p-3 bg-[#E2EEE8] rounded-full items-center justify-center cursor-pointer" onClick={handleWhatsappClick}>
             <Whatsapp />
           </div>
-          <div className=" p-3 bg-[#E2E8F0] rounded-full items-center justify-center cursor-pointer" onClick={handleMailClick}>
+          <div className=" p-3 bg-[#E2EEE8] rounded-full items-center justify-center cursor-pointer" onClick={handleMailClick}>
             <Mail />
           </div>
-          <div className=" p-3 bg-[#E2E8F0] rounded-full items-center justify-center cursor-pointer" onClick={handleSMSClick}>
+          <div className=" p-3 bg-[#E2EEE8] rounded-full items-center justify-center cursor-pointer" onClick={handleSMSClick}>
             <SMS />
           </div>
           <div className="hidden md:flex">

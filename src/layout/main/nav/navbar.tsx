@@ -23,7 +23,7 @@ function Navbar() {
         <ProfileIcon />
       </Link>
       <Link to={paths.home}>
-        <h3 className="text-lg font-black text-primary underline underline-offset-4 decoration-2">Tamweeli.</h3>
+        <h3 className="text-lg font-black text-foreground underline underline-offset-4 decoration-2">Tamweeli</h3>
       </Link>
       <div className="flex gap-3">
         <DropdownMenu>
