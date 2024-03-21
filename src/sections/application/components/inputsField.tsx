@@ -1,17 +1,17 @@
 import { brands } from "@/configs/brand-configs/brand";
 import React, { useEffect, useState } from "react";
-import { Input } from "../ui/input";
-import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
+import { Input } from "../../../components/ui/input";
+import { RadioGroup, RadioGroupItem } from "../../../components/ui/radio-group";
 import { cn } from "@/lib/utils";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
-import { InputFile } from "../ui/input-file";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../../../components/ui/accordion";
+import { InputFile } from "../../../components/ui/input-file";
 import { Brand, CarModel } from "@/configs";
-import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
-import { Button } from "../ui/button";
+import { Popover, PopoverContent, PopoverTrigger } from "../../../components/ui/popover";
+import { Button } from "../../../components/ui/button";
 import { CalendarIcon } from "@radix-ui/react-icons";
-import { Calendar } from "../ui/calendar";
+import { Calendar } from "../../../components/ui/calendar";
 import { format } from "date-fns";
-import { PhoneInput } from "../ui/phone-input";
+import { PhoneInput } from "../../../components/ui/phone-input";
 import { LangOptions } from "@/types";
 
 interface InputFieldProp {

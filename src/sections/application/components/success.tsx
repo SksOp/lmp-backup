@@ -1,6 +1,6 @@
 import { Icon } from "@iconify/react";
 import React from "react";
-import { SuccessIcon } from "../svgs/icon";
+import { SuccessIcon } from "../../../components/svgs/icon";
 
 function Success() {
   return (

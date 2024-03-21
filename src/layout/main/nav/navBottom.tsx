@@ -1,4 +1,3 @@
-import ApplicationDrawerContent from "@/components/application";
 import HomeIcon, { EditIcon, LeadIcon } from "@/components/svgs/icon";
 import { Button } from "@/components/ui/button";
 import {
@@ -12,14 +11,17 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import { cn } from "@/lib/utils";
+import { paths } from "@/router";
 import { ClassValue } from "clsx";
 import { Plus } from "lucide-react";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 export function ApplyButtonDrawer({ scrollDirection, className }: { scrollDirection?: "up" | "down"; className?: ClassValue }) {
   return (
-    <Drawer>
-      <DrawerTrigger className={cn("", className)}>
+    // <Drawer>
+      <Link to={paths.application}>
+      <div className={cn("", className)}>
         {scrollDirection === "down" && <Plus className=" bg-primary text-white rounded-full w-16 h-16 p-4" />}
         {scrollDirection ? (
           scrollDirection === "up" && (
@@ -34,11 +36,12 @@ export function ApplyButtonDrawer({ scrollDirection, className }: { scrollDirect
             <h2 className="font-semibold">Apply</h2>
           </div>
         )}
-      </DrawerTrigger>
-      <DrawerContent className="min-h-[60vh]">
-        <ApplicationDrawerContent />
-      </DrawerContent>
-    </Drawer>
+      </div>
+      </Link>
+    //   <DrawerContent className="min-h-[60vh]">
+    //     {/* <ApplicationDrawerContent /> */}
+    //   </DrawerContent>
+    // </Drawer>
   );
 }
 

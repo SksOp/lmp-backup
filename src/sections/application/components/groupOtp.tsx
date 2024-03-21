@@ -1,7 +1,7 @@
 import React from "react";
-import { Label } from "../ui/label";
-import { Button } from "../ui/button";
-import Otp from "../ui/otp";
+import { Label } from "../../../components/ui/label";
+import { Button } from "../../../components/ui/button";
+import Otp from "../../../components/ui/otp";
 import { GroupProps } from "./type";
 import { set } from "react-hook-form";
 import { CustomerDetailCard } from "./customer-detail-card";

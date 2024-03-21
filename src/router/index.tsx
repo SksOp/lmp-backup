@@ -11,6 +11,7 @@ const Profile = React.lazy(() => import("@/pages/profile/profile"));
 const Lead = React.lazy(() => import("@/pages/lead"));
 const Notifications = React.lazy(() => import("@/pages/notifications"));
 const Welcome = React.lazy(() => import("@/pages/welcome"));
+const Application = React.lazy(() => import("@/pages/application"));
 
 export default function Router() {
   return useRoutes([...root]);
@@ -44,6 +45,14 @@ const root = [
     element: (
       <AuthGuard>
         <Welcome />
+      </AuthGuard>
+    ),
+  },
+  {
+    path: paths.application,
+    element: (
+      <AuthGuard>
+        <Application />
       </AuthGuard>
     ),
   },

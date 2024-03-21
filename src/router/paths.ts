@@ -9,4 +9,5 @@ export const paths = {
   notifications: "/notifications",
   profile: "/profile",
   welcome: "/welcome",
+  application: "/application"
 };

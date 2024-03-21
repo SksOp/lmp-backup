@@ -1,7 +1,7 @@
 import { Icon } from "@iconify/react";
-import { LeadLogo } from "../leadLogo";
-import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
-import { DetailViewer } from "../leadCard";
+import { LeadLogo } from "../../../components/leadLogo";
+import { Card, CardContent, CardHeader, CardTitle } from "../../../components/ui/card";
+import { DetailViewer } from "../../../components/leadCard";
 
 export const CustomerDetailCard = ({ name }: { name: string }) => (
   <Card className="px-4 py-2">

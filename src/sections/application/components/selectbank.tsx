@@ -2,7 +2,7 @@ import React from "react";
 import { Bank } from "@/configs/index";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
+import { RadioGroup, RadioGroupItem } from "../../../components/ui/radio-group";
 
 const BankCard = ({ children, bank, onClick }: { children: React.ReactNode; bank: Bank; onClick: () => void }) => {
   return (

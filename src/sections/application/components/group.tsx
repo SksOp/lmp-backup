@@ -1,15 +1,15 @@
 import { Bank, BankConfig } from "@/configs";
 import React, { useEffect } from "react";
-import { Label } from "../ui/label";
-import { Button } from "../ui/button";
-import { LeadLogo } from "../leadLogo";
-import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
-import { DetailViewer } from "../leadCard";
+import { Label } from "../../../components/ui/label";
+import { Button } from "../../../components/ui/button";
+import { LeadLogo } from "../../../components/leadLogo";
+import { Card, CardContent, CardHeader, CardTitle } from "../../../components/ui/card";
+import { DetailViewer } from "../../../components/leadCard";
 import { Icon } from "@iconify/react";
 import InputsField from "./inputsField";
 import { GroupProps } from "./type";
 import { CustomerDetailCard } from "./customer-detail-card";
-import { useToast } from "../ui/use-toast";
+import { useToast } from "../../../components/ui/use-toast";
 
 function Group(props: GroupProps) {
   const { config, group, setGroup, setData, data, selectedBank, setRequestOtp, requestOtp } = props;
