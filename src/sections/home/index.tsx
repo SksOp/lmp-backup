@@ -18,9 +18,9 @@ function HomeView() {
       <LeadsFunnel />
       <div className="flex w-full justify-between gap-4">
         <Tabs defaultValue="all-leads" className="flex flex-col w-full ">
-          <div className="flex  items-center justify-center gap-5">
+          <div className="flex w-full items-center justify-center gap-5">
             <LeadsSelector />
-            <ApplyButtonDrawer className="hidden md:flex" />
+            {/* <ApplyButtonDrawer className="hidden md:flex" /> */}
           </div>
           <div className="flex gap-5 w-full">
             <div className="md:w-1/3 md:max-w-md w-full">

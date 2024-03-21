@@ -24,7 +24,8 @@ const UploadIcon = ({ className }: { className?: ClassValue }) => (
 );
 const InputFile = React.forwardRef<HTMLInputElement, InputProps>(({ id, name, className, label, onChange, description, ...props }, ref) => {
   return (
-    <label htmlFor={id} className="w-full">
+    <>
+    <label htmlFor={id} className="mr-[62vw] p-0 text-sm font-semibold">{name}</label>
       <div className={cn("flex items-center justify-start px-4 py-2 gap-3 border w-full rounded-md", className)}>
         <div className="bg-[#CAD1D9]/30 p-2 rounded-full">
           <UploadIcon className />
@@ -33,10 +34,10 @@ const InputFile = React.forwardRef<HTMLInputElement, InputProps>(({ id, name, cl
           <p className="mb-1 text-sm">
             {name ? (
               <span className="">{name}</span>
-            ) : label ? (
-              <span className="">{label}</span>
-            ) : (
-              <>
+              ) : label ? (
+                <span className="">{label}</span>
+                ) : (
+                  <>
                 <span className="font-semibold">Click to upload</span> or drag and drop
               </>
             )}
@@ -45,7 +46,8 @@ const InputFile = React.forwardRef<HTMLInputElement, InputProps>(({ id, name, cl
         </div>
         <input id={id} type="file" className="hidden" onChange={onChange} ref={ref} {...props} />
       </div>
-    </label>
+    </>
+    
   );
 });
 InputFile.displayName = "InputFile";

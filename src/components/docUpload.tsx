@@ -31,7 +31,7 @@ function DocUpload({ action }: { action: NonGenericAction[] }) {
           <DrawerTitle className="text-bold">Upload Documents</DrawerTitle>
           <DrawerDescription>We require you to confirm the car availability</DrawerDescription>
           <LeadCard data={leadExists} hideIcons className="p-4" />
-          <InputFile label="Press to Upload file here" description="Max Size: 50MB" className="py-2" />
+          <InputFile name="Driving license" label="Press to Upload file here" description="Max Size: 50MB" className="py-2" />
         </DrawerHeader>
         <DrawerFooter>
           <Button variant="default">Submit Documents</Button>
@@ -43,3 +43,5 @@ function DocUpload({ action }: { action: NonGenericAction[] }) {
 }
 
 export default DocUpload;
+
+  
