@@ -24,8 +24,7 @@ function ApplicationView() {
   
   return (
     <div className="flex flex-col gap-1 py-4  px-1">
-      <p className="text-center text-sm font-bold">New Leasing Application</p>
-      <p className="text-center text-[0.72rem] text-foreground/70">Initiate the application with customer/vehicle details</p>
+
       <ProgressBar group={group} />
       <div className="flex flex-col gap-4 h-[70vh] overflow-auto pb-10 px-2">
         {requestOtp.view ? (

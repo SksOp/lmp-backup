@@ -112,9 +112,9 @@ export default LeadCard;
 
 export const DetailViewer = ({ title, value, className }: { title: string; value: string; className?: ClassValue }) => {
   return (
-    <div className="flex gap-5">
-      <p className="text-sm opacity-50 line-clamp-1">{title}:</p>
-      <p className="text-sm font-medium line-clamp-1">{value}</p>
+    <div className="flex gap-4">
+      <p className="text-sm opacity-50 line-clamp-1 ">{title}:</p>
+      <p className="text-sm font-semibold line-clamp-1 ">{value}</p>
     </div>
   );
 };
