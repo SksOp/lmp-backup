@@ -27,7 +27,6 @@ export interface Props {
 }
 
 function LeadCard({ className, data, hideIcons, noHoverEffect }: Props) {
-  const [open, setOpen] = useState(false);
   const handleWhatsappClick = () => {
     window.open(`https://wa.me/${data.application_id.phone_number}`, "_blank");
   };
@@ -45,16 +44,16 @@ function LeadCard({ className, data, hideIcons, noHoverEffect }: Props) {
   };
 
   return (
-    <Card className={cn("transition-all duration-300", !noHoverEffect && "hover:bg-primary/5  hover:scale-[101%] p-3 px-4", className)}>
-      <CardHeader className="flex flex-row gap-2 items-center p-0 pb-2">
-        <LeadLogo className="w-12 h-12 text-lg" imageName={data.application_id.lead_name} />
-        <CardTitle className="text-md">{data.application_id.lead_name}</CardTitle>
-        {data.application_id.is_verified === "yes" ? <VerifiedLeadIcon className="w-8 h-8" /> : null}
+    <Card className={cn("transition-all duration-300 p-2 px-4", !noHoverEffect && "hover:bg-primary/5  hover:scale-[101%]", className)}>
+      <CardHeader className="flex flex-row gap-2 items-center p-0">
+        <LeadLogo className="text-foreground/70 w-10 h-10" imageName={data.application_id.lead_name} />
+        <CardTitle className="text-sm">{data.application_id.lead_name}</CardTitle>
+        {data.application_id.is_verified === "yes" ? <VerifiedLeadIcon className="w-6 h-6" /> : null}
       </CardHeader>
 
-      <CardContent className="flex flex-col gap-2 p-0 pt-2">
+      <CardContent className="flex flex-col gap-[0.40rem] p-0 pt-[0.8rem]">
         <div className="flex justify-between items-center pb-2">
-          <div className="flex flex-col gap-1">
+          <div className="flex flex-col gap-2">
             <DetailViewer title="Bank" value={data.application_id.lessor_details.lessor_name.en} />
             <DetailViewer title="Vehicle" value={data.application_id.car_details.brand} />
             <DetailViewer title="Cost" value={data.application_id.car_details.price.final_price} />
@@ -64,19 +63,19 @@ function LeadCard({ className, data, hideIcons, noHoverEffect }: Props) {
           </div>
         </div>
 
-        <Progress value={Number(data.application_id.progress_measure)} className="h-2" />
+        <Progress value={Number(data.application_id.progress_measure)} className="h-[0.3rem]" />
 
-        <div className="flex justify-between items-center">
-          <p>
-            <span className="opacity-50">Leasing Status:</span>
-            <span className="ml-3 text-foreground"> {data.application_id.status}</span>
+        <div className="text-xs flex justify-between items-center mt-[0.15rem]">
+          <p className="">
+            <span className=" opacity-50">Leasing Status:</span>
+            <span className="ml-1 text-foreground"> {data.application_id.status}</span>
           </p>
-          <p className="opacity-50 font-semibold">{data.application_id.progress_measure}%</p>
+          <p className="opacity-40 font-semibold">{data.application_id.progress_measure}%</p>
         </div>
       </CardContent>
 
       {!hideIcons && (
-        <CardFooter className="flex justify-between mt-3 mb-0 p-0 px-4 ">
+        <CardFooter className="flex justify-between mt-3 mb-0 p-0 px-4">
           <div className=" p-3 bg-[#E2EEE8] rounded-full items-center justify-center cursor-pointer" onClick={handleCallClick}>
             <Call />
           </div>

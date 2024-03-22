@@ -11,21 +11,23 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Profile } from "@/sections/profile/profle";
 import { useAuth } from "@/hooks/useAuth";
-import {notifications} from '@/constants/notifications'
+import { notifications } from "@/constants/notifications";
 
 function Navbar() {
   const { user } = useAuth();
   if (!user) return null;
 
   return (
-    <nav className="w-full bg-background flex justify-between items-center z-10 px-3 md:px-8 py-5 sticky top-0 border-b-2">
+    <nav className="w-full bg-background flex justify-between items-center z-10 px-4 md:px-8 py-3 sticky top-0 border border-b-1">
       <Link to={paths.profile} className="md:hidden">
         <ProfileIcon />
       </Link>
       <Link to={paths.home}>
-        <h3 className="text-lg font-black text-foreground underline underline-offset-4 decoration-2">Tamweeli</h3>
+        <h3 className=" absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 font-extrabold text-foreground underline underline-offset-4 decoration-1">
+          Tamweeli
+        </h3>
       </Link>
-      <div className="flex gap-3">
+      <div className="flex gap-4">
         <DropdownMenu>
           <DropdownMenuTrigger className="hidden md:flex">
             <ProfileIcon />

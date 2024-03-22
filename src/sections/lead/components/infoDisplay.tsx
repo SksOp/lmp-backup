@@ -13,8 +13,8 @@ function InfoDisplay({ title, item }: InfoProps) {
         <CardHeader className="py-4 md:flex hidden">
           <h2 className="font-bold">Personal Details</h2>
         </CardHeader>
-        <CardContent className="flex flex-col gap-3 md:pt-0 p-6">
-          <div className="grid grid-cols-1 grid-rows-4 md:grid-cols-3 md:grid-rows-2 gap-y-1 gap-x-3">
+        <CardContent className="flex flex-col md:pt-0 p-4">
+          <div className="grid grid-cols-1 grid-rows-4 md:grid-cols-3 md:grid-rows-2 gap-y-[0.65rem] gap-x-3">
             <div className="flex md:flex-col gap-2">
               <span className="text-secondary-foreground/50 text-sm md:col-span-1 min-w-[7.5rem]">National ID :</span>
               <span className="text-sm md:col-span-2 font-medium">{item.national_id}</span>

@@ -1,19 +1,25 @@
 import { TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { cn } from "@/lib/utils";
+import { ClassValue } from "clsx";
 
-export function LeadsSelector() {
+export function LeadsSelector({ className }: { className?: ClassValue }) {
   return (
-    <TabsList className="grid w-full grid-cols-4 md:grid-cols-12 gap-1 px-2 my-4 md:my-0 md:mb-4 bg-background border h-none">
-      <TabsTrigger value="all-leads" className="h-4/6">All</TabsTrigger>
-      <TabsTrigger value="active" className="h-4/6">Active</TabsTrigger>
-      <TabsTrigger value="action" className="h-4/6">Pending</TabsTrigger>
-      <TabsTrigger value="draft" className="h-4/6">
+    <TabsList className={cn("grid w-full grid-cols-4 md:grid-cols-12 gap-1 px-2  bg-background border h-none", className)}>
+      <TabsTrigger value="all-leads" className="my-[0.15rem]">
+        All
+      </TabsTrigger>
+      <TabsTrigger value="active" className="my-[0.15rem]">
+        Active
+      </TabsTrigger>
+      <TabsTrigger value="action" className="my-[0.15rem]">
+        Pending
+      </TabsTrigger>
+      <TabsTrigger value="draft" className="my-[0.15rem]">
         Drafts
-        <div
-        className="absolute flex w-4 h-4 translate-x-5 -translate-y-2  bg-red-500 text-white rounded-full items-center justify-center text-xs"
-      >
-        5
-      </div>
-        </TabsTrigger>
+        <div className="absolute flex w-4 h-4 translate-x-5 -translate-y-2  bg-red-500 text-white rounded-full items-center justify-center text-xs">
+          5
+        </div>
+      </TabsTrigger>
     </TabsList>
   );
 }

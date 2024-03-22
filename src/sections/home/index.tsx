@@ -14,13 +14,13 @@ function HomeView() {
   const [selectedLead, setSelectedLead] = useState(id);
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col gap-3">
       <LeadsFunnel />
       <div className="flex w-full justify-between gap-4">
-        <Tabs defaultValue="all-leads" className="flex flex-col w-full ">
+        <Tabs defaultValue="all-leads" className="flex flex-col w-full gap-3">
           <div className="flex w-full items-center justify-center gap-5">
-            <LeadsSelector />
-            {/* <ApplyButtonDrawer className="hidden md:flex" /> */}
+            <LeadsSelector className="py-[0.3rem]" />
+            <ApplyButtonDrawer className="hidden md:flex" />
           </div>
           <div className="flex gap-5 w-full">
             <div className="md:w-1/3 md:max-w-md w-full">

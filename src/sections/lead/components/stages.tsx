@@ -17,15 +17,15 @@ interface Props {
 
 function ConditionalIcon({ id, noOfStates, status }: Omit<Props, "className" | "date" | "title" | "doneBy" | "action">) {
   return (
-    <div className="flex w-8 h-8 items-center justify-center">
+    <div className="flex w-[1.2rem] h-[1.2rem] items-center justify-center">
       {id === noOfStates ? (
         <InitialStateIcon className="" />
       ) : status === "completed" ? (
         <StatusCompletedIcon />
       ) : status === "current" ? (
-        <CautionIcon className="" />
+        <CautionIcon className="scale-125" />
       ) : (
-        <StatusIcon className="" />
+        <StatusIcon className="scale-150" />
       )}
     </div>
   );
@@ -34,17 +34,19 @@ function ConditionalIcon({ id, noOfStates, status }: Omit<Props, "className" | "
 function States({ id, noOfStates, className, date, title, doneBy, status, action }: Props) {
   // console.log(action);
   return (
-    <div className={cn("flex items-start gap-2")}>
-      <div className="text-sm py-1 text-foreground/50 font-medium min-w-[5.8rem]">{date}</div>
-      <div className="h-full items-center flex flex-col">
+    <div className={cn("flex gap-2")}>
+      <div className="text-xs text-foreground/50 font-medium min-w-12">{date}</div>
+      <div className="flex flex-col ">
         <ConditionalIcon id={id} noOfStates={noOfStates} status={status} />
         <div
-          className={cn("flex  w-[3px] flex-grow my-2 py-14", status === "completed" || status === "current" ? "bg-primary" : "bg-primary/20")}
+          className={cn("flex mx-auto h-full min-h-14 mt-1 w-[2px]", status === "completed" || status === "current" ? "bg-primary" : "bg-primary/20")}
         ></div>
       </div>
-      <div className="flex flex-col gap-2 items-start">
-        <p className=" font-medium col-span-2">{title}</p>
-        <p className="text-xs opacity-50">Done By: {doneBy}</p>
+      <div className="flex text-sm flex-col ml-1 gap-[0.4rem] items-start">
+        <p className=" font-semibold text-sm col-span-2">{title}</p>
+        <p className="text-xs opacity-50">
+          Done By: <span className="font-medium">{doneBy}</span>
+        </p>
         {status === "current" ? <DocUpload action={action} /> : null}
       </div>
     </div>

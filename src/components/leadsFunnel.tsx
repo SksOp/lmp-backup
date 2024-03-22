@@ -29,7 +29,7 @@ const SimpleBarChart: React.FC = () => {
   const total = data.datasets[0].data.reduce((acc, point) => acc + point, 0);
 
   return (
-    <div className="flex gap-1 w-[100%]">
+    <div className="flex gap-[0.18rem] w-[100%]">
       {data.labels.map((label, index) => {
         const value = data.datasets[0].data[index];
         const backgroundColor = data.datasets[0].backgroundColor[index];
@@ -38,7 +38,7 @@ const SimpleBarChart: React.FC = () => {
             <div
               key={index}
               className="rounded-l-full"
-              style={{ width: `${(value / total) * 100}%`, backgroundColor: backgroundColor, height: "10px" }}
+              style={{ width: `${(value / total) * 100}%`, backgroundColor: backgroundColor, height: "11px" }}
             />
           );
         if (index === data.labels.length - 1)
@@ -46,10 +46,10 @@ const SimpleBarChart: React.FC = () => {
             <div
               key={index}
               className="rounded-r-full"
-              style={{ width: `${(value / total) * 100}%`, backgroundColor: backgroundColor, height: "10px" }}
+              style={{ width: `${(value / total) * 100}%`, backgroundColor: backgroundColor, height: "11px" }}
             />
           );
-        return <div key={index} className="" style={{ width: `${(value / total) * 100}%`, backgroundColor: backgroundColor, height: "10px" }} />;
+        return <div key={index} className="" style={{ width: `${(value / total) * 100}%`, backgroundColor: backgroundColor, height: "11px" }} />;
       })}
     </div>
   );
@@ -71,16 +71,17 @@ function LeadsFunnel() {
   const total = data.datasets[0].data.reduce((a, b) => a + b, 0);
   return (
     <Card className="bg-none w-full md:border-0 shadow-none">
-      <CardContent className="flex flex-col px-4 py-5 gap-4 md:px-0">
-        <div className="flex flex-col md:flex-row justify-between md:justify-normal gap-2 items-start md:items-center">
+      <CardContent className="flex flex-col px-4 py-4 gap-[0.89rem] md:px-0">
+        <div className="flex flex-col md:flex-row justify-between md:justify-normal gap-[0.35rem] items-start md:items-center">
           <h2>
-            <span className="font-bold">{total}</span> <span className="font-medium">Total Applications:</span>
+            {/* <span className="font-bold">{total}</span> <span className="font-medium">Total Applications:</span> */}
+            <span className="font-bold">281</span> <span className="font-medium">Total Applications:</span>
           </h2>
-          <ul className="flex flex-wrap gap-3">
+          <ul className="flex flex-wrap gap-x-3 gap-y-[0.15rem] items-center">
             {data.labels.map((label, index) => (
               <li key={index} className="flex md:gap-1 justify-center text-xl items-center">
                 <span
-                  className="text-xs items-center justify-center"
+                  className="text-[0.55rem] items-center justify-center mr-1 -translate-y-0.5"
                   style={{
                     color: data.datasets[0].backgroundColor[index],
                   }}
@@ -88,7 +89,7 @@ function LeadsFunnel() {
                   ⬤
                 </span>
                 <span className="font-bold text-xs ml-1">
-                  {data.datasets[0].data[index]} <span className="font-normal ">{label}</span>
+                  {data.datasets[0].data[index]} <span className="font-normal text-[0.8rem]">{label}</span>
                 </span>
               </li>
             ))}

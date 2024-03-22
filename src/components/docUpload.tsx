@@ -25,7 +25,7 @@ function DocUpload({ action }: { action: NonGenericAction[] }) {
   }
   return (
     <Drawer>
-      <DrawerTrigger className="border border-foreground bg-background rounded-sm py-1 px-2 text-sm">{action[0].en}</DrawerTrigger>
+      <DrawerTrigger className="border border-foreground bg-background rounded-sm py-1 px-2 text-sm mb-8">{action[0].en}</DrawerTrigger>
       <DrawerContent className="h-[90vh]">
         <DrawerHeader>
           <DrawerTitle className="text-bold">Upload Documents</DrawerTitle>
@@ -43,5 +43,3 @@ function DocUpload({ action }: { action: NonGenericAction[] }) {
 }
 
 export default DocUpload;
-
-  

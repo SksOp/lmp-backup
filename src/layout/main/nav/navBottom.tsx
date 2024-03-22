@@ -18,26 +18,20 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 export function ApplyButtonDrawer({ scrollDirection, className }: { scrollDirection?: "up" | "down"; className?: ClassValue }) {
+  const plus = <Plus className=" bg-primary text-white rounded-full w-8 h-8" />;
+
   return (
     // <Drawer>
-      <Link to={paths.application}>
-      <div className={cn("", className)}>
-        {scrollDirection === "down" && <Plus className=" bg-primary text-white rounded-full w-16 h-16 p-4" />}
-        {scrollDirection ? (
-          scrollDirection === "up" && (
-            <div className="flex items-center text-white rounded-full pl-4 pr-5 py-3 justify-center bg-primary">
-              <Plus className=" bg-primary  rounded-full w-12 h-6 pr-2 " />
-              <h2 className="font-semibold">Apply</h2>
-            </div>
-          )
-        ) : (
-          <div className="flex items-center text-white rounded-full pl-4 pr-5 py-3 justify-center bg-primary md:mb-4">
-            <Plus className=" bg-primary  rounded-full w-12 h-6 pr-2" />
-            <h2 className="font-semibold">Apply</h2>
-          </div>
-        )}
-      </div>
-      </Link>
+    <Link className={cn("flex items-center text-white rounded-full justify-center bg-primary gap-1 p-[0.88rem]", className)} to={paths.application}>
+      {scrollDirection && scrollDirection === "down" ? (
+        plus
+      ) : (
+        <>
+          {plus}
+          <h2 className="font-semibold">Apply</h2>
+        </>
+      )}
+    </Link>
     //   <DrawerContent className="min-h-[60vh]">
     //     {/* <ApplicationDrawerContent /> */}
     //   </DrawerContent>
@@ -51,7 +45,7 @@ function NavBottom() {
 
   useEffect(() => {
     const onScroll = () => {
-      const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      const currentScrollTop = window.scrollY || document.documentElement.scrollTop;
       if (currentScrollTop > lastScrollTop) {
         setScrollDirection("down");
       } else if (currentScrollTop < lastScrollTop) {
@@ -65,8 +59,8 @@ function NavBottom() {
     return () => window.removeEventListener("scroll", onScroll);
   }, [lastScrollTop]);
   return (
-    <footer className="z-10 fixed bottom-0 right-0 m-7 md:hidden">
-      <ApplyButtonDrawer scrollDirection={scrollDirection} />
+    <footer className="z-10 fixed bottom-9 right-10 md:hidden">
+      <ApplyButtonDrawer scrollDirection={scrollDirection} className="shadow-lg" />
     </footer>
   );
 }
