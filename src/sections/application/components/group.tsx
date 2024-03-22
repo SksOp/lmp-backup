@@ -77,11 +77,11 @@ function Group(props: GroupProps) {
             </div>
           );
         })}
-      <div className="flex absolute bottom-0 w-full gap-3 left-1/2 -translate-x-1/2 p-3 ">
-        <Button variant="outline" className="flex-grow" onClick={() => handleBackClick()}>
+      <div className="flex absolute bottom-7 w-full gap-3 left-1/2 -translate-x-1/2 p-4 ">
+        <Button variant="outline" className="w-1/2 h-[3rem]" onClick={() => handleBackClick()}>
           Back
         </Button>
-        <Button variant="default" className="flex-grow" onClick={() => handleNextClick()}>
+        <Button variant="default" className="w-1/2 h-[3rem]" onClick={() => handleNextClick()}>
           Continue
         </Button>
       </div>
