@@ -54,13 +54,13 @@ export function Status({ states }: { states: State[] }) {
 function Progress({ className, DetailedLeads }: { className?: ClassValue; DetailedLeads: DetailedLead }) {
   return (
     <>
-      <Tabs defaultValue="info" className={cn("w-full gap-2", className)}>
+      <Tabs defaultValue="status" className={cn("w-full gap-3", className)}>
         <TabsList className="grid w-full grid-cols-2 gap-1 px-2  bg-background border h-none">
           <TabsTrigger value="status">Application Status</TabsTrigger>
           <TabsTrigger value="info">Application info</TabsTrigger>
         </TabsList>
         <TabsContent value="status" className="flex flex-col gap-3">
-          <div className="flex md:hidden text-[0.85rem] gap-3 items-center rounded-md justify-start border-2 border-dashed border-[#475569]/60 p-2 px-3 bg-primary/5">
+          <div className="flex md:hidden text-[0.85rem] gap-3 items-center rounded-md justify-start border-2 border-dashed border-[#475569]/60 p-1 px-3 bg-primary/5">
             <LightBulb className="h-12 w-12" />
             <p>Aliquam pulvinar vestibulum blandit. Donec sed nisl libero. Fusce dignissim.</p>
           </div>

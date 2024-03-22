@@ -15,7 +15,7 @@ function LeadView({ setSelectedLead, showProgress }: { setSelectedLead?: (lead: 
   }
 
   return (
-    <div className="flex flex-col md:flex-row w-full gap-5">
+    <div className="flex flex-col md:flex-row w-full gap-3">
       <LeadCard noHoverEffect data={leadExists} className="w-full" />
       <Progress DetailedLeads={DetailedLeads} className={cn("", showProgress ? "flex flex-col" : "hidden")} />
     </div>
