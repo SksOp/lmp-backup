@@ -22,13 +22,13 @@ export function ApplyButtonDrawer({ scrollDirection, className }: { scrollDirect
 
   return (
     // <Drawer>
-    <Link className={cn("flex items-center text-white rounded-full justify-center  bg-primary h-14 w-[7.8rem] p-[0.88rem]", className)} to={paths.application}>
+    <Link className={cn("flex items-center text-white rounded-full justify-center  bg-primary  p-[0.88rem]", className)} to={paths.application}>
       {scrollDirection && scrollDirection === "down" ? (
         plus
       ) : (
         <>
           {plus}
-          <h2 className="font-semibold translate-x-1">Apply</h2>
+          <h2 className="font-semibold ">Apply</h2>
         </>
       )}
     </Link>
