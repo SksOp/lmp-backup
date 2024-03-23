@@ -62,7 +62,7 @@ function Group(props: GroupProps) {
 
           return (
             <div key={field.input_field_id} className="w-full flex flex-col  mt-1 ">
-              <Label className="text-base font-semibold ml-1">{field.label.en}</Label>
+              <Label className="text-base  font-semibold ml-1">{field.label.en}</Label>
               {/* {field.input_field_type !== "file" && <p className="text-md">{field.description.en}</p>} */}
               <InputsField
                 placeholder={field.description.en}

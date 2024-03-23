@@ -102,7 +102,7 @@ function InputsField({ name, inputType, data, setData, placeholder, options }: I
           type={inputType}
           placeholder={placeholder}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => setData({ ...data, [name]: e.target.value })}
-          className="h-15"
+          className="h-15 ml-1"
         />
       );
   }
