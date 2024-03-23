@@ -49,9 +49,9 @@ function Group(props: GroupProps) {
 
   return (
     <>
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4 mt-2 mx-1">
         {group >= 2 && <CustomerDetailCard name={selectedBank.name} />}
-        <h3 className="text-lg font-semibold py-1">{groupFinder?.group_name.en}</h3>
+        <h3 className="text-xl font-bold py-1">{groupFinder?.group_name.en}</h3>
       </div>
 
       {config &&
@@ -61,8 +61,8 @@ function Group(props: GroupProps) {
           //  TODO handle Bussiness logic for otp Verification
 
           return (
-            <div key={field.input_field_id} className="w-full flex flex-col gap-1">
-              <Label className="text-md ">{field.label.en}</Label>
+            <div key={field.input_field_id} className="w-full flex flex-col  mt-1 ">
+              <Label className="text-base font-semibold ml-1">{field.label.en}</Label>
               {/* {field.input_field_type !== "file" && <p className="text-md">{field.description.en}</p>} */}
               <InputsField
                 placeholder={field.description.en}
