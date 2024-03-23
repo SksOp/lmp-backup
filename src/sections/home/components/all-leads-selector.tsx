@@ -26,7 +26,4 @@ export function LeadsSelector({ className }: { className?: ClassValue }) {
     </TabsList>
   );
 }
-function createLink(lead: never): unknown {
-  throw new Error("Function not implemented.");
-}
 
