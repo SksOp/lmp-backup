@@ -18,17 +18,17 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 export function ApplyButtonDrawer({ scrollDirection, className }: { scrollDirection?: "up" | "down"; className?: ClassValue }) {
-  const plus = <Plus className=" bg-primary text-white rounded-full w-8 h-8" />;
+  const plus = <Plus className=" bg-primary text-white rounded-full w-6 h-6" />;
 
   return (
     // <Drawer>
-    <Link className={cn("flex items-center text-white rounded-full justify-center bg-primary gap-1 p-[0.88rem]", className)} to={paths.application}>
+    <Link className={cn("flex items-center text-white rounded-full justify-center  bg-primary h-14 w-[7.8rem] p-[0.88rem]", className)} to={paths.application}>
       {scrollDirection && scrollDirection === "down" ? (
         plus
       ) : (
         <>
           {plus}
-          <h2 className="font-semibold">Apply</h2>
+          <h2 className="font-semibold translate-x-1">Apply</h2>
         </>
       )}
     </Link>
@@ -59,7 +59,7 @@ function NavBottom() {
     return () => window.removeEventListener("scroll", onScroll);
   }, [lastScrollTop]);
   return (
-    <footer className="z-10 fixed bottom-9 right-10 md:hidden">
+    <footer className="z-10 fixed bottom-10 right-6 md:hidden">
       <ApplyButtonDrawer scrollDirection={scrollDirection} className="shadow-lg" />
     </footer>
   );
