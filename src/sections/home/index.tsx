@@ -17,7 +17,7 @@ function HomeView() {
     <div className="flex flex-col gap-3">
       <LeadsFunnel />
       <div className="flex w-full justify-between gap-4">
-        <Tabs defaultValue="all-leads" className="flex flex-col w-full gap-3">
+        <Tabs defaultValue="all-leads" className="flex flex-col w-full gap-3 ">
           <div className="flex w-full items-center justify-center gap-5">
             <LeadsSelector className="py-[0.3rem]" />
             <ApplyButtonDrawer className="hidden md:flex" />
