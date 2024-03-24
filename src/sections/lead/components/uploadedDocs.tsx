@@ -5,7 +5,11 @@ import { Link } from "react-router-dom";
 
 function UploadedDocument({ uploadedDoc }: { uploadedDoc: UploadedDoc }) {
   return (
-    <Button variant={"outline"} className="flex py-6 w-full items-center border border-secondary-foreground/20 justify-between">
+    <Button
+      variant={"outline"}
+      className="flex py-6 w-full items-center border border-secondary-foreground/20 justify-between"
+      onClick={() => window.open(uploadedDoc.link, "_blank")}
+    >
       <div className="flex items-center gap-2">
         <DocumentsIcon />
         {uploadedDoc.name}

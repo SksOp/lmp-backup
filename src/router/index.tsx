@@ -1,17 +1,17 @@
-import React from "react";
 import { Navigate, Outlet, useRoutes } from "react-router-dom";
 import { paths } from "./paths";
 import AuthGuard from "@/auth/guard/auth-guard";
 
-const Home = React.lazy(() => import("@/pages/home"));
-const Login = React.lazy(() => import("@/pages/auth/login"));
-const Logout = React.lazy(() => import("@/pages/auth/logout"));
-const ResetPassword = React.lazy(() => import("@/pages/auth/reset-password"));
-const Profile = React.lazy(() => import("@/pages/profile/profile"));
-const Lead = React.lazy(() => import("@/pages/lead"));
-const Notifications = React.lazy(() => import("@/pages/notifications"));
-const Welcome = React.lazy(() => import("@/pages/welcome"));
-const Application = React.lazy(() => import("@/pages/application"));
+// since we are having a PWAs, we can remove the lazy loading
+import Lead from "@/pages/lead";
+import Home from "@/pages/home";
+import Login from "@/pages/auth/login";
+import Logout from "@/pages/auth/logout";
+import ResetPassword from "@/pages/auth/reset-password";
+import Profile from "@/pages/profile/profile";
+import Notifications from "@/pages/notifications";
+import Welcome from "@/pages/welcome";
+import Application from "@/pages/application";
 
 export default function Router() {
   return useRoutes([...root]);
@@ -25,12 +25,6 @@ const root = [
         <Home />
       </AuthGuard>
     ),
-    children: [
-      {
-        path: ":id",
-        element: <Lead />,
-      },
-    ],
   },
   {
     path: paths.notifications,
@@ -106,6 +100,7 @@ const root = [
     path: paths.notifications,
     element: <Notifications />,
   },
+  { path: "/404", element: <h1>404</h1> },
   { path: "*", element: <Navigate to="/404" replace /> },
 ];
 

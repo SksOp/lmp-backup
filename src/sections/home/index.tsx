@@ -25,15 +25,13 @@ function HomeView() {
           </div>
           <div className="flex gap-5 w-full">
             <div className="md:w-1/3 md:max-w-md w-full">
-              <LeadsData setSelectedLead={setSelectedLead} selectedLead={selectedLead} />
+              <LeadsData />
             </div>
             <div className="md:flex md:flex-col hidden flex-grow items-center justify-start gap-3">
-              <LeadView />
-              <Info detailedLeads={DetailedLeads} />
+              {/* <LeadView /> */}
+              {/* <Info detailedLeads={DetailedLeads} /> */}
             </div>
-            <div className="lg:flex hidden  max-w-md justify-center ">
-              <Status states={DetailedLeads.history_timeline.states} />
-            </div>
+            <div className="lg:flex hidden  max-w-md justify-center ">{/* <Status states={DetailedLeads.history_timeline.states} /> */}</div>
           </div>
         </Tabs>
       </div>

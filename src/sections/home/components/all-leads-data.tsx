@@ -7,39 +7,20 @@ import { MinimalLead } from "@/types";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
-export function LeadsData({ setSelectedLead, selectedLead }: { setSelectedLead: (id: string) => void; selectedLead: string | undefined }) {
-  const isDesktop = () => window.innerWidth > 768;
-  const router = useRouter();
-  const handleLeadClick = (id: string, event: React.MouseEvent) => {
-    if (isDesktop()) {
-      event.preventDefault(); // Prevent the Link from navigating.
-      setSelectedLead(id); // Update the state as needed.
-      router.push(`/${id}`);
-      console.log("Lead Clicked", id);
-    }
-    // On mobile devices, the default Link behavior will proceed.
-  };
-
+export function LeadsData() {
   const createLink = (lead: MinimalLead, isPending: boolean = false) => (
-    <Link
-      key={lead.application_id.application_id}
-      to={`${paths.lead}/${lead.application_id.application_id}`}
-      onClick={(event) => handleLeadClick(lead.application_id.application_id, event)}
-    >
+    <Link key={lead.application_id.application_id} to={`${paths.lead}/${lead.application_id.application_id}`}>
       <LeadCard isPending={isPending} hideIcons data={lead} />
     </Link>
   );
 
-  useEffect(() => {
-    // Check if selectedLead is undefined to ensure this runs only once.
-    if (selectedLead === undefined && MinimalLeads.length > 0) {
-      const firstLeadId = MinimalLeads[0].application_id.application_id;
-      setSelectedLead(firstLeadId);
-      // Optionally, navigate to the first lead's page on initial load
-      // console.log(firstLeadId);
-      router.push(`/${firstLeadId}`);
-    }
-  }, [setSelectedLead, selectedLead]);
+  // useEffect(() => {
+  //   // Check if selectedLead is undefined to ensure this runs only once.
+  //   if (selectedLead === undefined && MinimalLeads.length > 0) {
+  //     const firstLeadId = MinimalLeads[0].application_id.application_id;
+  //     setSelectedLead(firstLeadId);
+  //   }
+  // }, [setSelectedLead, selectedLead]);
 
   const allLeads = MinimalLeads.map((lead) => createLink(lead));
   const activeLeads = MinimalLeads.map((lead) => lead.application_id.status === "active" && createLink(lead));
