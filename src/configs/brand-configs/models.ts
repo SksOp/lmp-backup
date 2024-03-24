@@ -27,7 +27,7 @@ export const Honda: CarModel[] = [
     variants: ["V CVT Petrol", "VX CVX Petrol", "VX Diesel", "VX MT Diesel", "ZX CVT Petrol", "ZX Diesel"],
   },
   {
-    name: "Civic Type R",
+    name: "Civic Type",
     logo: "/assets/car.png",
     variants: ["V CVT Petrol", "VX CVX Petrol", "VX Diesel", "VX MT Diesel", "ZX CVT Petrol", "ZX Diesel"],
   },
@@ -60,7 +60,7 @@ export const Jeep: CarModel[] = [
     variants: ["V CVT Petrol", "VX CVX Petrol", "VX Diesel", "VX MT Diesel", "ZX CVT Petrol", "ZX Diesel"],
   },
   {
-    name: "Civic Type R",
+    name: "Civic Type",
     logo: "/assets/car.png",
     variants: ["V CVT Petrol", "VX CVX Petrol", "VX Diesel", "VX MT Diesel", "ZX CVT Petrol", "ZX Diesel"],
   },
@@ -93,7 +93,7 @@ export const Nisan: CarModel[] = [
     variants: ["V CVT Petrol", "VX CVX Petrol", "VX Diesel", "VX MT Diesel", "ZX CVT Petrol", "ZX Diesel"],
   },
   {
-    name: "Civic Type R",
+    name: "Civic Type",
     logo: "/assets/car.png",
     variants: ["V CVT Petrol", "VX CVX Petrol", "VX Diesel", "VX MT Diesel", "ZX CVT Petrol", "ZX Diesel"],
   },
@@ -126,7 +126,7 @@ export const Volvo: CarModel[] = [
     variants: ["V CVT Petrol", "VX CVX Petrol", "VX Diesel", "VX MT Diesel", "ZX CVT Petrol", "ZX Diesel"],
   },
   {
-    name: "Civic Type R",
+    name: "Civic Type",
     logo: "/assets/car.png",
     variants: ["V CVT Petrol", "VX CVX Petrol", "VX Diesel", "VX MT Diesel", "ZX CVT Petrol", "ZX Diesel"],
   },
@@ -158,7 +158,7 @@ export const Audi: CarModel[] = [
     variants: ["V CVT Petrol", "VX CVX Petrol", "VX Diesel", "VX MT Diesel", "ZX CVT Petrol", "ZX Diesel"],
   },
   {
-    name: "Civic Type R",
+    name: "Civic Type",
     logo: "/assets/car.png",
     variants: ["V CVT Petrol", "VX CVX Petrol", "VX Diesel", "VX MT Diesel", "ZX CVT Petrol", "ZX Diesel"],
   },
@@ -191,7 +191,7 @@ export const Mercedes: CarModel[] = [
     variants: ["V CVT Petrol", "VX CVX Petrol", "VX Diesel", "VX MT Diesel", "ZX CVT Petrol", "ZX Diesel"],
   },
   {
-    name: "Civic Type R",
+    name: "Civic Type",
     logo: "/assets/car.png",
     variants: ["V CVT Petrol", "VX CVX Petrol", "VX Diesel", "VX MT Diesel", "ZX CVT Petrol", "ZX Diesel"],
   },
@@ -224,7 +224,7 @@ export const BMW: CarModel[] = [
     variants: ["V CVT Petrol", "VX CVX Petrol", "VX Diesel", "VX MT Diesel", "ZX CVT Petrol", "ZX Diesel"],
   },
   {
-    name: "Civic Type R",
+    name: "Civic Type",
     logo: "/assets/car.png",
     variants: ["V CVT Petrol", "VX CVX Petrol", "VX Diesel", "VX MT Diesel", "ZX CVT Petrol", "ZX Diesel"],
   },
@@ -257,7 +257,7 @@ export const Renault: CarModel[] = [
     variants: ["V CVT Petrol", "VX CVX Petrol", "VX Diesel", "VX MT Diesel", "ZX CVT Petrol", "ZX Diesel"],
   },
   {
-    name: "Civic Type R",
+    name: "Civic Type",
     logo: "/assets/car.png",
     variants: ["V CVT Petrol", "VX CVX Petrol", "VX Diesel", "VX MT Diesel", "ZX CVT Petrol", "ZX Diesel"],
   },
