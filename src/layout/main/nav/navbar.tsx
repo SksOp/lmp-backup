@@ -18,7 +18,7 @@ function Navbar() {
   if (!user) return null;
 
   return (
-    <nav className="w-full bg-background flex justify-between items-center z-10 px-4 md:px-8 py-3 sticky top-0 border border-b-1">
+    <nav className="w-full bg-background flex justify-between items-center z-20 px-4 md:px-8 py-3 sticky top-0 border border-b-1">
       <Link to={paths.profile} className="md:hidden">
         <ProfileIcon />
       </Link>
