@@ -13,9 +13,9 @@ import { Link } from "react-router-dom";
 export function Profile({ user, className }: { user: User; className?: ClassValue }) {
   const { name, email, number, role } = user;
   return (
-    <div className={cn("flex flex-col gap-2 pt-16 md:p-0 bg-background  items-center px-4 text-xs md:text-base", className)}>
+    <div className={cn("flex flex-col gap-2 pt-16 md:p-0 bg-background ml-1 items-center px-4 text-xs md:text-base", className)}>
       <div className="flex flex-col border md:border-0 rounded-md gap-2 w-full px-3 py-2 mt-5 md:m-0">
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 mb-1">
           <Avatar>
             {/* <AvatarImage src={image} alt={imageAlt} /> */}
             <AvatarFallback>{name[0] + name[name.indexOf(" ") + 1]}</AvatarFallback>
@@ -24,14 +24,14 @@ export function Profile({ user, className }: { user: User; className?: ClassValu
         </div>
         <div className="flex gap-2">
           <div className="flex flex-col gap-2">
-            <span className="text-secondary-foreground/60">Email:</span>
-            <span className="text-secondary-foreground/60">Phone:</span>
-            <span className="text-secondary-foreground/60">Role:</span>
+            <span className="text-secondary-foreground/60 text-sm">Email:</span>
+            <span className="text-secondary-foreground/60 text-sm">Phone:</span>
+            <span className="text-secondary-foreground/60 text-sm">Role:</span>
           </div>
           <div className="flex flex-col gap-2">
-            <span className="font-medium">{email}</span>
-            <span className="font-medium">{number}</span>
-            <span className="font-medium">{role.charAt(0).toUpperCase() + role.slice(1)}</span>
+            <span className="font-medium text-sm">{email}</span>
+            <span className="font-medium text-sm">{number}</span>
+            <span className="font-medium text-sm">{role.charAt(0).toUpperCase() + role.slice(1)}</span>
           </div>
         </div>
       </div>

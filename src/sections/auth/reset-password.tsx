@@ -73,10 +73,10 @@ function ResetPassword() {
   
 
   return (
-    <div className="pt-10 min-h-screen  bg-muted ">
-      <div className="pt-10 py-6 border-b flex bg-background flex-col gap-2 items-center">
+    <div className="pt-14 min-h-screen bg-muted ">
+      <div className="pt-10 py-6 border-b flex bg-background flex-col gap-1 items-center">
         <HeroAvatar icon={"prime:lock"} />
-        <h2 className="text-xl font-semibold mt-5">Reset your password</h2>
+        <h2 className="text-xl font-semibold mt-2">Reset your password</h2>
         <p className="text-sm opacity-50">Start your car leasing process with us </p>
       </div>
       {page === Page.SelectPlatform && <SelectPlatform onSelectPlatform={onSelectPlatform} />}
@@ -97,12 +97,12 @@ function SelectPlatform({ onSelectPlatform }: SelectPlatformProps) {
   const { user } = useAuth();
 
   return (
-    <div className="p-6 max-w-xl  m-auto flex flex-col gap-2">
+    <div className="p-4 mt-4 max-w-xl flex flex-col gap-4">
       <p className="text-sm font-semibold">Verify your identity with one of the option,</p>
-      <RadioGroup value={selectedPlatform} defaultValue={selectedPlatform} >
+      <RadioGroup value={selectedPlatform} defaultValue={selectedPlatform} className="" >
         {user?.email && (
           <PlatformCard onClick={() => setSelectedPlatform("email")} name="Email" label={user.email} Icon={SMS}>
-            <RadioGroupItem value="email" onClick={() => setSelectedPlatform("email")} className="text-foreground border-foreground" />
+            <RadioGroupItem value="email" onClick={() => setSelectedPlatform("email")} className="text-foreground border-foreground " />
           </PlatformCard>
         )}
 
@@ -127,13 +127,13 @@ function SelectPlatform({ onSelectPlatform }: SelectPlatformProps) {
 
 const PlatformCard = ({ children, name, label, onClick,Icon }: { children: React.ReactNode; name: string; label: string; onClick: () => void; Icon:React.ComponentType }) => {
   return (
-    <Card onClick={onClick} className="flex gap-3 px-8 py-4 items-center justify-start pointer-events-auto cursor-pointer hover:bg-secondary">
+    <Card onClick={onClick} className="flex gap-4 px-4 py-2 items-center justify-start pointer-events-auto cursor-pointer hover:bg-secondary">
       {children}
       <div className="flex items-center justify-between gap-2">
         <Icon />
-        <div>
-        <p className="text-sm text-foreground " >{name}</p>
-      <div className="flex-1" />
+        <div className="">
+        <p className="text-sm text-foreground ml-1" >{name}</p>
+      
       <p className="text-sm opacity-50">{label}</p>
 
         </div>
