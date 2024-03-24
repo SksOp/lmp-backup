@@ -1,10 +1,7 @@
 import React, { Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import "@/index.css";
-import { Progress } from "./components/ui/progress";
 import { SuspenseSpinner } from "./components/ui/spinner";
-// import App from "@/app";
-// import reportWebVitals from "./reportWebVitals";
 
 const App = React.lazy(() => import("@/app"));
 
