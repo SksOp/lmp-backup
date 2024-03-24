@@ -104,9 +104,7 @@ const root = [
   },
   {
     path: paths.notifications,
-    element: (
-      <Notifications />
-    ),
+    element: <Notifications />,
   },
   { path: "*", element: <Navigate to="/404" replace /> },
 ];
