@@ -145,16 +145,16 @@ function RadioMultiMedia(props: RadioMultiMediaProps) {
       {options.map((option) => {
         const isSelected = data[name] === option.name;
         return (
-          <div key={option.name} onClick={() => handleChange(option.name)} className={cn("flex flex-col justify-end items-center ")}>
+          <div key={option.name} onClick={() => handleChange(option.name)} className={cn("flex flex-col justify-end items-center mt-1 pl-2 pt-1 ")}>
             <img
               src={option?.logo}
               alt={option.name}
               className={cn(
-                "cursor-pointer w-full h-auto object-contain p-3 bg-foreground/5 rounded-lg aspect-square",
+                "cursor-pointer w-full  h-auto object-contain p-3 bg-foreground/5 rounded-lg aspect-square",
                 isSelected && "border-2 border-primary"
               )}
             />
-            <p className="text-xs text-foreground/70">{option.name}</p>
+            <p className="text-sm mt-1 text-foreground/70">{option.name}</p>
           </div>
         );
       })}
