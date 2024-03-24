@@ -59,8 +59,8 @@ function LeadCard({ className, data, hideIcons, noHoverEffect, isPending }: Prop
             <DetailViewer title="Vehicle" value={data.application_id.car_details.brand} />
             <DetailViewer title="Cost" value={data.application_id.car_details.price.final_price} />
           </div>
-          <div>
-            <img className="max-w-[10rem]" src={data.application_id.car_details.car_image} alt="vehicle" />
+          <div className=" self-stretch">
+            <img className="max-h-[4.65rem]" src={data.application_id.car_details.car_image} alt="vehicle" />
           </div>
         </div>
 
