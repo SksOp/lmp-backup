@@ -513,27 +513,27 @@ export const DetailedLeads: DetailedLead = {
     {
       name: "Driving License",
       type: "pdf",
-      link: "https://www.img.com/8765678",
+      link: "http://alvarestech.com/temp/deep/Deep%20Learning%20by%20Ian%20Goodfellow,%20Yoshua%20Bengio,%20Aaron%20Courville%20(z-lib.org).pdf",
     },
     {
       name: "IQAMA Document",
       type: "pdf",
-      link: "https://www.img.com/8765678",
+      link: "http://alvarestech.com/temp/deep/Deep%20Learning%20by%20Ian%20Goodfellow,%20Yoshua%20Bengio,%20Aaron%20Courville%20(z-lib.org).pdf",
     },
     {
       name: "Photo",
       type: "jpeg",
-      link: "https://www.img.com/8765678",
+      link: "http://alvarestech.com/temp/deep/Deep%20Learning%20by%20Ian%20Goodfellow,%20Yoshua%20Bengio,%20Aaron%20Courville%20(z-lib.org).pdf",
     },
     {
       name: "Salary Certificate",
       type: "pdf",
-      link: "https://www.img.com/8765678",
+      link: "http://alvarestech.com/temp/deep/Deep%20Learning%20by%20Ian%20Goodfellow,%20Yoshua%20Bengio,%20Aaron%20Courville%20(z-lib.org).pdf",
     },
     {
       name: "Income Statement",
       type: "pdf",
-      link: "https://www.img.com/8765678",
+      link: "http://alvarestech.com/temp/deep/Deep%20Learning%20by%20Ian%20Goodfellow,%20Yoshua%20Bengio,%20Aaron%20Courville%20(z-lib.org).pdf",
     },
   ],
   booking_payment_details: {
