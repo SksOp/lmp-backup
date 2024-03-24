@@ -13,6 +13,7 @@ import { Input } from "@/components/ui/input";
 import Otp from "@/components/ui/otp";
 import { Mail, SMS } from "@/components/svgs/contacts";
 import { InfoIcon } from "@/components/svgs/icon";
+import { useToast } from "@/components/ui/use-toast";
 
 enum Page {
   SelectPlatform,
@@ -24,7 +25,7 @@ function ResetPassword() {
   const { requestResetPasswordWithEmail, resetPassword, validateOtp, requestResetPasswordWithPhone } = useAuth();
   const [otp, setOtp] = React.useState<number>(0);
   const [page, setPage] = React.useState<Page>(Page.SelectPlatform);
-
+  const { toast } = useToast();
   const [password, setPassword] = React.useState("");
 
   const onSelectPlatform = async (platform: Platform) => {
@@ -61,7 +62,16 @@ function ResetPassword() {
       return;
     }
     // Confirm User that password has been reset
+    toast({
+      title: "Success",
+      description: "Your password has been reset successfully",
+      variant: "default",
+    });
+  
   };
+
+  
+
   return (
     <div className="pt-10 min-h-screen  bg-muted ">
       <div className="pt-10 py-6 border-b flex bg-background flex-col gap-2 items-center">
