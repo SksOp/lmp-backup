@@ -25,12 +25,6 @@ const root = [
         <Home />
       </AuthGuard>
     ),
-    children: [
-      {
-        path: ":id",
-        element: <Lead />,
-      },
-    ],
   },
   {
     path: paths.notifications,
@@ -106,6 +100,7 @@ const root = [
     path: paths.notifications,
     element: <Notifications />,
   },
+  { path: "/404", element: <h1>404</h1> },
   { path: "*", element: <Navigate to="/404" replace /> },
 ];
 

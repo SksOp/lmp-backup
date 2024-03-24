@@ -24,7 +24,8 @@ function DocUpload({ action }: { action: NonGenericAction[] }) {
   const [fileName, setFileName] = useState<string>("");
   const leadExists = MinimalLeads.find((lead) => lead.application_id.application_id === (id as string));
   if (!leadExists) {
-    return <Navigate to="/404" replace />;
+    // return <Navigate to="/404" replace />;
+    return null;
   }
 
   const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
