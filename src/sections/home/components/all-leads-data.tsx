@@ -3,8 +3,9 @@ import { TabsContent } from "@/components/ui/tabs";
 import { MinimalLeads } from "@/constants/leads";
 import { useRouter } from "@/hooks/useRouter";
 import { paths } from "@/router";
+import { MinimalLead } from "@/types";
 import { useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export function LeadsData({ setSelectedLead, selectedLead }: { setSelectedLead: (id: string) => void; selectedLead: string | undefined }) {
   const isDesktop = () => window.innerWidth > 768;
@@ -19,8 +20,12 @@ export function LeadsData({ setSelectedLead, selectedLead }: { setSelectedLead: 
     // On mobile devices, the default Link behavior will proceed.
   };
 
-  const createLink = (lead: any, isPending: boolean = false) => (
-    <Link to={`${paths.lead}/${lead.application_id.application_id}`} onClick={(event) => handleLeadClick(lead.application_id.application_id, event)}>
+  const createLink = (lead: MinimalLead, isPending: boolean = false) => (
+    <Link
+      key={lead.application_id.application_id}
+      to={`${paths.lead}/${lead.application_id.application_id}`}
+      onClick={(event) => handleLeadClick(lead.application_id.application_id, event)}
+    >
       <LeadCard isPending={isPending} hideIcons data={lead} />
     </Link>
   );

@@ -60,7 +60,7 @@ export function SuccessIcon({ className }: Props) {
         strokeLinecap="round"
         strokeLinejoin="round"
       />
-      <path d="M38.25 50.5L46.75 58.9167L63.75 42.0833" stroke="white" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M38.25 50.5L46.75 58.9167L63.75 42.0833" stroke="white" strokeWidth="10" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }
@@ -84,7 +84,7 @@ export function StatusCompletedIcon({ isCompleted, className }: { isCompleted?: 
         d="M17 9.56277C17 9.01751 16.9488 8.48361 16.8465 7.96107C16.7328 7.43852 16.5764 6.9387 16.3774 6.4616C16.1784 5.98449 15.9311 5.53011 15.6354 5.09845C15.3511 4.66678 15.027 4.26919 14.6631 3.90569C14.2992 3.55354 13.9012 3.22979 13.4691 2.93444C13.0483 2.65045 12.5991 2.40622 12.1215 2.20175C11.6439 1.99727 11.1436 1.84392 10.6205 1.74168C10.0974 1.62809 9.55721 1.57129 9 1.57129C8.44279 1.57129 7.90263 1.62809 7.37953 1.74168C6.85643 1.84392 6.35608 1.99727 5.87846 2.20175C5.40085 2.40622 4.95167 2.65045 4.53092 2.93444C4.09879 3.22979 3.70078 3.55354 3.33689 3.90569C2.97299 4.26919 2.6489 4.66678 2.36461 5.09845C2.06894 5.53011 1.82161 5.98449 1.6226 6.4616C1.4236 6.9387 1.26724 7.43852 1.15352 7.96107C1.05117 8.48361 1 9.01751 1 9.56277C1 10.1194 1.05117 10.659 1.15352 11.1815C1.26724 11.7041 1.4236 12.2039 1.6226 12.681C1.82161 13.1581 2.06894 13.6125 2.36461 14.0441C2.6489 14.4644 2.97299 14.8563 3.33689 15.2199C3.70078 15.5834 4.09879 15.9071 4.53092 16.1911C4.95167 16.4864 5.40085 16.7364 5.87846 16.9408C6.35608 17.1453 6.85643 17.2987 7.37953 17.4009C7.90263 17.5145 8.44279 17.5713 9 17.5713C9.55721 17.5713 10.0974 17.5145 10.6205 17.4009C11.1436 17.2987 11.6439 17.1453 12.1215 16.9408C12.5991 16.7364 13.0483 16.4864 13.4691 16.1911C13.9012 15.9071 14.2992 15.5834 14.6631 15.2199C15.027 14.8563 15.3511 14.4644 15.6354 14.0441C15.9311 13.6125 16.1784 13.1581 16.3774 12.681C16.5764 12.2039 16.7328 11.7041 16.8465 11.1815C16.9488 10.659 17 10.1194 17 9.56277Z"
         fill="#10B981"
         stroke="#10B981"
-        stroke-width="2"
+        strokeWidth="2"
       />
       <path
         d="M12.4101 6.53526L7.59625 11.344L5.58955 9.33945C5.49451 9.25182 5.38303 9.20801 5.2551 9.20801C5.12717 9.20801 5.01934 9.25182 4.93162 9.33945C4.83658 9.43439 4.78906 9.54575 4.78906 9.67355C4.78906 9.80134 4.83658 9.90906 4.93162 9.99669L7.26728 12.3408C7.35501 12.4285 7.46466 12.4723 7.59625 12.4723C7.72784 12.4723 7.83749 12.4285 7.92522 12.3408L13.0681 7.19249C13.1631 7.10486 13.2106 6.99714 13.2106 6.86935C13.2106 6.74155 13.1631 6.63019 13.0681 6.53526C12.9804 6.44762 12.8725 6.40381 12.7446 6.40381C12.6167 6.40381 12.5052 6.44762 12.4101 6.53526Z"
@@ -97,13 +97,13 @@ export function StatusCompletedIcon({ isCompleted, className }: { isCompleted?: 
 export function TranslateIcon({ className }: { className?: ClassValue }) {
   return (
     <svg className={cn("", className)} width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <g clip-path="url(#clip0_4562_15913)">
-        <path d="M4.16663 6.66663L9.16663 11.6666" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-        <path d="M3.33337 11.6666L8.33337 6.66663L10 4.16663" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-        <path d="M1.66663 4.16663H11.6666" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-        <path d="M5.83337 1.66663H6.66671" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-        <path d="M18.3333 18.3333L14.1667 10L10 18.3333" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-        <path d="M11.6666 15H16.6666" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <g clipPath="url(#clip0_4562_15913)">
+        <path d="M4.16663 6.66663L9.16663 11.6666" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M3.33337 11.6666L8.33337 6.66663L10 4.16663" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M1.66663 4.16663H11.6666" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M5.83337 1.66663H6.66671" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M18.3333 18.3333L14.1667 10L10 18.3333" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M11.6666 15H16.6666" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
       </g>
       <defs>
         <clipPath id="clip0_4562_15913">
@@ -120,16 +120,16 @@ export function LockIcon({ className }: { className?: ClassValue }) {
       <path
         d="M15.8333 9.16663H4.16667C3.24619 9.16663 2.5 9.91282 2.5 10.8333V16.6666C2.5 17.5871 3.24619 18.3333 4.16667 18.3333H15.8333C16.7538 18.3333 17.5 17.5871 17.5 16.6666V10.8333C17.5 9.91282 16.7538 9.16663 15.8333 9.16663Z"
         stroke="black"
-        stroke-width="1.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M5.83338 9.16667V5.83334C5.83234 4.80005 6.21528 3.80323 6.90785 3.03639C7.60043 2.26956 8.55323 1.78742 9.5813 1.68358C10.6094 1.57974 11.6393 1.86159 12.4713 2.47443C13.3032 3.08728 13.8778 3.98738 14.0834 5.00001"
         stroke="black"
-        stroke-width="1.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
@@ -141,12 +141,12 @@ export function LogoutIcon({ className }: { className?: ClassValue }) {
       <path
         d="M7.5 17.5H4.16667C3.72464 17.5 3.30072 17.3244 2.98816 17.0118C2.67559 16.6993 2.5 16.2754 2.5 15.8333V4.16667C2.5 3.72464 2.67559 3.30072 2.98816 2.98816C3.30072 2.67559 3.72464 2.5 4.16667 2.5H7.5"
         stroke="#EF4444"
-        stroke-width="1.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
-      <path d="M13.3334 14.1667L17.5 10L13.3334 5.83337" stroke="#EF4444" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-      <path d="M17.5 10H7.5" stroke="#EF4444" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M13.3334 14.1667L17.5 10L13.3334 5.83337" stroke="#EF4444" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M17.5 10H7.5" stroke="#EF4444" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }
@@ -392,14 +392,14 @@ export function EditIcon({ className }: Props) {
 export function PencilIcon({ className }: Props) {
   return (
     <svg className={cn("", className)} width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <g clip-path="url(#clip0_4588_7355)">
-        <path d="M12 1.3335L14.6667 4.00016" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <g clipPath="url(#clip0_4588_7355)">
+        <path d="M12 1.3335L14.6667 4.00016" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
         <path
           d="M5.00004 13.6668L12.6667 6.00016L10 3.3335L2.33337 11.0002L1.33337 14.6668L5.00004 13.6668Z"
           stroke="white"
-          stroke-width="1.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </g>
       <defs>
@@ -529,16 +529,16 @@ export function KebabMenuIcon({ className }: Props) {
 export function InfoIcon({ className }: Props) {
   return (
     <svg className={cn("", className)} width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <g clip-path="url(#clip0_4559_14756)">
+      <g clipPath="url(#clip0_4559_14756)">
         <path
           d="M7.99992 14.6667C11.6818 14.6667 14.6666 11.6819 14.6666 8.00004C14.6666 4.31814 11.6818 1.33337 7.99992 1.33337C4.31802 1.33337 1.33325 4.31814 1.33325 8.00004C1.33325 11.6819 4.31802 14.6667 7.99992 14.6667Z"
           stroke="#64748B"
-          stroke-width="1.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
-        <path d="M8 10.6667V8" stroke="#64748B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-        <path d="M8 5.33337H8.00667" stroke="#64748B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M8 10.6667V8" stroke="#64748B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M8 5.33337H8.00667" stroke="#64748B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
       </g>
       <defs>
         <clipPath id="clip0_4559_14756">
@@ -576,7 +576,7 @@ export function NextArrow({ className }: Props) {
 export function CorrectIcon({ className }: Props) {
   return (
     <svg className={cn("", className)} width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M20 6L9 17L4 12" stroke="#22C55E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M20 6L9 17L4 12" stroke="#22C55E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }
@@ -584,8 +584,8 @@ export function CorrectIcon({ className }: Props) {
 export function WrongIcon({ className }: Props) {
   return (
     <svg className={cn("", className)} width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M18 6L6 18" stroke="#EF4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-      <path d="M6 6L18 18" stroke="#EF4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M18 6L6 18" stroke="#EF4444" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M6 6L18 18" stroke="#EF4444" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }
