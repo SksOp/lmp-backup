@@ -69,6 +69,7 @@ function InputsField({ name, inputType, data, setData, placeholder, options }: I
           id={name}
           label="Press to Upload file here"
           description="Max Size: 50MB"
+          
         />
       );
 
@@ -177,15 +178,15 @@ function AccordionAndRadio(props: RadioInput) {
     setData({ ...data, [name]: val });
   };
   return (
-    <RadioGroup value={data[name]}>
+    <RadioGroup value={data[name]} className="mt-[0.6rem] mx-1">
       <Accordion type="single" collapsible>
         <AccordionItem value="item-1" className="border rounded-sm">
-          <AccordionTrigger className="p-3">{data[name] ?? <span className=" opacity-30 "> {label}</span>}</AccordionTrigger>
-          <AccordionContent>
+          <AccordionTrigger className="p-3">{data[name] ?? <span className="text-base opacity-30 "> {label}</span>}</AccordionTrigger>
+          <AccordionContent className="flex flex-col gap-0">
             {options.map((option) => {
               return (
-                <div onClick={() => handleChange(option)} className={cn("flex justify-left items-center gap-3 p-4 cursor-pointer")}>
-                  <RadioGroupItem value={option} />
+                <div onClick={() => handleChange(option)} className={cn("flex justify-left items-center gap-3 px-4 py-1 cursor-pointer")}>
+                  <RadioGroupItem value={option} className="border-foreground text-foreground" />
                   <p>{option}</p>
                 </div>
               );
