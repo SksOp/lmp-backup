@@ -21,19 +21,19 @@ import { ChangeEvent, useState } from "react";
 
 function DocUpload({ action }: { action: NonGenericAction[] }) {
   const { id } = useParams();
+  const [fileName, setFileName] = useState<string>("");
   const leadExists = MinimalLeads.find((lead) => lead.application_id.application_id === (id as string));
   if (!leadExists) {
     return <Navigate to="/404" replace />;
   }
 
-  const [fileName, setFileName] = useState<string>('');
   const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files && event.target.files[0]; 
+    const file = event.target.files && event.target.files[0];
     if (file) {
-      setFileName(file.name); 
+      setFileName(file.name);
     }
   };
-  
+
   return (
     <Drawer>
       <DrawerTrigger className="border border-foreground bg-background rounded-sm py-1 px-2 text-sm mb-8">{action[0].en}</DrawerTrigger>
@@ -41,11 +41,13 @@ function DocUpload({ action }: { action: NonGenericAction[] }) {
         <DrawerHeader>
           <DrawerTitle className="text-bold">Upload Documents</DrawerTitle>
           <DrawerDescription>We require you to confirm the car availability</DrawerDescription>
+
           <LeadCard data={leadExists} hideIcons className="p-4" />
-          <Label className="text-base  font-semibold absolute left-5 bottom-[44vh] ">Driving License</Label>
-          
-          <InputFile onChange={handleFileChange} name={fileName}  label="Press to Upload file here" description="Max Size: 50MB" className="py-2 mt-8" />
+          <Label className="text-left ">Driving License</Label>
+
+          <InputFile onChange={handleFileChange} name={fileName} label="Press to Upload file here" description="Max Size: 50MB" className="" />
         </DrawerHeader>
+
         <DrawerFooter>
           <Button variant="default">Submit Documents</Button>
         </DrawerFooter>
