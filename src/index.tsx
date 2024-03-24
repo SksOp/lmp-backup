@@ -1,25 +1,18 @@
-import React from "react";
+import React, { Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import "@/index.css";
-import App from "@/app";
+import { Progress } from "./components/ui/progress";
+import { SuspenseSpinner } from "./components/ui/spinner";
+// import App from "@/app";
 // import reportWebVitals from "./reportWebVitals";
-import { BrowserRouter } from "react-router-dom";
-import { Toaster } from "./components/ui/toaster";
-import { AuthProvider } from "./auth/context/auth-provider";
-import { AuthConsumer } from "./auth/context/auth-consumer";
+
+const App = React.lazy(() => import("@/app"));
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
 root.render(
-  // <React.StrictMode>
-  <BrowserRouter>
-    <AuthProvider>
-      <AuthConsumer>
-        <App />
-        <Toaster />
-      </AuthConsumer>
-    </AuthProvider>
-  </BrowserRouter>
-  // </React.StrictMode>
+  <Suspense fallback={<SuspenseSpinner />}>
+    <App />
+  </Suspense>
 );
 
 // // If you want to start measuring performance in your app, pass a function
