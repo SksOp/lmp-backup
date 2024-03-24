@@ -38,7 +38,7 @@ export function Status({ states }: { states: State[] }) {
                 id={Number(state.key)}
                 date={formattedDate(state.completed_at)}
                 title={state.name.en}
-                doneBy={state.completed_by}
+                doneBy={state.completion_actor_name}
                 status={state.status}
                 noOfStates={states.length}
                 action={DetailedLeads.actions.non_generic}

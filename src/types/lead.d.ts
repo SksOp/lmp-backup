@@ -8,6 +8,7 @@ interface State {
   actor: string;
   completed_by: string;
   completed_at: string;
+  completion_actor_name: string;
   updated_by: string;
   updated_at: string;
   state_type: string;
