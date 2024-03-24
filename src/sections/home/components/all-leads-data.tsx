@@ -18,9 +18,9 @@ export function LeadsData({ setSelectedLead, selectedLead }: { setSelectedLead: 
     // On mobile devices, the default Link behavior will proceed.
   };
 
-  const createLink = (lead: any) => (
+  const createLink = (lead: any, isPending: boolean = false) => (
     <Link to={`${paths.lead}/${lead.application_id.application_id}`} onClick={(event) => handleLeadClick(lead.application_id.application_id, event)}>
-      <LeadCard hideIcons data={lead} />
+      <LeadCard isPending={isPending} hideIcons data={lead} />
     </Link>
   );
 
@@ -37,7 +37,7 @@ export function LeadsData({ setSelectedLead, selectedLead }: { setSelectedLead: 
 
   const allLeads = MinimalLeads.map((lead) => createLink(lead));
   const activeLeads = MinimalLeads.map((lead) => lead.application_id.status === "active" && createLink(lead));
-  const pending = MinimalLeads.map((lead) => lead.application_id.current_actor === "Dealer" && createLink(lead));
+  const pending = MinimalLeads.map((lead) => lead.application_id.current_actor === "Dealer" && createLink(lead, true));
   const draft = MinimalLeads.map((lead) => lead.application_id.is_draft && createLink(lead));
 
   return (

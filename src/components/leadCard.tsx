@@ -24,9 +24,10 @@ export interface Props {
   data: MinimalLead;
   hideIcons?: boolean;
   noHoverEffect?: boolean;
+  isPending?: boolean;
 }
 
-function LeadCard({ className, data, hideIcons, noHoverEffect }: Props) {
+function LeadCard({ className, data, hideIcons, noHoverEffect, isPending }: Props) {
   const handleWhatsappClick = () => {
     window.open(`https://wa.me/${data.application_id.phone_number}`, "_blank");
   };
@@ -68,7 +69,10 @@ function LeadCard({ className, data, hideIcons, noHoverEffect }: Props) {
         <div className="text-xs flex justify-between items-center mt-[0.15rem]">
           <p className="">
             <span className=" opacity-50">Leasing Status:</span>
-            <span className="ml-1 text-foreground"> {data.application_id.status}</span>
+            <span className="ml-1 text-foreground">
+              {" "}
+              {isPending ? "Pending" : data.application_id.status.charAt(0).toUpperCase() + data.application_id.status.slice(1)}
+            </span>
           </p>
           <p className="opacity-40 font-semibold">{data.application_id.progress_measure}%</p>
         </div>
