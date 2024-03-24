@@ -1,6 +1,6 @@
 "use client";
 
-import { CrossIcon, HamburgerMenuIcon } from "@/components/svgs/icon";
+import { CrossIcon, EditIcon, HamburgerMenuIcon } from "@/components/svgs/icon";
 import { useState, RefObject, useEffect, useRef } from "react";
 import { DetailedLeads } from "@/constants/leads";
 import { DetailedLead } from "@/types";
@@ -75,7 +75,7 @@ function NavBottom() {
     <footer className="z-10 fixed bottom-3 right-2 m-5">
       <div>
         <div onClick={() => setOpen(true)}>
-          <HamburgerMenuIcon className="bg-primary rounded-full p-3 w-14 h-14" />
+          <EditIcon className="" />
         </div>
         {open && <Actions setOpen={setOpen} detailedLeads={DetailedLeads} />}
       </div>

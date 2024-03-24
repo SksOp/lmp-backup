@@ -69,7 +69,7 @@ const Otp = ({
                 className
               )}
               type="number"
-              placeholder={(index + 1).toString()}
+              placeholder="-"
               value={tempOtp[index]}
             />
           </Fragment>

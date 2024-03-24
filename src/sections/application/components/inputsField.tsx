@@ -94,7 +94,7 @@ function InputsField({ name, inputType, data, setData, placeholder, options }: I
         </Popover>
       );
     case "phone":
-      return <PhoneInput value={data[name]} onChange={(phone) => (data[name] = phone)} defaultCountry="IN" placeholder="9876543210" />;
+      return <PhoneInput value={data[name]} onChange={(phone) => (data[name] = phone)} defaultCountry="IN" placeholder="9876543210" className="" />;
     default:
       return (
         <Input
@@ -102,6 +102,7 @@ function InputsField({ name, inputType, data, setData, placeholder, options }: I
           type={inputType}
           placeholder={placeholder}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => setData({ ...data, [name]: e.target.value })}
+          className="h-15 ml-1"
         />
       );
   }

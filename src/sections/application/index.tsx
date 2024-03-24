@@ -5,13 +5,26 @@ import ProgressBar from "./components/progressBar";
 import Success from "./components/success";
 import Group from "./components/group";
 import GroupOtp from "./components/groupOtp";
+import Layout from '@/layout/application'
+import { useRouter } from "@/hooks/useRouter";
+import { set } from "date-fns";
 
 function ApplicationView() {
   const [data, setData] = useState({});
   const [bank, setBank] = useState<Bank>(banks[0]);
   const [group, setGroup] = useState<number>(0);
   const [requestOtp, setRequestOtp] = useState<{ next: boolean; view: boolean }>({ next: false, view: false });
-  
+  const router = useRouter ()
+  const onBackClick = ()=>{
+    if (group === 0) {
+     router.back()
+    }if(requestOtp.view){
+      setRequestOtp({next:false,view:false})
+    } else {
+      setGroup(group - 1);
+    }
+  }
+
   const props = {
     config: bank.config,
     selectedBank: bank,
@@ -23,9 +36,9 @@ function ApplicationView() {
   };
   
   return (
+    <Layout backFn={onBackClick} >
     <div className="flex flex-col gap-1 py-4  px-1">
-      <p className="text-center text-sm font-bold">New Leasing Application</p>
-      <p className="text-center text-[0.72rem] text-foreground/70">Initiate the application with customer/vehicle details</p>
+
       <ProgressBar group={group} />
       <div className="flex flex-col gap-4 h-[70vh] overflow-auto pb-10 px-2">
         {requestOtp.view ? (
@@ -42,6 +55,7 @@ function ApplicationView() {
         )}
       </div>
     </div>
+    </Layout>
   );
 }
 
