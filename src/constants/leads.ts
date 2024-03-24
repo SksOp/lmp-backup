@@ -3,7 +3,7 @@ import { DetailedLead, MinimalLead } from "@/types";
 export const MinimalLeads: MinimalLead[] = [
   {
     application_id: {
-      application_id: "987654321",
+      application_id: "1",
       lead_name: "John Duo",
       lead_ID: "lead_234565432",
       current_state: {
@@ -70,7 +70,7 @@ export const MinimalLeads: MinimalLead[] = [
   },
   {
     application_id: {
-      application_id: "123456789",
+      application_id: "2",
       lead_name: "Alice Smith",
       lead_ID: "lead_234565432",
       current_state: {
@@ -137,7 +137,7 @@ export const MinimalLeads: MinimalLead[] = [
   },
   {
     application_id: {
-      application_id: "987670321",
+      application_id: "3",
       lead_name: "John Duo",
       lead_ID: "lead_234565432",
       current_state: {
@@ -204,7 +204,7 @@ export const MinimalLeads: MinimalLead[] = [
   },
   {
     application_id: {
-      application_id: "124006789",
+      application_id: "4",
       lead_name: "Alice Smith",
       lead_ID: "lead_234565432",
       current_state: {
@@ -271,7 +271,7 @@ export const MinimalLeads: MinimalLead[] = [
   },
   {
     application_id: {
-      application_id: "920654321",
+      application_id: "5",
       lead_name: "John Duo",
       lead_ID: "lead_234565432",
       current_state: {
@@ -338,7 +338,7 @@ export const MinimalLeads: MinimalLead[] = [
   },
   {
     application_id: {
-      application_id: "123454075",
+      application_id: "6",
       lead_name: "Alice Smith",
       lead_ID: "lead_234565432",
       current_state: {
@@ -405,7 +405,7 @@ export const MinimalLeads: MinimalLead[] = [
   },
   {
     application_id: {
-      application_id: "987696321",
+      application_id: "7",
       lead_name: "John Duo",
       lead_ID: "lead_234565432",
       current_state: {

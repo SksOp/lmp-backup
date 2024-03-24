@@ -6,7 +6,7 @@ import { Label } from "@radix-ui/react-label";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import HeroAvatar from "./components/hero-avatar";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { paths } from "@/router/paths";
 import Success from "../welcome/components/success";
 
@@ -22,8 +22,6 @@ function LoginView() {
     if (user) replace("/");
   }, [user, replace]);
 
-
-
   return (
     <div className="pt-10 min-h-screen  bg-muted ">
       <div className="pt-10 py-6 border-b flex bg-background flex-col gap-2 items-center">
@@ -33,7 +31,6 @@ function LoginView() {
       </div>
       {currentPage === "id" && <IdView id={id} setId={setId} setCurrentPage={setCurrentPage} />}
       {currentPage === "password" && <PasswordView id={id} password={password} setPassword={setPassword} login={login} />}
-      
     </div>
   );
 }
@@ -44,7 +41,9 @@ const IdView = ({ id, setId, setCurrentPage }: { id: string; setId: (id: string)
   return (
     <>
       <div className="p-6 max-w-xl  m-auto flex flex-col gap-2">
-        <Label htmlFor="id" className="text-sm text-foreground font-semibold">Enter your Email ID or Phone</Label>
+        <Label htmlFor="id" className="text-sm text-foreground font-semibold">
+          Enter your Email ID or Phone
+        </Label>
         <Input value={id} onChange={(e) => setId(e.target.value)} name="id" placeholder="enter your email ID or phone number" />
       </div>
       <div className="w-full max-w-xl  absolute bottom-0 left-1/2 transform -translate-x-1/2 p-6">
@@ -67,21 +66,30 @@ const PasswordView = ({
   setPassword: (password: string) => void;
   login: (id: string, password: string) => void;
 }) => {
-  
-  const navigate = useNavigate();
+  const router = useRouter();
   const handleOnClick = () => {
     login(id, password);
-    navigate(paths.welcome);
-  }
+    router.push(paths.welcome);
+  };
 
   return (
     <>
       <div className="p-6 max-w-xl  m-auto flex flex-col gap-2">
-        <Label htmlFor="password" className="text-sm text-foreground font-semibold">Password</Label>
-        <Input value={password} onChange={(e) => setPassword(e.target.value)} name="password" type="password" placeholder="enter your password here" />
+        <Label htmlFor="password" className="text-sm text-foreground font-semibold">
+          Password
+        </Label>
+        <Input
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          name="password"
+          type="password"
+          placeholder="enter your password here"
+        />
         <div className="flex">
           <div className="flex flex-grow" />
-          <Link to={paths.resetPassword} className="text-sm font-semibold">Forget Password?</Link>
+          <Link to={paths.resetPassword} className="text-sm font-semibold">
+            Forget Password?
+          </Link>
         </div>
       </div>
       <div className="w-full max-w-xl  absolute bottom-0 left-1/2 transform -translate-x-1/2 p-6">
