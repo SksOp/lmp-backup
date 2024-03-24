@@ -1,9 +1,9 @@
 import React from "react";
 import Navbar from "./nav/navbar";
-function Layout({ children }: { children: React.ReactNode }) {
+function Layout({ children,backFn }: { children: React.ReactNode; backFn:()=>void }) {
   return (
     <>
-      <Navbar />
+      <Navbar backFn={backFn}  />
       {children}
     </>
   );
