@@ -19,7 +19,7 @@ function HomeView() {
       <div className="flex w-full justify-between">
         <Tabs defaultValue="all-leads" className="flex flex-col w-full ">
           <div className="flex w-full items-center justify-center gap-5 sticky top-[3.1rem] z-10 py-3 ">
-            <div className="absolute w-full h-1/2 bg-background top-0 left-0 " />
+            <div className="absolute w-full h-[calc(100%-0.75rem)] bg-background top-0 left-0 " />
             <LeadsSelector className="py-[0.3rem] relative z-10 " />
             <ApplyButtonDrawer className="hidden md:flex  relative z-10" />
           </div>
