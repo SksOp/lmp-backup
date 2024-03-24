@@ -16,6 +16,7 @@ import { MinimalLeads } from "@/constants/leads";
 import { ClassValue } from "clsx";
 import { NonGenericAction } from "@/types";
 import { InputFile } from "./ui/input-file";
+import { Label } from "./ui/label";
 
 function DocUpload({ action }: { action: NonGenericAction[] }) {
   const { id } = useParams();
@@ -31,6 +32,7 @@ function DocUpload({ action }: { action: NonGenericAction[] }) {
           <DrawerTitle className="text-bold">Upload Documents</DrawerTitle>
           <DrawerDescription>We require you to confirm the car availability</DrawerDescription>
           <LeadCard data={leadExists} hideIcons className="p-4" />
+          <Label className="text-base  font-semibold mr-[13.5rem]">Driving License</Label>
           <InputFile name="Driving license" label="Press to Upload file here" description="Max Size: 50MB" className="py-2" />
         </DrawerHeader>
         <DrawerFooter>

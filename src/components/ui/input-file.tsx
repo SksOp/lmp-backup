@@ -25,7 +25,8 @@ const UploadIcon = ({ className }: { className?: ClassValue }) => (
 const InputFile = React.forwardRef<HTMLInputElement, InputProps>(({ id, name, className, label, onChange, description, ...props }, ref) => {
   return (
     <>
-    <label htmlFor={id} className=" p-0 text-sm font-semibold"><span className="block text-left">{name}</span>
+    <label htmlFor={id} className=" p-0 text-sm font-semibold">
+      {/* <span className="block text-left">{name}</span> */}
       <div className={cn("flex items-center cursor-pointer justify-start px-4 py-2 gap-3 border w-full rounded-md", className)}>
         <div className="bg-[#CAD1D9]/30 p-2 rounded-full">
           <UploadIcon className />
